@@ -1,0 +1,20 @@
+﻿// List
+//
+// TODO:Listの説明
+//
+// Markup:
+// <div class="c-label">ラベル</div>
+// <div class="c-label"><i class="c-label_icon fa fa-check"></i>アイコン付きラベル</div>
+//
+// Styleguide 3.11.0
+
+.c-list {
+  list-style-type:none;
+  li{
+    background:$color-white;
+    border:1px solid $color-silver;
+    position: relative;
+    margin-top:-1px;
+    padding:10px;
+  }
+}

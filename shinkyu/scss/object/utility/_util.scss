@@ -1,0 +1,354 @@
+﻿.for-sp {
+    display: block !important;
+}
+
+span.for-sp,
+i.for-sp {
+    display: inline !important;
+}
+
+.for-pc {
+    display: none !important;
+}
+
+span.for-pc,
+i.for-pc {
+    display: none !important;
+}
+
+@include breakpoint($bp-md) {
+    .for-sp {
+        display: none !important;
+    }
+    span.for-sp,
+    i.for-sp {
+        display: none !important;
+    }
+    .for-pc {
+        display: block !important;
+    }
+    span.for-pc,
+    i.for-pc {
+        display: inline !important;
+    }
+}
+
+// position
+//
+// positionプロパティを個別に指定します。<br>※表示が崩れるためサンプルは省略。<br>
+// <br>
+//　.pos-s - static<br>
+//　.pos-r - relative<br>
+//　.pos-a - absolute<br>
+//　.pos-f - fixed
+//
+// Styleguide 4.2.0
+.pos-s {
+    position: static !important;
+}
+
+.pos-r {
+    position: relative !important;
+}
+
+.pos-a {
+    position: absolute !important;
+}
+
+.pos-f {
+    position: fixed !important;
+}
+
+// align
+//
+//　.tl - 左寄せ
+//　.tc - 中央寄せ
+//　.tr - 右寄せ
+//
+// Markup:
+// <div class="{$modifiers}">ダミーテキストダミーテキスト</div>
+//
+// Styleguide 4.3.0
+.tl {
+    text-align: left !important;
+}
+
+.tc {
+    text-align: center !important;
+}
+
+.tr {
+    text-align: right !important;
+}
+
+.center{
+    margin-left:auto !important;
+    margin-right:auto !important;
+}
+
+// float
+//
+// 使用時は弟要素でclearするか、親要素でclearfixしましょう。
+//
+//　.fl - float:left
+//　.fr - float:right
+//
+// Markup:
+// <div class="{$modifiers}">ダミーテキストダミーテキスト</div>
+//
+// Styleguide 4.4.0
+.fl {
+    float: left !important;
+}
+
+.fr {
+    float: right !important;
+}
+
+// hide
+//
+// 要素を非表示にする場合に使用します。<br>
+// ※cssスタイルを直接弄るより、classを切り替える方が低コスト。
+//
+//　.hide - display:none;
+//
+// Markup:
+// <div class="{$modifiers}">ダミーテキストダミーテキスト</div>
+//
+// Styleguide 4.5.0
+.hide {
+    display: none !important;
+}
+
+// width (%)
+//
+// 要素の幅を個別に%で指定する場合に使用します。
+// 0～100%まで1%刻みで指定可能です。
+//
+//　.w-25 - width:25%;
+//　.w-50 - width:50%;
+//　.w-75 - width:75%;
+//　.w-100 - width:100%;
+//
+// Markup:
+// <div style="background:#eee;" class="{$modifiers}">ダミーテキストダミーテキスト</div>
+//
+// Styleguide 4.6.0
+@for $i from 0 through 100 {
+    .w-#{$i} {
+        width: percentage($i / 100) !important;
+    }
+}
+
+// width (em)
+//
+// 要素の幅を個別にemで指定する場合に使用します。
+// 例としてtableの列幅などへの使用が挙げられます。<br>
+// 0～20emまで1em刻みで指定可能です。
+//
+//　.w-5em - width:5em;
+//　.w-10em - width:10em;
+//　.w-15em - width:15em;
+//　.w-20em - width:20em;
+//
+// Markup:
+// <div style="background:#eee;" class="{$modifiers}">ダミーテキストダミーテキスト</div>
+//
+// Styleguide 4.7.0
+@for $i from 0 through 20 {
+    .w-#{$i}em {
+        width:#{$i}em !important;
+    }
+}
+
+// margin (px)
+//
+// 要素の上下の余白（margin/padding）を個別に指定したい場合に使用します。<br>
+// 0～100pxまで1px刻みで指定可能です。
+//
+//　.mb-5 - margin-bottom:5px;
+//　.mt-20 - margin-top:20px;
+//　.mr-50 - margin-right:50px;
+//　.ml-75 - margin-left:75px;
+//
+// Markup:
+// <div style="background:#eee;" class="{$modifiers}">ダミーテキストダミーテキスト</div>
+//
+// Styleguide 4.8.0
+@for $i from 0 through 100 {
+    .mb-#{$i} {
+        margin-bottom:#{$i}px !important;
+    }
+    .mt-#{$i} {
+        margin-top:#{$i}px !important;
+    }
+    .mr-#{$i} {
+        margin-right:#{$i}px !important;
+    }
+    .ml-#{$i} {
+        margin-left:#{$i}px !important;
+    }
+}
+
+// padding (px)
+//
+// 要素の上下の余白（margin/padding）を個別に指定したい場合に使用します。<br>
+// 0～100pxまで1px刻みで指定可能です。
+//
+//　.pb-5 - padding-bottom:5px;
+//　.pt-20 - padding-top:20px;
+//　.pr-50 - padding-right:50px;
+//　.pl-75 - padding-left:75px;
+//
+// Markup:
+// <div style="background:#eee;" class="{$modifiers}">ダミーテキストダミーテキスト</div>
+//
+// Styleguide 4.9.0
+@for $i from 0 through 100 {
+    .pb-#{$i} {
+        padding-bottom:#{$i}px !important;
+    }
+    .pt-#{$i} {
+        padding-top:#{$i}px !important;
+    }
+    .pr-#{$i} {
+        padding-right:#{$i}px !important;
+    }
+    .pl-#{$i} {
+        padding-left:#{$i}px !important;
+    }
+}
+
+// indent
+//
+// スマホ表示時など、左右100%表示ではなく、余白を持たせる場合に使用します。
+//
+// Markup:
+// <div class="indent">ダミーテキストダミーテキスト</div>
+//
+// Styleguide 4.10.0
+.indent {
+    padding-left: 15px;
+    padding-right: 15px;
+    @include breakpoint($bp-md) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    &--pc {
+        @include breakpoint($bp-md) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+// overflow
+//
+// overflowプロパティを個別に指定します。
+// <br>
+//　.of-h - hidden<br>
+//　.of-s - scroll
+//
+// Styleguide 4.11.0
+.of-h {
+    overflow: hidden !important;
+}
+
+.of-s {
+    overflow: scroll !important;
+}
+
+// Border
+//
+// 個別にborderを指定します。
+//
+// Markup:
+//　<div class="bdr" style="width:50px;height:50px;background:#f9f9f9;display:inline-block;"></div>
+//　<div class="bdr bdr-t-0" style="width:50px;height:50px;background:#fff;display:inline-block;"></div>
+//　<div class="bdr bdr-r-0" style="width:50px;height:50px;background:#fff;display:inline-block;"></div>
+//　<div class="bdr bdr-b-0" style="width:50px;height:50px;background:#fff;display:inline-block;"></div>
+//　<div class="bdr bdr-l-0" style="width:50px;height:50px;background:#fff;display:inline-block;"></div>
+//
+// Styleguide 4.12.0
+.bdr {
+    border: 1px solid #eee !important;
+}
+
+.bdr-0 {
+    border: none !important;
+}
+
+.bdr-t-0 {
+    border-top: none !important;
+}
+
+.bdr-r-0 {
+    border-right: none !important;
+}
+
+.bdr-b-0 {
+    border-bottom: none !important;
+}
+
+.bdr-l-0 {
+    border-left: none !important;
+}
+
+// invisible
+//
+// 要素を非表示にする場合に使用します。<br>
+// ※cssスタイルを直接弄るより、classを切り替える方が低コスト。
+//
+//　.invisible - display:none;
+//
+// Markup:
+// <div class="{$modifiers}">ダミーテキストダミーテキスト</div>
+//
+// Styleguide 4.13.0
+.invisible {
+    position: absolute !important;
+    z-index: -1 !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+}
+
+// Font-Weight
+//
+// 文字のウェイトを指定します。<br>
+// 数値で指定する場合は.fw-400のようにします
+//
+//　.fw-b - font-weight:bold;
+//
+// Markup:
+// <div class="{$modifiers}">ダミーテキストダミーテキスト</div>
+//
+// Styleguide 4.14.0
+.fw-b {
+    font-weight: bold;
+}
+
+.fw-n {
+    font-weight: normal;
+}
+
+@for $i from 1 through 8 {
+    .fw-#{$i*100} {
+        font-weight: #{$i*100};
+    }
+}
+
+img{
+    &.round{
+        border-radius:5px;
+    }
+    &.shadow{
+        box-shadow: 0 0 5px rgba(0,0,0,0.08);
+    }
+}
+
+@for $i from 1 through 20 {
+    .ad-#{$i*500}ms {
+        animation-delay: #{$i*500}ms !important;
+    }
+}

@@ -1,0 +1,17 @@
+﻿// Reset
+//
+// デフォルトでbox-sizingは全てのタグに適用<br>
+// ul,ol,dlのlist-styleは非表示
+//
+// Styleguide 1.2.0
+* {
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+dl {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

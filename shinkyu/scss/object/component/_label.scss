@@ -1,0 +1,23 @@
+﻿// Label
+//
+// TODO:Labelの説明
+//
+// Markup:
+// <div class="c-label">ラベル</div>
+// <div class="c-label"><i class="c-label_icon fa fa-check"></i>アイコン付きラベル</div>
+//
+// Styleguide 3.8.0
+
+.c-label {
+  display: inline-block;
+  padding:2px 8px;
+  background:$color-black;
+  color:$color-white;
+  border-radius:$global-border-radius;
+  vertical-align:middle;
+  &_icon{
+    margin-right:5px;
+  }
+  @extend %font-size-variation;
+  @extend %bkg-color-variation;
+}

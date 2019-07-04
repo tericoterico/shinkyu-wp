@@ -1,0 +1,82 @@
+﻿// Pager
+//
+// Pagerの要素を定義します。
+//
+// Markup:
+// <ul class="pager">
+//   <li class="pager-item"><a href="#">&lt;</a></li>
+//   <li class="pager-item"><a href="#">1</a></li>
+//   <li class="pager-item current"><span>2</span></li>
+//   <li class="pager-item"><a href="#">3</a></li>
+//   <li class="pager-item"><a href="#">&gt;</a></li>
+// </ul>
+//
+// Styleguide 3.4.0
+
+%pager_li{
+    display: inline-block;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0;
+}
+
+
+%pager_item{
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 2.4;
+    display: block;
+    width: 36px;
+    min-width: 1em;
+    height: 36px;
+    margin: 0 0 0 -1px;
+    padding: 0;
+    transition: all ease .3s;
+    text-decoration: none;
+    color: $color-cerulean;
+    border: 1px solid rgba( $color-cerulean, 0.6);
+    //border-radius: 50%;
+    &:hover{
+        background: $color-cerulean;
+        color: $color-white;
+    }
+}
+
+
+.c-pager {
+    margin: 10px 0;
+    text-align: center;
+    font-size:0;
+    .c-pager_prev{
+        @extend %pager_li;
+        a, span{
+            @extend %pager_item;
+            border-top-left-radius: $border-radius-md;
+            border-bottom-left-radius: $border-radius-md;
+            margin-left:0;
+        }
+    }
+    .c-pager_next{
+        @extend %pager_li;
+        a, span{
+            @extend %pager_item;
+            border-top-right-radius: $border-radius-md;
+            border-bottom-right-radius: $border-radius-md;
+        }
+    }
+    .c-pager_item{
+        @extend %pager_li;
+        &.is-current{
+            a, span{
+                cursor: default;
+                color: $color-white !important;
+                border: 1px solid $color-cerulean;
+                background: $color-cerulean;
+            }
+        }
+        a, span{
+            @extend %pager_item;
+        }
+    }
+}

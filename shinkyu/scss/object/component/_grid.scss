@@ -1,0 +1,110 @@
+﻿$columns:12;
+$gutter:60px;
+
+// Grid
+//
+// 段組みのためのGridを定義します。<br>
+// Gridのフレームワークとしてsusy3を採用しています。
+// 12分割を前提としています。
+//
+// Styleguide 3.2.0
+
+// grid
+//
+// 段組みを纏める親要素に指定します。<br>
+// flexboxにて実装しています。
+//
+// Markup:
+//  <div class="grid">
+//    <div class="col-6" style="background:#eee">50%</div>
+//    <div class="col-6" style="background:#eee">50%</div>
+//  </div>
+//
+// Styleguide 3.2.1
+
+.c-grid {
+    margin: 0;
+    //padding: 10px 0;
+    box-sizing: border-box;
+    display:flex;
+    flex-flow: row wrap;
+    @include breakpoint($bp-md) {
+        margin-left: -($gutter/2);
+        margin-right: -($gutter/2);
+    }
+}
+
+// Col
+//
+// col-[n]で分割数を指定します。<br>
+// nには12を分割数で割った値を指定します。<br>
+// 例） 4分割の場合 12/4 = 3 -> .col-3<br>
+// <br>
+// 現在は5分割には対応していません。
+//
+// Markup:
+//  <div class="grid">
+//    <div class="col-6" style="background:#eee">2分割</div>
+//    <div class="col-6" style="background:#eee">2分割</div>
+//  </div>
+//  <div class="grid">
+//    <div class="col-4" style="background:#eee">3分割</div>
+//    <div class="col-4" style="background:#eee">3分割</div>
+//    <div class="col-4" style="background:#eee">3分割</div>
+//  </div>
+//  <div class="grid">
+//    <div class="col-2" style="background:#eee">6分割</div>
+//    <div class="col-2" style="background:#eee">6分割</div>
+//    <div class="col-2" style="background:#eee">6分割</div>
+//    <div class="col-2" style="background:#eee">6分割</div>
+//    <div class="col-2" style="background:#eee">6分割</div>
+//    <div class="col-2" style="background:#eee">6分割</div>
+//  </div>
+//
+// Styleguide 3.2.2
+
+.c-col {
+    position: relative;
+    max-width:100%;
+    width: 100%;
+    min-height: 1px; // Prevent columns from collapsing when empty
+    flex-basis:0;
+    flex-grow:1;
+    padding-left:$gutter/4;
+    padding-right:$gutter/4;
+    @include breakpoint($bp-md) {
+        padding-left:$gutter/2;
+        padding-right:$gutter/2;
+    }
+}
+
+@for $i from 1 through $columns {
+    .is-#{$i}{
+        max-width: percentage($i / $columns);
+        flex: 0 0 percentage($i / $columns);
+    }
+    @include breakpoint($bp-sm){
+        .is-sm-#{$i}{
+            max-width: percentage($i / $columns);
+            flex: 0 0 percentage($i / $columns);
+        }
+    }
+    @include breakpoint($bp-md){
+        .is-md-#{$i}{
+            max-width: percentage($i / $columns);
+            flex: 0 0 percentage($i / $columns);
+        }
+    }
+    @include breakpoint($bp-lg){
+        .is-lg-#{$i}{
+            max-width: percentage($i / $columns);
+            flex: 0 0 percentage($i / $columns);
+        }
+    }
+    @include breakpoint($bp-xl){
+        .is-xl-#{$i}{
+            max-width: percentage($i / $columns);
+            flex: 0 0 percentage($i / $columns);
+        }
+    }
+}

@@ -1,0 +1,20 @@
+﻿// Z-index
+//
+// Z-indexを管理します。
+// 各SCSSファイルでここで定義した変数を呼び出して使用します。
+// 
+// $zindex-dropdown:          1000 !default;<br>
+// $zindex-sticky:            1020 !default;<br>
+// $zindex-fixed:             1030 !default;<br>
+// $zindex-modal:             1040 !default;<br>
+// $zindex-popover:           1050 !default;<br>
+// $zindex-tooltip:           1060 !default;
+//
+// Styleguide 1.7.0
+
+$zindex-dropdown:          1000 !default;
+$zindex-sticky:            1020 !default;
+$zindex-fixed:             1030 !default;
+$zindex-modal:             1040 !default;
+$zindex-popover:           1050 !default;
+$zindex-tooltip:           1060 !default;

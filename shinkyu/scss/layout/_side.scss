@@ -1,0 +1,125 @@
+// Side
+//
+// サイドバー部分を定義します。
+//
+// Markup:
+//<div id="content" class="clear">
+// <aside id="side" class="open">
+// 	<ul class="menu">
+// 		<li class="">
+// 				<a href="#"><i class="fa fa-fw fa-gear"></i>dummy</a>
+// 				<i class="toggle-sub-menu fa fa-chevron-circle-down"></i>
+// 				<ul class="sub-menu" style="display: none;">
+// 					<li><a href="master-facility-list.html">dummy</a></li>
+// 				</ul>
+// 		</li>
+// 		<li>
+// 			<a href="#"><i class="fa fa-fw fa-wrench"></i>dummy</a>
+// 		</li>
+// 	</ul>
+// 	<div class="toggle-menu"><a href="#"><i class="fa fa-chevron-left"></i></a></div>
+// </aside>
+// </div>
+//
+// Styleguide 2.4.0
+#side {
+    position: relative;
+    width: 100%;
+    @include breakpoint($bp-md) {
+        width: $side-width;
+        float: right;
+    }
+}
+
+.sidebar__wrapper {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar__item {
+    position: relative;
+}
+
+.sidebar__toggle {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    color: $color-white;
+    font-size: 20px;
+    font-size: 2.0rem;
+}
+
+.sidebar__title {
+    background: #336f8a;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    color: $color-white;
+}
+
+.sidebar__submenu {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar__submenuItem {
+    >a {
+        display: block;
+        padding: 10px 15px;
+        background: #d8f3ff;
+        border-top: 1px solid #7bd6ff;
+        color: #004f73;
+        text-decoration: none;
+        font-size: 14px;
+        font-size: 1.4rem;
+        transition: all ease 0.3s;
+        &:hover {
+            @include breakpoint($bp-md) {
+                opacity: 0.75;
+            }
+        }
+        >i.fa {
+            margin-right: 10px;
+        }
+    }
+}
+
+.sidebar__login {
+    margin-bottom: 10px;
+    background: #eee;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+    >a.sidebar__mypageBtn.button {
+        width: 100%;
+        margin-bottom: 8px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+#side-logout-btn,
+#side-login-btn {
+    padding: 5px 14px;
+    width: 100%;
+}
+
+.sidebar__loginBtn {
+    margin-bottom: 10px;
+}
+
+.sidebar_forgotLink {
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.sidebar__loginInfo {
+    margin-bottom: 10px;
+}
+
+.sidebar__loginInfo__today {
+    font-weight: bold;
+    font-size: 18px;
+    font-size: 1.8rem;
+}

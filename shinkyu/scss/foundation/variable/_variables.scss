@@ -1,0 +1,49 @@
+﻿// Variables
+// 
+// 変数（定数）を定義します。
+//
+// Styleguide 1.4.0
+//PC content width
+$site-width: 1200px;
+$side-width: 200px;
+$content-width: 920px;
+// form
+$form-border-color: #aaa;
+$form-border-radius: 2px;
+
+$border-radius-md:3px;
+
+$padding: 12px 15px;
+
+$base-px: 375;
+$base-padding:30;
+// color mapping
+
+// $def-border-color:$color-gray;
+// $def-border-color-light:$color-silver;
+
+// global setting
+
+$global-border-radius: 3px;
+
+%font-size-variation {
+  &.is-sm {
+    font-size: 1.2rem;
+    font-size: 12px;
+  }
+  &.is-xs {
+    font-size: 1.0rem;
+    font-size: 10px;
+  }
+}
+
+
+%font-small{
+  font-size:1.2rem;
+  font-size:12px;
+}
+
+%font-x-small{
+  font-size:1.0rem;
+  font-size:10px;
+}

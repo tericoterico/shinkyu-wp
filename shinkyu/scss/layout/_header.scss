@@ -1,0 +1,164 @@
+// Header
+//
+// ヘッダを定義します。
+//
+// Markup:
+//
+// Styleguide 2.1.0
+.header {
+    // position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.12); //スマホの場合はローダーよりヘッダが上でないと操作不能になる
+    z-index: 15001;
+    position: fixed;
+    min-height: 67px;
+    @include breakpoint($bp-md) {
+        z-index: 500;
+    }
+    .content-width{
+        padding: 0px;
+    }
+    .c-col{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+// .header__wrapper {
+//     @include breakpoint($bp-tablet) {
+//         width: $site-width;
+//         margin: 0 auto;
+//     }
+// }
+// .header__row {
+//     min-height: 44px;
+// }
+// .header__bar {
+//     @include clearfix();
+//     position: absolute;
+//     top: 6px;
+//     right: 52px;
+//     @include breakpoint($bp-tablet) {
+//         display: none;
+//     }
+//     .header__info {
+//         float: right;
+//         display: inline-block;
+//         border-radius: 5px;
+//         margin-left: 10px;
+//         font-size: 9px;
+//         font-size: 0.9rem;
+//         text-decoration: none;
+//         vertical-align: top;
+//         text-align: center;
+//         position: relative;
+//         >i.fa {
+//             width: 20px;
+//             height: 20px;
+//             border: 1px solid #03a9f4;
+//             border-radius: 50%;
+//             font-size: 14px;
+//             margin: 0 auto 2px;
+//             display: block;
+//             &:before {
+//                 position: relative;
+//                 top: 2px;
+//             }
+//         }
+//     }
+//     .header__mypage,
+//     .header__logout,
+//     .header__login {
+//         float: right;
+//         display: inline-block;
+//         border-radius: 5px;
+//         margin-left: 10px;
+//         font-size: 9px;
+//         font-size: 0.9rem;
+//         text-decoration: none;
+//         vertical-align: top;
+//         text-align: center;
+//         position: relative;
+//     }
+//     >a {
+//         color: #03a9f4;
+//         >i.fa {
+//             width: 20px;
+//             font-size: 20px;
+//             margin: 0 auto 2px;
+//             display: block;
+//         }
+//     }
+// }
+.logo {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0 0 10px;
+    a {
+        // color: #e6feff;
+        transition: all ease 0.3s; // background: url(../img/logo-sp.png) 0 0 / contain no-repeat;
+        // text-indent: -9999px;
+        // height: 25px;
+        width: 100%;
+        display: inline-block;
+        @include breakpoint($bp-md) {
+            // background: url(../img/logo.png) 0 0 / contain no-repeat;
+        }
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+}
+
+.telephone {
+    @include breakpoint($bp-md) {
+        padding: 8px 0 0 0;
+        text-align: right;
+    }
+    >img {
+        @include breakpoint($bp-md) {
+            width: 80%;
+        }
+    }
+}
+
+.header-meta {
+    border-top: 1px solid #eee;
+    @include breakpoint($bp-md) {
+        border-top: none;
+    }
+}
+
+.banner{
+    float:right;
+    box-shadow:0 1px 6px rgba(0,0,0,0.15);
+    width: 30%;
+    max-width: 90px;
+    margin-top: 5px;
+    margin-bottom:5px;
+    @include breakpoint($bp-md) {
+        max-width: auto;
+        margin-top: 12px;
+        margin-bottom: 0;
+        width: auto;
+    }
+    a{
+        display: block;
+        transition: all ease 0.3s;
+        @include breakpoint($bp-md) {
+            width: 140px;
+        }
+        &:hover{
+            opacity:0.5;
+        }
+        >img{
+            vertical-align: bottom;
+            width: 100%;
+            max-width:200px;
+            @include breakpoint($bp-md) {
+            }
+        }
+    }
+}

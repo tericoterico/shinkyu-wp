@@ -1,0 +1,47 @@
+﻿.required {
+    padding: 2px 5px 3px;
+    border-radius: 3px;
+    background: #b91414;
+    color: #fff;
+    font-size: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -12px;
+}
+
+.icon{
+
+    width: 100px;
+    margin: 0 15px;
+    box-sizing: border-box;
+    font-size: 12px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: #fff;
+    color: #03a9f4;
+    display: inline-block;
+    text-align: center;
+    // text-shadow: 0 0 4px rgba(0,0,0,0.4);
+    font-weight: 300;
+    white-space: nowrap;
+    border: 1px solid #03a9f4;
+    &.ng{
+        color: #fff;
+        border: 1px solid #e25959;
+        background: #e25959;
+    }
+    &.maintenance{
+        color: #fff;
+        border: 1px solid #65b560;
+        background: #65b560;
+    }
+    &.info{
+        color: #fff;
+        border: 1px solid #59aee2;
+        background: #59aee2;
+    }
+
+}

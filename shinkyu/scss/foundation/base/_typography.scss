@@ -1,0 +1,31 @@
+﻿// Typography
+//
+// フォント関連の共通設定を定義します。
+//
+// Markup:
+// <div>ダミーテキスト</div>
+//
+// Styleguide 1.6.0
+
+html {
+    font-size: 62.5%;
+    line-height: 1.7;
+}
+
+body {
+    // font-family: 'Lato', Calibri, Arial,'ヒラギノ角ゴ ProN W6', 'ヒラギノ角ゴ Pro W6','Hiragino Kaku Gothic Pro','メイリオ', Meiryo, 'ＭＳ Ｐゴシック','ＭＳ ゴシック', Osaka, sans-serif;
+    // font-family: "Noto Sans Japanese",'ヒラギノ角ゴ ProN W6', 'ヒラギノ角ゴ Pro W6', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'ＭＳ ゴシック', Osaka, sans-serif;
+    font-family: '游明朝', 'Yu Mincho', YuMincho, serif;
+    font-size: 1.4rem;
+    color:#333;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    // font-family: 'Lato', Calibri, Arial,'ヒラギノ角ゴ ProN W6', 'ヒラギノ角ゴ Pro W6','Hiragino Kaku Gothic Pro','メイリオ', Meiryo, 'ＭＳ Ｐゴシック','ＭＳ ゴシック', Osaka, sans-serif;
+    // font-family: "Noto Sans Japanese",'ヒラギノ角ゴ ProN W6', 'ヒラギノ角ゴ Pro W6', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'ＭＳ ゴシック', Osaka, sans-serif;
+    font-family: "Noto Sans Japanese";
+}

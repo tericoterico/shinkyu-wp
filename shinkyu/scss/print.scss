@@ -1,0 +1,13 @@
+@charset "UTF-8";
+header,
+#gnavi,
+.mypage__title,
+.qrcode__btns,
+.info,
+#side {
+    display: none;
+}
+
+.qrcode__image {
+    display: block !important;
+}

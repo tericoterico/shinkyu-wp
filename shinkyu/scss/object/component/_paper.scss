@@ -1,0 +1,22 @@
+﻿// Paper
+//
+// TODO:paperの説明
+//
+// Markup:
+//
+// Styleguide 3.6.0
+
+.c-paper {
+    padding: 15px;
+    background: $color-white;
+    border-radius:$global-border-radius;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    &.is-gray{
+        background: $color-wildsand;
+    }
+    &.is-flat{
+        box-shadow:none;
+    }
+}
+
+

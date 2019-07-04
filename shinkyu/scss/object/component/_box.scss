@@ -1,0 +1,27 @@
+﻿/* Box
+   ------------------------ */
+
+.box {
+    margin: 0 0 10px 0; // padding: 20px;
+    .box-bar {
+        @include clearfix;
+        position: relative;
+        margin: 0 0 10px 0;
+        padding: 0 0 5px 0;
+        border-bottom: 1px solid #333;
+    }
+    .box-title {
+        float: left;
+        margin: 0;
+    }
+    &.edit {
+        background: $color-picasso;
+    }
+}
+
+.box-sub {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

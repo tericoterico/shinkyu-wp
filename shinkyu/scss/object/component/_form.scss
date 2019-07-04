@@ -1,0 +1,265 @@
+﻿// Form
+//
+// Formの要素を定義します。
+//
+// Styleguide 3.3.0
+
+// input / textarea
+//
+// 幅はutilityの.w-*、もしくはstyle属性のwidthを直接指定します。
+//
+// text - テキスト入力
+// search - 検索入力
+// number - 数値入力
+// password - パスワード入力
+//
+// Markup:
+// <input type="{$modifiers}" value="" placeholder="placeholder">
+//
+// Styleguide 3.3.1
+@include placeholderColor(#aaa);
+input[type="text"],
+input[type="search"],
+input[type="number"],
+input[type="password"],
+textarea {
+    width: 100%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, .1);
+    border: 1px solid $form-border-color;
+    padding: 10px;
+    height: 38px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    vertical-align: middle;
+    transition:all ease 0.3s;
+    &[readonly] {
+        background: #eee;
+    }
+    border-radius:$form-border-radius;
+    &.is-error{
+        background-color: $color-pippin;
+        border:2px solid $color-mona-lisa;
+    }
+}
+
+textarea {
+    width: 100%;
+    height: 4em;
+}
+
+input[type="number"] {
+    text-align: right;
+}
+
+input:focus{
+}
+
+
+// readonly / disabled
+//
+// readonly - 読取専用
+// disabled - 無効
+//
+// Markup:
+// <input type="text" {$modifiers} value="value" placeholder="placeholder">
+//
+// Styleguide 3.3.1.1
+input[type="text"],
+input[type="search"],
+input[type="number"],
+input[type="password"],
+textarea {
+    &[readonly] {
+        background: $color-mercury;
+        cursor: not-allowed;
+    }
+    &[disabled] {
+        background: $color-alto;
+        cursor: not-allowed;
+    }
+    &.error {
+        background: #ffe7e7;
+    }
+}
+
+// select
+//
+// Markup:
+// <select>
+//   <option>option-1</option>
+//   <option>option-2</option>
+//   <option>option-3</option>
+// <select>
+//
+// Styleguide 3.3.2
+select {
+    border-radius: $form-border-radius;
+    padding: 3px;
+    min-height: 28px;
+    vertical-align: middle;
+    option {}
+}
+
+// readonly / disabled
+//
+// readonly - 読取専用
+// disabled - 無効
+//
+// Markup:
+// <select {$modifiers}>
+//   <option>option-1</option>
+//   <option>option-2</option>
+//   <option>option-3</option>
+// <select>
+//
+// Styleguide 3.3.2.1
+select {
+    &[readonly] {
+        background: $color-mercury;
+    }
+    &[disabled] {
+        background: $color-mercury;
+    }
+}
+
+// radio
+//
+// Markup:
+// <label>
+//   <input name="r" type="radio" value="">ラジオ1
+//   <input name="r" type="radio" value="">ラジオ2
+// </label>
+//
+// Styleguide 3.3.3
+// readonly / disabled
+//
+// readonly - 読取専用
+// disabled - 無効
+//
+// Markup:
+// <label>
+//   <input name="r-{$modifiers}" type="radio" {$modifiers} value="">ラジオ1
+//   <input name="r-{$modifiers}" type="radio" {$modifiers} value="">ラジオ2
+// </label>
+//
+// Styleguide 3.3.3.1
+// checkbox
+//
+// Markup:
+// <label>
+//   <input name="c" type="checkbox" value="">チェック1
+//   <input name="c" type="checkbox" value="">チェック2
+// </label>
+//
+// Styleguide 3.3.4
+// readonly / disabled
+//
+// readonly - 読取専用
+// disabled - 無効
+//
+// Markup:
+// <label>
+//   <input name="c-{$modifiers}" type="checkbox" {$modifiers} value="">チェック1
+//   <input name="c-{$modifiers}" type="checkbox" {$modifiers} value="">チェック2
+// </label>
+//
+// Styleguide 3.3.4.1
+// submit
+//
+// Markup:
+// <input type="submit" value="submit">
+//
+// Styleguide 3.3.5
+input[type="submit"] {
+    @include button($color-white, $color-cerulean);
+}
+
+// disabled
+//
+// disabled - 無効
+//
+// Markup:
+//   <input type="submit" {$modifiers} value="submit">
+//
+// Styleguide 3.3.5.1
+input[type="submit"] {
+    &[disabled] {
+        @include button($color-white, $color-dove-gray);
+        opacity: 0.3;
+        cursor: default;
+        &:hover {
+            opacity: 0.3;
+        }
+    }
+}
+
+// styleguide:ignore:start
+
+/*
+label{
+	vertical-align: middle;
+	&:first-child{
+		margin: 0 5px 0 0;
+	}
+}
+*/
+
+// styleguide:ignore:end
+// .required
+//
+// 必須項目、ラベルの横に表示します。
+//
+// Markup:
+//   名前<span class="required">*</span>
+//
+// Styleguide 3.3.6
+.required {
+    color: red;
+    margin-left: 0.25em;
+    font-weight: normal;
+}
+
+.drill {
+    display: block;
+    margin-top: 5px;
+    &[data-depth="1"] {
+        margin-left: 30px;
+    }
+    &[data-depth="2"] {
+        margin-left: 60px;
+    }
+    &[data-depth="3"] {
+        margin-left: 90px;
+    }
+    &[data-depth="4"] {
+        margin-left: 120px;
+    }
+}
+
+.parts {
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+label.error {
+    color: #da0000;
+}
+
+.noty_buttons {
+    @include clearfix();
+    text-align: center;
+    >button.button {
+        width: 49%;
+        &:first-child {
+            float: left;
+        }
+        &:last-child {
+            float: right;
+        }
+        &:first-child:last-child {
+            float: none;
+        }
+    }
+}

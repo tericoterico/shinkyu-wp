@@ -1,0 +1,77 @@
+﻿%table-input {
+    width: 100%;
+    display: block;
+    @include breakpoint($bp-md) {
+        display: table;
+        border-collapse: collapse;
+    }
+    tbody {
+        width: 100%;
+        display: block;
+        @include breakpoint($bp-md) {
+            display: table-row-group;
+        }
+    }
+    tr {
+        display: block;
+        @include breakpoint($bp-md) {
+            display: table-row;
+        }
+    }
+    th {
+        width: 100%;
+        display: block;
+        text-align: left;
+        background: #e5f1f7;
+        padding: 8px;
+        position: relative;
+        @include breakpoint($bp-md) {
+            width: auto;
+            display: table-cell;
+            border-bottom: 1px solid $color-white;
+        }
+    }
+    td {
+        width: 100%;
+        display: block;
+        padding: 8px;
+        @include breakpoint($bp-md) {
+            width: auto;
+            display: table-cell;
+            border-top: 1px solid #e3e3e3;
+            border-bottom: 1px solid #e3e3e3;
+        }
+    }
+}
+
+.c-table{
+    width:100%;
+    background: $color-white;
+    border-collapse:collapse;
+    thead{
+        tr{
+            background:$color-mercury;
+
+        }
+        th{
+            border:1px solid $color-silver ;
+            text-align: center;
+            padding:3px 0;
+        }
+    }
+    tbody{
+        th{
+        }
+        td{
+            border:1px solid $color-silver;
+            padding:3px 5px;
+        }
+    }
+    &.is-zebra{
+        tbody{
+            tr:nth-child(even){
+                background-color:$color-alabaster;
+            }
+        }
+    }
+}

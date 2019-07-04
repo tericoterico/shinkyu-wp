@@ -1,0 +1,307 @@
+﻿// Button
+//
+// ボタンUIを定義します。
+//
+// Styleguide 3.1.0
+
+// Button
+//
+// -red - 赤
+// -blue - 青
+// -forestGreen - 緑
+// -gray - 灰
+// -darkGray - 暗灰
+// -slateGray - 暗灰
+//
+// Markup:
+// <div><a class="c-btn c-btn{$modifiers}">aタグ</a>
+// <button class="c-btn c-btn{$modifiers}">buttonタグ</button>
+// <input type="button" class="btn btn{$modifiers}" value="inputタグ"/>
+//
+// Styleguide 3.1.1
+
+.c-btn{
+    @extend %btn;
+}
+
+%btn {
+    position:relative;
+    overflow: hidden;
+    &.is-red {
+        @include button($color-white, $color-thunderbird);
+    }
+    &.is-slateGray {
+        @include button($color-white, $color-mine-shaft);
+    }
+    &.is-gray {
+        @include button($color-white, $color-dove-gray );
+    }
+    &.is-darkGray {
+        @include button($color-white, $color-gray);
+    }
+    &.is-blue {
+        @include button($color-white, $color-cerulean );
+    }
+    &.is-forestGreen {
+        @include button($color-white, $color-forest-green);
+    }
+    @extend %font-size-variation;
+    &.is-square{
+        width: 37px;
+        padding: 6px 0;
+        &.is-sm{
+            width: 33px;
+        }
+        &.is-xs{
+            width: 30px;
+        }
+    }
+}
+
+.c-ripple{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    @keyframes ripple {
+        from {
+            transform: scale(0);
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+            transform: scale(250);
+        }
+    }
+
+    .circle {
+        position: absolute;
+        background: rgba(255,255,255,0.2);
+        border: 1px solid transparent;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: ripple 1.5s 1;
+        top: 50%;
+        left: 50%;
+    }
+}
+
+// Button:disabled
+//
+// aタグにはdisabled属性が効かないため、.btnを無効状態にする場合は、.btn-disabledを付与することを推奨します。
+//
+// -red - 赤
+// -blue - 青
+// -forestGreen - 緑
+// -gray - 灰
+// -darkGray - 暗灰
+// -slateGray - 暗灰
+//
+// Markup:
+// <div><a class="btn btn{$modifiers} btn-disabled">aタグ</a>
+// <button class="btn btn{$modifiers} btn-disabled">buttonタグ</button>
+// <input type="button" class="btn btn{$modifiers}" disabled value="inputタグ"/>
+//
+// Styleguide 3.1.2
+// .btn {
+//     &.btn:disabled,
+//     &.btn-disabled {
+//         opacity: 0.3;
+//         border-bottom: 0;
+//         box-shadow: none;
+//         &:hover {
+//             opacity: 0.3;
+//             cursor: default;
+//         }
+//         &:active {
+//             top: 0px;
+//             box-shadow: none;
+//         }
+//     }
+// }
+
+// .btn-set {
+//     &.bottom {
+//         margin-top: 10px;
+//     }
+//     .btn {
+//         display: inline-block;
+//         &.fr {
+//             margin-left: 10px;
+//         }
+//     }
+// }
+
+// .btn,
+// .btn:link {
+//     @include button;
+//     i.fa {
+//         margin-right: 5px;
+//         margin-left: 5px;
+//     }
+// }
+
+// Button 正方形
+//
+// 正方形のボタン。アイコンのみのボタンへの使用を想定しています。
+//
+// -red - 赤
+// -blue - 青
+// -forestGreen - 緑
+// -gray - 灰
+// -darkGray - 暗灰
+// -slateGray - 暗灰
+//
+// Markup:
+// <div><a class="btn btn{$modifiers} btn-square"><i class="fa fa-check"></i></a>
+// <button class="btn btn{$modifiers} btn-square"><i class="fa fa-plus"></i></button>
+//
+// Styleguide 3.1.3
+
+// Button Group & Position
+//
+// ボタンのグルーピングと配置
+//
+// -left - 左寄せ
+// -center - 中央寄せ
+// -right - 右寄せ
+//
+// Markup:
+// <div class="btns btns{$modifiers}">
+//   <a class="btn btn-red"><i class="fa fa-check"></i>Button</a>
+//   <button class="btn btn-blue"><i class="fa fa-plus"></i>Button</button>
+//   <a class="btn btn-square btn-forestGreen"><i class="fa fa-check"></i></a>
+// </div>
+//
+// Styleguide 3.1.5
+
+// .btns{
+//     font-size: 0;
+//     &.btns-left{
+//         text-align: left;
+//         .btn{
+//             margin-right: 10px;
+//         }
+//     }
+//     &.btns-center{
+//         text-align: center;
+//         .btn{
+//             margin: 0 5px;
+//         }
+//     }
+//     &.btns-right{
+//         text-align: right;
+//         .btn{
+//             margin-left: 10px;
+//         }
+//     }
+//     .btn{
+//         display: inline-block;
+//     }
+// }
+
+/* split button */
+
+.c-btn-split{
+    display: inline-block;
+    position: relative;
+    &_main{
+        @extend %btn;
+        padding-right: 30px !important;
+    }
+    &_sub{
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        width: 20px;
+        height: 37px;
+        border: none;
+        border-left: 1px solid rgba(0,0,0,0.12);
+        background:$color-cerulean;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        cursor: pointer;
+        padding: 0;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 1px inset;
+        outline: none;
+        &:active{
+            box-shadow: inset 0px 0px 1px $color-white, inset 0px 0px 3px rgba(0, 0, 0, 0.52);
+            outline: none;
+        }
+        &:hover{
+            background: #1db2f5;
+        }
+        i.fa{
+            font-size: 14px;
+            font-size: 1.4rem;
+            color:$color-white;
+        }
+    }
+    &_dropdown{
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        margin-left: -100px;
+        background:$color-white;
+        padding: 15px;
+        box-shadow: 0 0 3px rgba(0,0,0,0.5);
+        font-size: 14px;
+        font-size: 1.4rem;
+        width: 200px;
+        &[data-dropdown-position="up"]{
+            top: -60px;
+        }
+        li{
+            text-align: left;
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.btn-detail{
+    padding: 10px 0;
+    background:#ff8300;
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+    display: inline-block;
+    font-weight: 600;
+    border-radius:50px;
+    position: relative;
+    transition: all ease 0.3s;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+    &:hover{
+        opacity:0.7;
+    }
+    &:after{
+        font-family: "Font Awesome 5 Free";
+        content: "\f054";
+        position: absolute;
+        top: 50%;
+        margin-top: -12px;
+        right: 15px;
+        transition: all ease 0.3s;
+    }
+    &:hover::after{
+        right: 12px;
+    }
+    &.icon-back:after{
+        font-family: "Font Awesome 5 Free";
+        content: "\f053";
+        position: absolute;
+        top: 50%;
+        margin-top: -12px;
+        left: 15px;
+        right: auto;
+        transition: all ease 0.3s;
+    }
+    &.icon-back:hover::after{
+        left: 12px;
+    }
+
+}

@@ -1,0 +1,66 @@
+﻿// Colors
+//
+// カラーの定義を行います。
+// 色に対応した変数名で呼び出しを行います。
+//
+// #ffffff - $color-white         ;
+// #000000 - $color-black         ;
+// #fafafa - $color-alabaster     ;
+// #efefef - $color-gallery       ;
+// #e6e6e6 - $color-mercury       ;
+// #d3d3d3 - $color-alto          ;
+// #cccccc - $color-silver        ;
+// #808080 - $color-gray          ;
+// #666666 - $color-dove-gray     ;
+// #333333 - $color-mine-shaft    ;
+// #607d8b - $color-lynch         ;
+// #9dd4ff - $color-anakiwa       ;
+// #03a9f4 - $colorcerulean       ;
+// #2196f3 - $color-dodger-blue   ;
+// #0085af - $color-deepcerulean  ;
+// #003a67 - $color-midnight-blue ;
+// #03233c - $color-tangaroa      ;
+// #00af68 - $color-jade          ;
+// #228b22 - $color-forest-green  ;
+// #fffbd9 - $color-scotch-mist   ;
+// #fff5a1 - $color-picasso       ;
+// #ffc107 - $color-amber         ;
+// #ff9c9C - $color-mona-lisa     ;
+// #f44336 - $color-pomegranate   ;
+// #bc1815 - $color-thunderbird   ;
+//
+// Markup:
+// <div style="background-color:{$modifiers};" class="styleguide-color">{$modifiers}</div>
+//
+// Styleguide 1.5.0
+
+$color-white        : #ffffff;
+$color-black        : #000000;
+
+$color-alabaster    : #fafafa;
+$color-wildsand     : #f6f6f6;
+$color-gallery      : #efefef;
+$color-mercury      : #e6e6e6;
+$color-alto         : #d3d3d3;
+$color-silver       : #cccccc;
+$color-gray         : #808080;
+$color-dove-gray    : #666666;
+$color-mine-shaft   : #333333;
+
+$color-lynch        : #607d8b;
+$color-anakiwa      : #9dd4ff;
+$color-cerulean     : #03a9f4;
+$color-dodger-blue  : #2196f3;
+$color-deepcerulean : #0085af;
+$color-midnight-blue: #003a67;
+$color-tangaroa     : #03233c;
+$color-jade         : #00af68;
+$color-forest-green : #228b22;
+
+$color-scotch-mist  : #fffbd9;
+$color-picasso      : #fff5a1;
+$color-amber        : #ffc107;
+$color-pippin       : #ffe1e1;
+$color-mona-lisa    : #ff9c9C;
+$color-pomegranate  : #f44336;
+$color-thunderbird  : #bc1815;

@@ -1,0 +1,30 @@
+﻿// Avatar
+//
+// TODO:Avatarの説明
+//
+// Markup:
+//
+// Styleguide 3.10.0
+
+.c-avatar {
+  padding:10px;
+  &_img{
+    width: 40px;
+    height:40px;
+    border-radius:50%;
+    vertical-align:middle;
+    margin-right:8px;
+  }
+  &_txt{
+    display: inline-block;
+    vertical-align:middle;
+    span{
+      display: block;
+      &:last-child{
+        font-size:1.2rem;
+        font-size:12px;
+        color:$color-gray;
+      }
+    }
+  }
+}

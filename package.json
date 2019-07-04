@@ -1,0 +1,24 @@
+{
+  "name": "shinkyu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tericoterico/shinkyu-wp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tericoterico/shinkyu-wp/issues"
+  },
+  "homepage": "https://github.com/tericoterico/shinkyu-wp#readme",
+  "devDependencies": {
+    "breakpoint-sass": "^2.7.1",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  }
+}

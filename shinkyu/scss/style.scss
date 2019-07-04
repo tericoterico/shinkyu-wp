@@ -1,0 +1,142 @@
+@charset "UTF-8";
+@import "breakpoint";
+// Foundation
+//
+// Reset.cssやNormalize.cssなどを用いたブラウザのデフォルトスタイルの初期化や、プロジェクトにおける基本的なスタイルを定義します。 ページの下地としての全体の背景や、基本的なタイポグラフィなどが該当します。<br>(詳細度を極力弱く、影響範囲を極力狭くします。)
+//
+// Styleguide 1.0.0
+// styleguide:ignore:start
+
+/* ========================
+   Foundation
+   ======================== */
+
+/* Base
+   ------------------------ */
+
+@import "foundation/base/typography";
+@import "foundation/base/reset";
+
+/* Mixin
+   ------------------------ */
+
+@import "foundation/mixin/mixins";
+
+/* Variable
+   ------------------------ */
+
+@import "foundation/variable/colors";
+@import "foundation/variable/variables";
+@import "foundation/variable/z-index";
+@import "foundation/variable/media-queries";
+// styleguide:ignore:end
+
+/* ========================
+   Vendors
+   ======================== */
+
+$susy: ( 'svg-grid-colors': hsl(180, 70%, 95%), 'columns': susy-repeat(12), 'gutters': 0.5, 'spread': 'narrow', 'container-spread': 'narrow', );
+@import "vendors/normalize";
+@import "vendors/font-awesome";
+@import "vendors/animate";
+@import "vendors/jquery-ui";
+@import "vendors/noty";
+@import "vendors/iziModal";
+@import "vendors/iziToast";
+@import "vendors/panorama-viewer";
+@import "vendors/lightbox";
+@import "vendors/swiper";
+@import "vendors/imageviewer";
+
+// Layout
+//
+// ページを構成するヘッダーやメインのコンテンツエリア、サイドバーやフッターといったプロジェクト共通のコンテナーブロックのスタイルを定義します。<br>
+// 基本的には、ページ単位で唯一の存在である要素となるため、Layoutレイヤーの要素ではIDセレクタを使うことを推奨します。 IDセレクタはセレクタの詳細度を高めてしまうため、他のレイヤーやモジュールでは推奨しません。
+//
+// Styleguide 2.0.0
+// styleguide:ignore:start
+
+/* ========================
+   Layout
+   ======================== */
+
+@import "layout/header";
+@import "layout/footer";
+@import "layout/main";
+@import "layout/side";
+// styleguide:ignore:end
+
+/* ========================
+   Object
+   ======================== */
+
+
+/* Component
+   ------------------------ */
+
+// Component
+//
+// Componentレイヤーは多くのプロジェクトで横断的に再利用できるような小さな単位のモジュールが該当します。<br>OOCSSの構造の機能を担い、固有のサイズや装飾的なスタイルを極力含まないようにします。
+//
+// Styleguide 3.0.0
+// styleguide:ignore:start
+@import "object/component/clearfix";
+@import "object/component/grid";
+@import "object/component/button";
+@import "object/component/box";
+@import "object/component/table";
+@import "object/component/form";
+@import "object/component/pager";
+@import "object/component/heading";
+@import "object/component/totop";
+@import "object/component/loader";
+@import "object/component/icon";
+// @import "object/component/panel";
+@import "object/component/paper";
+@import "object/component/dropdown";
+// @import "object/component/label";
+// @import "object/component/badge";
+// @import "object/component/list";
+// @import "object/component/checkbox";
+// @import "object/component/radio";
+// @import "object/component/avatar";
+// styleguide:ignore:end
+// Utility
+//
+// Utilityは、Component、ProjectレイヤーのObjectを無尽蔵に増やしてしまうことを防いだり、またこれらのObject自体が持つべきではないmarginの代わりに.mbs { margin-bottom: 10px; }のようなUtility Objectを用いて、隣接するモジュールとの間隔をつくるといった役割を担います。<br>
+// またclearfixテクニックのためのルールセットが定義されているヘルパークラスも、このレイヤーに含めます。
+// 確実にスタイルを適応させるために!importantを指定します。
+//
+// Styleguide 4.0.0
+// styleguide:ignore:start
+@import "object/utility/util";
+// styleguide:ignore:end
+// Project
+//
+// Projectレイヤーはプロジェクト固有のスタイルが該当します。プロジェクトで使い回すスタイルのほとんどはProjectレイヤーに追加することになります。
+//
+// Styleguide 5.0.0
+// styleguide:ignore:start
+// Project内での共通スタイルはplaceholderになるべくまとめる
+
+// @import "object/project/placeholder";
+// @import "object/project/menu";
+// @import "object/project/misc";
+
+// styleguide:ignore:end
+// Theme
+//
+// 配色や見た目などテーマとして切り替える場合には、該当スタイルを切り出してまとめます。
+//
+// Styleguide 6.0.0
+
+/* Theme
+   ------------------------ */
+
+// styleguide:ignore:start
+// styleguide:ignore:end
+// Vendor
+//
+// 外部ライブラリの使用方法をまとまめます。
+//
+// Styleguide 7.0.0
