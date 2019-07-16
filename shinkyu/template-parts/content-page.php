@@ -10,8 +10,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	<header class="entry-header p-vertical">
+		<div class="title">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</div>
+		<div class="img">
+			<img src="<?php echo get_template_directory_uri() . "/img/dummy-7.jpg" ?>" alt="">	
+		</div>
 	</header><!-- .entry-header -->
 
 	<?php shinkyu_post_thumbnail(); ?>

@@ -25,6 +25,17 @@ get_header();
 					<div class="swiper-wrapper">
 						<!-- Slides -->
 						<div class="swiper-slide">
+							<img src="<?php echo get_template_directory_uri() . "/img/mv-5.png" ?>" alt="">
+							<div class="p-mv_logo">
+								<img src="<?php echo get_template_directory_uri() . "/img/logo.png" ?>" alt="">
+							</div>
+							<!-- <div class="p-mv_copy">
+								改札口を抜けると<br>
+								そこには、<br>
+								駅前が広がっていた
+							</div> -->
+						</div>
+						<div class="swiper-slide">
 							<img src="<?php echo get_template_directory_uri() . "/img/mv-1.jpg" ?>" alt="">
 						</div>
 						<div class="swiper-slide">
@@ -40,18 +51,20 @@ get_header();
 					<!-- If we need navigation buttons -->
 					<div class="swiper-button-prev"></div>
 					<div class="swiper-button-next"></div>
-
+<?php /*
 					<!-- If we need scrollbar -->
 					<div class="swiper-scrollbar"></div>
+*/ ?>
 			</div>
 		</section>
 
 		<section class="p-section">
 			<h2 class="p-section_title">
-				篠原鍼灸院（仮について
-				<span class="p-section_title_sub">About us</span>
+				良鍼堂について
+				<span class="p-section_title_sub">About Ryoshindo</span>
 			</h2>
 			<div class="p-section_eyecatch">
+				<img src="<?php echo get_template_directory_uri() . "/img/title1.jpg" ?>" alt="">
 			</div>
 			<div class="p-section_content">
 				<h3>私たちが大切にしていること</h3>
@@ -75,7 +88,7 @@ get_header();
 					</div>
 					<div class="p-tile_item_content">
 						<div class="p-tile_item_content_date">2019.07.03 (Wed)</div>
-						<div class="p-tile_item_content_title">なぜ被引用文を引用する必要があるのか</div>
+						<div class="p-tile_item_content_title">常識とは十八歳までに身につけた偏見のコレクションのことをいう。</div>
 					</div>
 				</li>
 				<li class="p-tile_item">
@@ -84,7 +97,7 @@ get_header();
 					</div>
 					<div class="p-tile_item_content">
 						<div class="p-tile_item_content_date">2019.07.03 (Wed)</div>
-						<div class="p-tile_item_content_title">dummy-title is here.</div>
+						<div class="p-tile_item_content_title">どこに行こうとしているのかわからないのに、決して遠くまで行けるものではない。</div>
 					</div>
 				</li>
 				<li class="p-tile_item">
@@ -107,8 +120,50 @@ get_header();
 				予約
 				<span class="p-section_title_sub">Resevation</span>
 			</h2>
-			<?php echo do_shortcode('[booking_package id=1]'); ?>
-
+			<div class="p-section_eyecatch">
+				<img src="<?php echo get_template_directory_uri() . "/img/title1.jpg" ?>" alt="">
+			</div>
+			<div class="p-section_content">
+				<p>完全予約制につき人数に限りがございます。状態によっても治療時間が変わって参りますので、予めご連絡下さい。また、難病の方や原因不明の症状でお悩みの方もお気軽にご相談ください。 相談や問い合わせには一切費用はかかりません。</p>
+				<table class="p-schedule">
+					<tbody>
+						<tr>
+							<th>診療時間</th>
+							<th>月</th>
+							<th>火</th>
+							<th>水</th>
+							<th>木</th>
+							<th>金</th>
+							<th>土</th>
+							<th>日</th>
+						</tr>
+    			        <tr>
+							<td>09:30-15:00<br><span>(最終受付15:00)</span></td>
+							<td>○</td>
+							<td>○</td>
+							<td>○</td>
+							<td>○</td>
+							<td>○</td>
+							<td>○</td>
+							<td>※</td>
+			            </tr>
+						<tr>
+							<td>15:00-19:00<br><span>(最終受付19:00)</span></td>
+							<td>○</td>
+							<td>○</td>
+							<td>○</td>
+							<td>○</td>
+							<td>○</td>
+							<td>※</td>
+							<td>※</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>休診日：日曜日・祝祭日<br>※ 時間外診療も可能な限り応じますのでお気軽にご相談ください。</p>
+				<div class="p-link">
+					<a href="#">ご予約はこちら</a>
+				</div>
+			</div>
 		</section>
 
 
@@ -119,52 +174,59 @@ get_header();
 			</h2>
 			<ul class="p-tile">
 				<li class="p-tile_item">
-					<div class="p-tile_item_img"></div>
+					<div class="p-tile_item_img">
+						<img src="<?php echo get_template_directory_uri() . "/img/dummy-5.jpg" ?>" alt="">
+					</div>
 					<div class="p-tile_item_content">
 						<div class="p-tile_item_content_date">2019.07.03 (Wed)</div>
-						<div class="p-tile_item_content_title">dummy-title is here.</div>
+						<div class="p-tile_item_content_title">苦しい時でも、とにかく笑っていろ。笑える余裕、ゆとりがないと判断を間違える。</div>
 					</div>
 				</li>
 				<li class="p-tile_item">
-					<div class="p-tile_item_img"></div>
+					<div class="p-tile_item_img">
+						<img src="<?php echo get_template_directory_uri() . "/img/dummy-6.jpg" ?>" alt="">
+					</div>
 					<div class="p-tile_item_content">
 						<div class="p-tile_item_content_date">2019.07.03 (Wed)</div>
-						<div class="p-tile_item_content_title">dummy-title is here.</div>
+						<div class="p-tile_item_content_title">弱いものを救い上げるだけでは十分ではない。その後も支えてやらなければ。</div>
 					</div>
 				</li>
 				<li class="p-tile_item">
-					<div class="p-tile_item_img"></div>
-					<div class="p-tile_item_content">
-						<div class="p-tile_item_content_date">2019.07.03 (Wed)</div>
-						<div class="p-tile_item_content_title">dummy-title is here.</div>
+					<div class="p-tile_item_img">
+						<img src="<?php echo get_template_directory_uri() . "/img/dummy-7.jpg" ?>" alt="">
 					</div>
-				</li>
-				<li class="p-tile_item">
-					<div class="p-tile_item_img"></div>
 					<div class="p-tile_item_content">
 						<div class="p-tile_item_content_date">2019.07.03 (Wed)</div>
-						<div class="p-tile_item_content_title">dummy-title is here.</div>
+						<div class="p-tile_item_content_title">蝶はモグラではない。でも、そのことを残念がる蝶はいないだろう。</div>
 					</div>
 				</li>
 			</ul>
+			<div class="p-link">
+				<a href="#">ブログ一覧</a>
+			</div>
 		</section>
 
 		<ul class="p-grid" data-col="2">
 			<li class="p-grid_item">
-				<div class="p-grid_img"></div>
+				<div class="p-grid_img">
+					<img src="<?php echo get_template_directory_uri() . "/img/dummy-9.jpg" ?>" alt="">
+				</div>
 				<div class="p-grid_content">
-					<h3 class="p-grid_content_title">われわれは宇宙人だ</h3>
+					<h3 class="p-grid_content_title">生きるとは</h3>
 					<div class="p-grid_content_text">
-						花びらのように舞い散る命短し恋せよ乙女
+						呼吸することではない。行動することだ。
 					</div>
 				</div>
 			</li>
 			<li class="p-grid_item">
-				<div class="p-grid_img"></div>
+				<div class="p-grid_img">
+					<img src="<?php echo get_template_directory_uri() . "/img/dummy-8.jpg" ?>" alt="">
+				</div>
 				<div class="p-grid_content">
-					<h3 class="p-grid_content_title">われわれは宇宙人だ</h3>
+					<h3 class="p-grid_content_title">休日の過ごし方</h3>
 					<div class="p-grid_content_text">
-						花びらのように舞い散る命短し恋せよ乙女
+						人間には不幸か、貧乏か、病気が必要だ。
+						でないと人間はすぐに思いあがる。
 					</div>
 				</div>
 			</li>
@@ -176,9 +238,9 @@ get_header();
 					<img src="<?php echo get_template_directory_uri() . "/img/dummy-4.jpg" ?>" alt="">
 				</div>
 				<div class="p-grid_content">
-					<h3 class="p-grid_content_title">われわれは宇宙人だ</h3>
+					<h3 class="p-grid_content_title">人間のほほえみ</h3>
 					<div class="p-grid_content_text">
-						花びらのように舞い散る命短し恋せよ乙女
+						人間のほほえみ、人間のふれあいを忘れた人がいます。これはとても大きな貧困です。
 					</div>
 				</div>
 			</li>
@@ -187,17 +249,20 @@ get_header();
 		<div class="p-nav_bottom">
 			<ul>
 				<li>
-					<a href="">
+					<a href="/reservation">
+						<img src="<?php echo get_template_directory_uri() . "/img/reservation.svg" ?>" alt="">
 						ご予約
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a href="tel:000-0000-0000">
+						<img src="<?php echo get_template_directory_uri() . "/img/phone.svg" ?>" alt="">
 						お電話
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a href="/contact">
+						<img src="<?php echo get_template_directory_uri() . "/img/mail.svg" ?>" alt="">
 						お問い合わせ
 					</a>
 				</li>
@@ -208,7 +273,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+			//get_template_part( 'template-parts/content', 'page' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :

@@ -15,7 +15,7 @@
 
 	<footer class="p-footer">
 		<div class="p-copyright">
-			ecopark shioya &copy; all rights reserved.
+			篠原さんの鍼灸院（仮 &copy; all rights reserved.
 		</div>
 	</footer>
 </div><!-- #page -->
