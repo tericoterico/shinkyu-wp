@@ -167,3 +167,174 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+class mySettingPage{
+	public static $key='my_option_name';//オプションへの保存、呼び出しキー
+  
+	private $html_title='共通情報設定';//HTMLのタイトル（管理ページのtitleタグ）
+	private $page_title='共通情報設定';//ページのタイトル
+	private $page_slug='my_option_page';
+  
+	private $options;
+	private $group='my_option_group';
+	private $section='my_setting_admin';
+  
+	//ここにキーとタイトル、コールバックをセットにして
+	public static function getFields(){
+  
+	  return array(
+		// array(
+		//   'type'=>'section',//区切りを入れるときはtypeをセクションにする
+		//   'name'=>'section1',
+		//   'title'=>'入力してください',
+		//   'callback'=>'section_callback',
+		// ),
+		array(
+		  'type'=>'field',//フィールドかセクション　お好みに合わせて追加
+		  'name'=>'tel',//名前
+		  'title'=>'電話番号',//タイトル
+		  'callback'=>'text_callback',//コールバック
+		),
+		array(
+		  'type'=>'field',
+		  'name'=>'fax',
+		  'title'=>'FAX',
+		  'callback'=>'text_callback',
+		),
+		array(
+		  'type'=>'field',
+		  'name'=>'address',
+		  'title'=>'住所',
+		  'callback'=>'text_callback',
+		),
+		array(
+		  'type'=>'section',//区切りを入れるときはtypeをセクションにする
+		  'name'=>'section2',
+		  'title'=>'',
+		  'callback'=>'section_callback',
+		),
+		array(
+		  'type'=>'field',
+		  'name'=>'holiday',
+		  'title'=>'休診日',
+		  'callback'=>'text_callback',
+		),
+	  );
+	}
+  
+	//初期化
+	public function __construct(){
+		add_action('admin_menu',array($this,'add_my_option_page'));
+		add_action('admin_init',array($this,'page_init'));
+	}
+  
+	//キーを取得（外部から呼び出せるようにする）
+	public static function getKey(){
+	  return self::$key;
+	}
+  
+	//設定
+	public function add_my_option_page(){
+		add_menu_page(
+			$this->html_title,//ダッシュボードのメニューに表示するテキスト
+			$this->page_title,//ページのタイトル
+			'edit_themes',
+			$this->page_slug,//ページスラッグ
+			array( $this, 'create_admin_page' ),
+			null,
+			10
+		);
+	}
+  
+	//フォームの外観作成
+	public function create_admin_page(){
+		// Set class property
+		$this->options = get_option($this->getKey());
+		?>
+		<div class="wrap">
+			<?php screen_icon(); ?>
+			<h2><?php echo $this->page_title;?></h2>
+			<form method="post" action="options.php">
+			<?php
+				// This prints out all hidden setting fields
+				settings_fields($this->group);
+				do_settings_sections($this->section);
+				submit_button();
+			?>
+			</form>
+		</div>
+		<?php
+	}
+  
+	//フォームの部品組み立て
+	public function page_init(){
+	  register_setting(
+		$this->group, // Option group
+		$this->getKey(), // Option name
+		array( $this, 'sanitize' ) // Sanitize
+	  );
+  
+	  $fields=$this->getFields();
+	  $section_id='';
+	  foreach($fields AS $field){
+		if($field['type']=='field'){
+		  add_settings_section(
+			$field['name'], // ID
+			$field['title'], // Title
+			array($this,$field['callback']), // Callback
+			$this->section, // Page
+			$section_id
+		  );
+		}else{
+		  add_settings_section(
+			$field['name'], // ID
+			$field['title'], // Title
+			array($this,$field['callback']), // Callback
+			$this->section // Page
+		  );
+		  $section_id=$field['name'];
+		}
+	  }
+	}
+  
+	//保存前のサニタイズ
+	public function sanitize($input){
+  
+	  $new_input = array();
+	  foreach($this->getFields() AS $field){
+		if(isset($input[$field['name']])){
+		  $new_input[$field['name']] = sanitize_text_field($input[$field['name']]);
+		}
+	  }
+	  return $new_input;
+	}
+  
+	//セクション表示関数
+	public function section_callback(array $args){
+	  echo '<hr>';
+	}
+  
+	//テキストフィール表示関数
+	public function text_callback(array $args){
+	  $name=$args['id'];
+	  printf(
+		'<input type="text" id="'.$name.'" name="'.$this->getKey().'['.$name.']" value="%s" />',
+		isset( $this->options[$name] ) ? esc_attr( $this->options[$name]) : ''
+	  );
+	}
+  
+  
+  }
+  
+  if(is_admin())
+	  $my_settings_page = new mySettingPage();
+
+//
+
+function custom_archive_title($title){
+	$titleParts=explode(': ',$title);
+	if($titleParts[1]){
+		return $titleParts[1];
+	}
+	return $title;
+}
+add_filter('get_the_archive_title','custom_archive_title');

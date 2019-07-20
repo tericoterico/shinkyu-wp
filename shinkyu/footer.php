@@ -11,14 +11,20 @@
 
 ?>
 
+		<?php
+			get_template_part( 'template-parts/footer', 'common' );
+		?>
+
+
 	</div><!-- #content -->
 
 	<footer class="p-footer">
 		<div class="p-copyright">
-			篠原さんの鍼灸院（仮 &copy; all rights reserved.
+			鍼灸院 良鍼堂 Ryoshindo.com &copy; all rights reserved.
 		</div>
 	</footer>
 </div><!-- #page -->
+<div class="p-bkg"></div>
 
 <?php wp_footer(); ?>
 

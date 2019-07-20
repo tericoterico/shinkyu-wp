@@ -25,9 +25,9 @@ get_header();
 					<div class="swiper-wrapper">
 						<!-- Slides -->
 						<div class="swiper-slide">
-							<img src="<?php echo get_template_directory_uri() . "/img/mv-5.png" ?>" alt="">
+							<img class="p-mv_fish" src="<?php echo get_template_directory_uri() . "/img/mv-5.png" ?>" alt="">
 							<div class="p-mv_logo">
-								<img src="<?php echo get_template_directory_uri() . "/img/logo.png" ?>" alt="">
+								<img src="<?php echo get_template_directory_uri() . "/img/logo.svg" ?>" alt="">
 							</div>
 							<!-- <div class="p-mv_copy">
 								改札口を抜けると<br>
@@ -246,29 +246,6 @@ get_header();
 			</li>
 		</ul>
 
-		<div class="p-nav_bottom">
-			<ul>
-				<li>
-					<a href="/reservation">
-						<img src="<?php echo get_template_directory_uri() . "/img/reservation.svg" ?>" alt="">
-						ご予約
-					</a>
-				</li>
-				<li>
-					<a href="tel:000-0000-0000">
-						<img src="<?php echo get_template_directory_uri() . "/img/phone.svg" ?>" alt="">
-						お電話
-					</a>
-				</li>
-				<li>
-					<a href="/contact">
-						<img src="<?php echo get_template_directory_uri() . "/img/mail.svg" ?>" alt="">
-						お問い合わせ
-					</a>
-				</li>
-			</ul>
-		</div>
-
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -284,7 +261,7 @@ get_header();
 		?>
 
 		</main><!-- #main -->
-	</><!-- #primary -->
+	</div><!-- #primary -->
 
 <?php
 //get_sidebar();

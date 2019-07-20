@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				shinkyu_posted_on();
-				shinkyu_posted_by();
+				// shinkyu_posted_on();
+				// shinkyu_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php shinkyu_post_thumbnail(); ?>
+	<?php /* shinkyu_post_thumbnail(); */?>
 
 	<div class="entry-content">
 		<?php
@@ -54,6 +54,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php shinkyu_entry_footer(); ?>
+		<?php /* shinkyu_entry_footer(); */ ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -119,6 +119,14 @@
 		// },
 		loop:true,
 
+		on: {
+			init: function () {
+			  console.log('swiper initialized');
+			  TweenMax.to(".p-mv_fish" , 3 , {opacity:1});
+			  TweenMax.to(".p-mv_logo" , 2 , {opacity:1, y:0, delay:1.2});
+			},
+		},
+
 		// If we need pagination
 		pagination: {
 		el: '.swiper-pagination',

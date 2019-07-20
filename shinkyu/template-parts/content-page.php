@@ -10,12 +10,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header p-vertical">
+	<header class="entry-header">
+		<?php
+		get_template_part( 'template-parts/content', 'header' );
+		?>
 		<div class="title">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		</div>
-		<div class="img">
-			<img src="<?php echo get_template_directory_uri() . "/img/dummy-7.jpg" ?>" alt="">	
+			<h2 class="p-section_title"><?php the_title(); ?>
+				<span class="p-section_title_sub"><?php the_field('title-english'); ?></span>
+			</h2>
 		</div>
 	</header><!-- .entry-header -->
 

@@ -14,14 +14,22 @@ get_header();
 		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
-
 			<header class="page-header">
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+				get_template_part( 'template-parts/content', 'header' );
+				?>
+
+				<div class="title">
+					<h2 class="p-section_title"><?php the_archive_title(); ?>
+						<span class="p-section_title_sub"></span>
+					</h2>
+				</div>
+
+				<?php
+				//the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-
+			<div class="p-archive">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -35,8 +43,11 @@ get_header();
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
-
-			the_posts_navigation();
+			?>
+			</div>
+			
+			<?php
+			// the_posts_navigation();
 
 		else :
 
@@ -49,5 +60,5 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

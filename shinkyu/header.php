@@ -21,7 +21,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="p-bkg"></div>
 <div id="page" class="p-site">
 	<?php /*
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'shinkyu' ); ?></a>
