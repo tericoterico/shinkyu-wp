@@ -27,6 +27,7 @@ get_header();
 						<div class="swiper-slide">
 							<img class="p-mv_fish" src="<?php echo get_template_directory_uri() . "/img/mv-5.png" ?>" alt="">
 							<div class="p-mv_logo">
+								<img src="<?php echo get_template_directory_uri() . "/img/shinkyu.svg" ?>" alt="">
 								<img src="<?php echo get_template_directory_uri() . "/img/logo.svg" ?>" alt="">
 							</div>
 							<!-- <div class="p-mv_copy">
@@ -82,33 +83,7 @@ get_header();
 				<span class="p-section_title_sub">Information</span>
 			</h2>
 			<ul class="p-tile">
-				<li class="p-tile_item">
-					<div class="p-tile_item_img">
-						<img src="<?php echo get_template_directory_uri() . "/img/dummy-1.jpg" ?>" alt="">
-					</div>
-					<div class="p-tile_item_content">
-						<div class="p-tile_item_content_date">2019.07.03 (Wed)</div>
-						<div class="p-tile_item_content_title">常識とは十八歳までに身につけた偏見のコレクションのことをいう。</div>
-					</div>
-				</li>
-				<li class="p-tile_item">
-					<div class="p-tile_item_img">
-						<img src="<?php echo get_template_directory_uri() . "/img/dummy-2.jpg" ?>" alt="">
-					</div>
-					<div class="p-tile_item_content">
-						<div class="p-tile_item_content_date">2019.07.03 (Wed)</div>
-						<div class="p-tile_item_content_title">どこに行こうとしているのかわからないのに、決して遠くまで行けるものではない。</div>
-					</div>
-				</li>
-				<li class="p-tile_item">
-					<div class="p-tile_item_img">
-						<img src="<?php echo get_template_directory_uri() . "/img/dummy-3.jpg" ?>" alt="">
-					</div>
-					<div class="p-tile_item_content">
-						<div class="p-tile_item_content_date">2019.07.03 (Wed)</div>
-						<div class="p-tile_item_content_title">ホームページを公開しました。</div>
-					</div>
-				</li>
+				<?php echo do_shortcode('[infolist pt="info"]'); ?>
 			</ul>
 			<div class="p-link">
 				<a href="#">お知らせ一覧</a>
@@ -173,33 +148,7 @@ get_header();
 				<span class="p-section_title_sub">Blog</span>
 			</h2>
 			<ul class="p-tile">
-				<li class="p-tile_item">
-					<div class="p-tile_item_img">
-						<img src="<?php echo get_template_directory_uri() . "/img/dummy-5.jpg" ?>" alt="">
-					</div>
-					<div class="p-tile_item_content">
-						<div class="p-tile_item_content_date">2019.07.03 (Wed)</div>
-						<div class="p-tile_item_content_title">苦しい時でも、とにかく笑っていろ。笑える余裕、ゆとりがないと判断を間違える。</div>
-					</div>
-				</li>
-				<li class="p-tile_item">
-					<div class="p-tile_item_img">
-						<img src="<?php echo get_template_directory_uri() . "/img/dummy-6.jpg" ?>" alt="">
-					</div>
-					<div class="p-tile_item_content">
-						<div class="p-tile_item_content_date">2019.07.03 (Wed)</div>
-						<div class="p-tile_item_content_title">弱いものを救い上げるだけでは十分ではない。その後も支えてやらなければ。</div>
-					</div>
-				</li>
-				<li class="p-tile_item">
-					<div class="p-tile_item_img">
-						<img src="<?php echo get_template_directory_uri() . "/img/dummy-7.jpg" ?>" alt="">
-					</div>
-					<div class="p-tile_item_content">
-						<div class="p-tile_item_content_date">2019.07.03 (Wed)</div>
-						<div class="p-tile_item_content_title">蝶はモグラではない。でも、そのことを残念がる蝶はいないだろう。</div>
-					</div>
-				</li>
+				<?php echo do_shortcode('[bloglist pt="blog"]'); ?>
 			</ul>
 			<div class="p-link">
 				<a href="#">ブログ一覧</a>

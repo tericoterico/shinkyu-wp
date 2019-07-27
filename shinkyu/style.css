@@ -16629,7 +16629,7 @@ body {
 
 .p-mv_logo {
   position: absolute;
-  top: 41.06667vw;
+  top: 43.73333vw;
   left: 50%;
   margin-left: -24vw;
   z-index: 100;
@@ -16641,7 +16641,13 @@ body {
   transform: translateY(2.5vh);
 }
 
-.p-mv_logo img {
+.p-mv_logo img:first-child {
+  position: absolute;
+  top: -31%;
+  height: 27%;
+}
+
+.p-mv_logo img:last-child {
   position: relative;
   top: 14%;
   height: 70%;
@@ -16714,11 +16720,16 @@ body {
 }
 
 .p-tile_item {
+  margin-bottom: 5.33333vw;
+  font-size: 3.73333vw;
+}
+
+.p-tile_item > a {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin-bottom: 5.33333vw;
-  font-size: 3.73333vw;
+  text-decoration: none;
+  color: #333;
 }
 
 .p-tile_item_img {
@@ -16908,8 +16919,70 @@ body {
   text-decoration: none;
 }
 
+.p-question {
+  position: relative;
+  padding-left: 10.66667vw;
+  margin-top: 13.33333vw;
+}
+
+.p-question:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "Q";
+  display: inline-block;
+  border: 1px solid #aaa;
+  width: 6.66667vw;
+  height: 6.66667vw;
+  text-align: center;
+  margin-right: 4vw;
+}
+
+.p-answer {
+  position: relative;
+  margin-top: 8vw;
+  padding-left: 10.66667vw;
+}
+
+.p-answer:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "A";
+  display: inline-block;
+  border: 1px solid #aaa;
+  width: 6.66667vw;
+  height: 6.66667vw;
+  text-align: center;
+  margin-right: 4vw;
+}
+
+.p-answer:after {
+  position: absolute;
+  bottom: -9.33333vw;
+  left: 50%;
+  content: "";
+  display: block;
+  border-bottom: 1px solid #ccc;
+  width: 10.66667vw;
+  height: 0.26667vw;
+  margin-left: -5.33333vw;
+}
+
 p {
   line-height: 1.9;
+}
+
+#booking-package_schedulePage .box_shadow {
+  box-shadow: -3px 0px 3px 0 rgba(0, 0, 0, 0.08) !important;
+}
+
+#booking-package_inputFormPanel .required:after {
+  color: #c52626 !important;
+}
+
+#booking-package_schedulePage .selectPanelError {
+  color: #c52626 !important;
 }
 
 #side {
@@ -17935,6 +18008,7 @@ p {
 }
 
 input[type="text"],
+input[type="mail"],
 input[type="search"],
 input[type="number"],
 input[type="password"],
@@ -17952,6 +18026,7 @@ textarea {
 }
 
 input[type="text"][readonly],
+input[type="mail"][readonly],
 input[type="search"][readonly],
 input[type="number"][readonly],
 input[type="password"][readonly],
@@ -17960,6 +18035,7 @@ textarea[readonly] {
 }
 
 input[type="text"].is-error,
+input[type="mail"].is-error,
 input[type="search"].is-error,
 input[type="number"].is-error,
 input[type="password"].is-error,
@@ -18109,7 +18185,7 @@ label{
 }
 */
 .required {
-  color: red;
+  color: #c52626;
   margin-left: 0.25em;
   font-weight: normal;
 }

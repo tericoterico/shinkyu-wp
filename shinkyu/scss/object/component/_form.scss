@@ -19,6 +19,7 @@
 // Styleguide 3.3.1
 @include placeholderColor(#aaa);
 input[type="text"],
+input[type="mail"],
 input[type="search"],
 input[type="number"],
 input[type="password"],
@@ -216,7 +217,7 @@ label{
 //
 // Styleguide 3.3.6
 .required {
-    color: red;
+    color: #c52626;
     margin-left: 0.25em;
     font-weight: normal;
 }

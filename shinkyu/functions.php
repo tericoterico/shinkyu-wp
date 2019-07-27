@@ -338,3 +338,94 @@ function custom_archive_title($title){
 	return $title;
 }
 add_filter('get_the_archive_title','custom_archive_title');
+
+/*
+* スラッグ名が日本語だったら自動的に投稿タイプ＋id付与へ変更（スラッグを設定した場合は適用しない）
+*/
+function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
+    if ( preg_match( '/(%[0-9a-f]{2})+/', $slug ) ) {
+        $slug = utf8_uri_encode( $post_type ) . '-' . $post_ID;
+    }
+    return $slug;
+}
+add_filter( 'wp_unique_post_slug', 'auto_post_slug', 10, 4  );
+
+/**/
+
+//news
+function get_blog_list( $atts ){
+	extract(
+		shortcode_atts(
+			array(
+				'pt' => null
+			),
+			$atts
+		)
+	);
+
+	$the_pt = get_post ( $pt ); 
+
+	$args = array(
+		'posts_per_page' => 3,
+		'post_type' => $pt,
+	);
+	 
+	$the_query = new WP_Query( $args );
+		while ( $the_query->have_posts() ): $the_query->the_post();
+		$psttype_list .= '<li class="p-tile_item">';
+		$psttype_list .= '<div class="p-tile_item_img">';
+		$psttype_list .= '<img src="'. get_the_post_thumbnail_url(get_the_ID(), 'thumbnail') . '" alt="">';
+		$psttype_list .= '</div>';
+		$psttype_list .= '<div class="p-tile_item_content">';
+
+		$psttype_list .= '<div class="p-tile_item_content_date">'. get_the_date() .'</div>';
+		$psttype_list .= '<div class="p-tile_item_content_title">'. get_the_title() .'</div>';
+		$psttype_list .= '</div>';
+		$psttype_list .= '</li>';
+   
+	endwhile;
+   
+	return $psttype_list;
+}
+   
+add_shortcode('bloglist', 'get_blog_list');
+
+//info
+function get_info_list( $atts ){
+	extract(
+		shortcode_atts(
+			array(
+				'pt' => null
+			),
+			$atts
+		)
+	);
+
+	$the_pt = get_post ( $pt ); 
+
+	$args = array(
+		'posts_per_page' => 3,
+		'post_type' => $pt,
+	);
+	 
+	$the_query = new WP_Query( $args );
+		while ( $the_query->have_posts() ): $the_query->the_post();
+		$psttype_list .= '<li class="p-tile_item">';
+		$psttype_list .= '<a href="'. get_permalink() .'">';
+		$psttype_list .= '<div class="p-tile_item_img">';
+		$psttype_list .= '<img src="'. get_the_post_thumbnail_url(get_the_ID(), 'thumbnail') . '" alt="">';
+		$psttype_list .= '</div>';
+		$psttype_list .= '<div class="p-tile_item_content">';
+
+		$psttype_list .= '<div class="p-tile_item_content_date">'. get_the_date() .'</div>';
+		$psttype_list .= '<div class="p-tile_item_content_title">'. get_the_title() .'</div>';
+		$psttype_list .= '</div>';
+		$psttype_list .= '</a>';
+		$psttype_list .= '</li>';
+   
+	endwhile;
+   
+	return $psttype_list;
+}
+   
+add_shortcode('infolist', 'get_info_list');

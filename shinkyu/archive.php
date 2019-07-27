@@ -19,9 +19,12 @@ get_header();
 				get_template_part( 'template-parts/content', 'header' );
 				?>
 
+				<?php
+					$term = get_queried_object();
+				?>
 				<div class="title">
 					<h2 class="p-section_title"><?php the_archive_title(); ?>
-						<span class="p-section_title_sub"></span>
+						<span class="p-section_title_sub"><?php echo ucfirst($term->rewrite["slug"]); ?></span>
 					</h2>
 				</div>
 

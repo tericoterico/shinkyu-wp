@@ -194,7 +194,7 @@ body{
     }
     &_logo{
         position: absolute;
-        top: (154/$base-px*100vw);
+        top: (164/$base-px*100vw);
         left: 50%;
         margin-left: -(90/$base-px*100vw); 
         z-index:100;
@@ -204,11 +204,17 @@ body{
         border-radius:50%;
         opacity:0;
         transform: translateY(2.5vh);
-        img{
+        img:first-child{
+            position: absolute;
+            top: -31%;
+            height:27%;
+        }
+        img:last-child{
             position: relative;
             top: 14%;
             height:70%;
         }
+
     }
     &_fish{
         opacity:0;
@@ -277,11 +283,17 @@ body{
 .p-tile{
     padding: 0 ($base-padding/$base-px*100vw);
     &_item{
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
         margin-bottom: (20/$base-px*100vw);
         font-size: (14/$base-px*100vw);
+
+        > a{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            text-decoration: none;
+            color:#333;
+        }
+
         &_img{
             background:#fff;
             height: (85/$base-px*100vw);
@@ -470,6 +482,67 @@ button{
     }
 }
 
+.p-question{
+    position: relative;
+    padding-left: (40/$base-px*100vw);
+    margin-top:(50/$base-px*100vw);
+    &:before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        content:"Q";
+        display: inline-block;
+        border: 1px solid #aaa;
+        width: (25/$base-px*100vw);
+        height: (25/$base-px*100vw);
+        text-align: center;
+        margin-right: (15/$base-px*100vw);
+    }
+}
+
+.p-answer{
+    position: relative;
+    margin-top:(30/$base-px*100vw);
+    padding-left: (40/$base-px*100vw);
+    &:before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        content:"A";
+        display: inline-block;
+        border: 1px solid #aaa;
+        width: (25/$base-px*100vw);
+        height: (25/$base-px*100vw);
+        text-align: center;
+        margin-right: (15/$base-px*100vw);
+    }
+    &:after{
+        position: absolute;
+        bottom: -(35/$base-px*100vw);
+        left: 50%;
+        content:"";
+        display: block;
+        border-bottom: 1px solid #ccc;
+        width: (40/$base-px*100vw);
+        height: (1/$base-px*100vw);
+        margin-left: -(20/$base-px*100vw);
+    }
+
+}
+
+
 p{
     line-height: 1.9;
+}
+
+#booking-package_schedulePage .box_shadow {
+    box-shadow: -3px 0px 3px 0 rgba(0,0,0,0.08) !important;
+}
+
+#booking-package_inputFormPanel .required:after{
+    color: #c52626 !important;
+}
+
+#booking-package_schedulePage .selectPanelError{
+    color: #c52626 !important;
 }
