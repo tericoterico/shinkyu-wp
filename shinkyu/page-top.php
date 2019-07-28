@@ -25,19 +25,19 @@ get_header();
 					<div class="swiper-wrapper">
 						<!-- Slides -->
 						<div class="swiper-slide">
+							<img class="p-mv_blackfish" src="<?php echo get_template_directory_uri() . "/img/black-fish.png" ?>" alt="">
+							<img class="p-mv_redfish" src="<?php echo get_template_directory_uri() . "/img/red-fish.png" ?>" alt="">
+							<div class="p-mv_logo">
+								<img src="<?php echo get_template_directory_uri() . "/img/shinkyu.svg" ?>" alt="">
+								<img src="<?php echo get_template_directory_uri() . "/img/logo.svg" ?>" alt="">
+							</div>
+						</div>
+						<div class="swiper-slide">
 							<img class="p-mv_fish" src="<?php echo get_template_directory_uri() . "/img/mv-5.png" ?>" alt="">
 							<div class="p-mv_logo">
 								<img src="<?php echo get_template_directory_uri() . "/img/shinkyu.svg" ?>" alt="">
 								<img src="<?php echo get_template_directory_uri() . "/img/logo.svg" ?>" alt="">
 							</div>
-							<!-- <div class="p-mv_copy">
-								改札口を抜けると<br>
-								そこには、<br>
-								駅前が広がっていた
-							</div> -->
-						</div>
-						<div class="swiper-slide">
-							<img src="<?php echo get_template_directory_uri() . "/img/mv-1.jpg" ?>" alt="">
 						</div>
 						<div class="swiper-slide">
 							<img src="<?php echo get_template_directory_uri() . "/img/mv-2.jpg" ?>" alt="">

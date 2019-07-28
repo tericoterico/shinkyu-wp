@@ -209,7 +209,7 @@ body{
             top: -31%;
             height:27%;
         }
-        img:last-child{
+        img:last-child{ 
             position: relative;
             top: 14%;
             height:70%;
@@ -219,7 +219,20 @@ body{
     &_fish{
         opacity:0;
     }
-
+    &_redfish{
+        position: absolute;
+        top: (55/$base-px*100vw); 
+        right: -(108/$base-px*100vw);
+        width: 73% !important;
+        opacity:0;
+    }
+    &_blackfish{
+        position: absolute;
+        top: (10/$base-px*100vw); 
+        left: -(112/$base-px*100vw); 
+        width: 82% !important; 
+        opacity:0;
+    }
 }
 
 .p-schedule{
@@ -317,10 +330,13 @@ body{
 .p-section{
     margin-bottom: ($base-padding*3/$base-px*100vw);
     &_title{
-        margin: ($base-padding*1.75/$base-px*100vw) 0 ($base-padding*1.75/$base-px*100vw);
+        margin: 0;
+        padding: ($base-padding*1.25/$base-px*100vw) 0 ($base-padding*1.5/$base-px*100vw);
         text-align: center;
         font-size: (20/$base-px*100vw);
         letter-spacing:0.15em;
+        background:url(./img/cloud1.png) no-repeat 12% (24/$base-px*100vw);
+        background-size:88%;
         &_sub{
             display: block;
             font-size: (10/$base-px*100vw);
@@ -441,6 +457,20 @@ button{
             fill:rgba(60, 28, 0, 0.90);
         }
     }
+    &_redfish{
+        position: absolute;
+        top: (40/$base-px*100vw); 
+        right: -(140/$base-px*100vw);
+        width: 133% !important;
+        opacity:0.8;
+    }
+    &_blackfish{
+        position: absolute;
+        top: -(24/$base-px*100vw); 
+        left: -(134/$base-px*100vw); 
+        width: 144%; 
+        opacity:0.8;
+    }
 }
 
 .p-full{
@@ -467,6 +497,7 @@ button{
 }
 
 .entry-content{
+    position: relative;
     padding-left: (30/$base-px*100vw);
     padding-right: (30/$base-px*100vw);
     padding-bottom: (30/$base-px*100vw);
@@ -527,7 +558,30 @@ button{
         height: (1/$base-px*100vw);
         margin-left: -(20/$base-px*100vw);
     }
+}
 
+.p-img_butterfly1{
+    position: absolute;
+    top: (0/$base-px*100vw);
+    right: -(80/$base-px*100vw);
+    opacity:0.16;
+    width: 80%;
+}
+
+.p-img_butterfly2{
+    position: absolute;
+    top: (280/$base-px*100vw);
+    left: (50/$base-px*100vw);
+    opacity:0.16;
+    width: 30%;
+}
+
+.p-img_butterfly3{
+    position: absolute;
+    bottom: (20/$base-px*100vw);
+    right: (50/$base-px*100vw);
+    opacity:0.2;
+    width: 20%;
 }
 
 

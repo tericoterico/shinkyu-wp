@@ -16657,6 +16657,22 @@ body {
   opacity: 0;
 }
 
+.p-mv_redfish {
+  position: absolute;
+  top: 14.66667vw;
+  right: -28.8vw;
+  width: 73% !important;
+  opacity: 0;
+}
+
+.p-mv_blackfish {
+  position: absolute;
+  top: 2.66667vw;
+  left: -29.86667vw;
+  width: 82% !important;
+  opacity: 0;
+}
+
 .p-schedule {
   border: 1px solid #ddd;
   border-collapse: collapse;
@@ -16757,10 +16773,13 @@ body {
 }
 
 .p-section_title {
-  margin: 14vw 0 14vw;
+  margin: 0;
+  padding: 10vw 0 12vw;
   text-align: center;
   font-size: 5.33333vw;
   letter-spacing: 0.15em;
+  background: url(./img/cloud1.png) no-repeat 12% 6.4vw;
+  background-size: 88%;
 }
 
 .p-section_title_sub {
@@ -16880,6 +16899,22 @@ body {
   fill: rgba(60, 28, 0, 0.9);
 }
 
+.p-logo_redfish {
+  position: absolute;
+  top: 10.66667vw;
+  right: -37.33333vw;
+  width: 133% !important;
+  opacity: 0.8;
+}
+
+.p-logo_blackfish {
+  position: absolute;
+  top: -6.4vw;
+  left: -35.73333vw;
+  width: 144%;
+  opacity: 0.8;
+}
+
 .p-full {
   width: 100vw !important;
   margin-left: -8vw;
@@ -16905,6 +16940,7 @@ body {
 }
 
 .entry-content {
+  position: relative;
   padding-left: 8vw;
   padding-right: 8vw;
   padding-bottom: 8vw;
@@ -16967,6 +17003,30 @@ body {
   width: 10.66667vw;
   height: 0.26667vw;
   margin-left: -5.33333vw;
+}
+
+.p-img_butterfly1 {
+  position: absolute;
+  top: 0vw;
+  right: -21.33333vw;
+  opacity: 0.16;
+  width: 80%;
+}
+
+.p-img_butterfly2 {
+  position: absolute;
+  top: 74.66667vw;
+  left: 13.33333vw;
+  opacity: 0.16;
+  width: 30%;
+}
+
+.p-img_butterfly3 {
+  position: absolute;
+  bottom: 5.33333vw;
+  right: 13.33333vw;
+  opacity: 0.2;
+  width: 20%;
 }
 
 p {

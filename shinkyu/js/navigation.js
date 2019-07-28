@@ -122,8 +122,25 @@
 		on: {
 			init: function () {
 			  console.log('swiper initialized');
-			  TweenMax.to(".p-mv_fish" , 3 , {opacity:1});
-			  TweenMax.to(".p-mv_logo" , 2 , {opacity:1, y:0, delay:1.2});
+			  TweenMax.fromTo(".p-mv_blackfish" , 4 , {
+				  opacity:0,
+				  rotation:-180,
+				  transformOrigin:"100% 100%"
+				},
+				{
+					opacity:1,
+					rotation:0
+			  });
+			  TweenMax.fromTo(".p-mv_redfish" , 4 , {
+				opacity:0,
+				rotation:-180,
+				transformOrigin:"0% 0%"
+				},
+			  {
+				  opacity:1,
+				  rotation:0
+			});
+			  TweenMax.to(".p-mv_logo" , 3 , {opacity:1, y:0, delay:2});
 			},
 		},
 

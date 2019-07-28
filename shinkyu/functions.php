@@ -373,6 +373,7 @@ function get_blog_list( $atts ){
 	$the_query = new WP_Query( $args );
 		while ( $the_query->have_posts() ): $the_query->the_post();
 		$psttype_list .= '<li class="p-tile_item">';
+		$psttype_list .= '<a href="'. get_permalink() .'">';
 		$psttype_list .= '<div class="p-tile_item_img">';
 		$psttype_list .= '<img src="'. get_the_post_thumbnail_url(get_the_ID(), 'thumbnail') . '" alt="">';
 		$psttype_list .= '</div>';
@@ -381,6 +382,7 @@ function get_blog_list( $atts ){
 		$psttype_list .= '<div class="p-tile_item_content_date">'. get_the_date() .'</div>';
 		$psttype_list .= '<div class="p-tile_item_content_title">'. get_the_title() .'</div>';
 		$psttype_list .= '</div>';
+		$psttype_list .= '</a>';
 		$psttype_list .= '</li>';
    
 	endwhile;

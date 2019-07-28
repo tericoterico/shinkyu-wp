@@ -10,6 +10,9 @@
 ?>
 
 <div class="p-logo">
+	<img class="p-logo_blackfish" src="<?php echo get_template_directory_uri() . "/img/black-fish.png" ?>" alt="">
+	<img class="p-logo_redfish" src="<?php echo get_template_directory_uri() . "/img/red-fish.png" ?>" alt="">
+
 	<svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" width="11.688px" height="39.688px" viewBox="0 0 11.688 39.688" enable-background="new 0 0 11.688 39.688"
 	 xml:space="preserve">
