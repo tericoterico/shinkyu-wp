@@ -122,25 +122,25 @@
 		on: {
 			init: function () {
 			  console.log('swiper initialized');
-			  TweenMax.fromTo(".p-mv_blackfish" , 4 , {
+			  TweenMax.fromTo(".p-mv_blackfish" , 3 , {
 				  opacity:0,
-				  rotation:-180,
+				  rotation:-40,
 				  transformOrigin:"100% 100%"
 				},
 				{
-					opacity:1,
+					opacity:0.8,
 					rotation:0
 			  });
-			  TweenMax.fromTo(".p-mv_redfish" , 4 , {
+			  TweenMax.fromTo(".p-mv_redfish" , 3 , {
 				opacity:0,
-				rotation:-180,
+				rotation:-40,
 				transformOrigin:"0% 0%"
 				},
 			  {
-				  opacity:1,
+				  opacity:0.8,
 				  rotation:0
 			});
-			  TweenMax.to(".p-mv_logo" , 3 , {opacity:1, y:0, delay:2});
+			//   TweenMax.to(".p-mv_logo" , 2 , {opacity:1, y:0, delay:1});
 			},
 		},
 

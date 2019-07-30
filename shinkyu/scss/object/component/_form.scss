@@ -19,22 +19,26 @@
 // Styleguide 3.3.1
 @include placeholderColor(#aaa);
 input[type="text"],
-input[type="mail"],
+input[type="email"],
 input[type="search"],
 input[type="number"],
 input[type="password"],
-textarea {
-    width: 100%;
+textarea{
+    width: 125%;
     margin-top: 3px;
     margin-bottom: 3px;
     // box-shadow: inset 1px 1px 3px rgba(0, 0, 0, .1);
-    border: 1px solid $form-border-color;
+    border:none;
+    border-bottom: 1px solid $form-border-color;
     padding: 10px;
     height: 38px;
-    font-size: 14px;
-    font-size: 1.4rem;
+    font-size: 16px;
+    font-size: 1.6rem;
+    transform: scale(0.8) translateX(-12.5%);
     vertical-align: middle;
     transition:all ease 0.3s;
+    border-radius:0;
+    background: none;
     &[readonly] {
         background: #eee;
     }
@@ -45,9 +49,20 @@ textarea {
     }
 }
 
+#booking-package_inputFormPanel input[type=text]{
+    width: 125% !important;
+    border:none !important;
+    border-bottom: 1px solid $form-border-color !important;
+}
+
+#booking-package_inputFormPanel .row{
+    padding: 0 !important;
+    border: none !important;
+}
+
 textarea {
-    width: 100%;
-    height: 4em;
+    // width: 100%;
+    height: 6em;
 }
 
 input[type="number"] {
@@ -70,6 +85,7 @@ input:focus{
 input[type="text"],
 input[type="search"],
 input[type="number"],
+input[type="email"],
 input[type="password"],
 textarea {
     &[readonly] {
@@ -174,7 +190,8 @@ select {
 //
 // Styleguide 3.3.5
 input[type="submit"] {
-    @include button($color-white, $color-cerulean);
+    @extend %p-button;
+    // @include button($color-white, $color-cerulean);
 }
 
 // disabled
