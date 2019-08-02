@@ -107,6 +107,24 @@
 
 ( function( $ ) {
 
+	var controller = new ScrollMagic.Controller();
+
+	var tween = TweenMax.fromTo(".p-img_butterfly1", 2, {opacity:0 }, {opacity:0.16 });
+
+	var scene = new ScrollMagic.Scene({
+		triggerElement: ".p-section_title",
+		triggerHook: "onEnter",
+		offset : 0,
+		duration:600
+		// reverse: false
+		})
+		.setTween(tween)
+		.on("progress", function (event) { // シーン変化の度に呼ばれる
+			console.log("Scene progress changed to " + event.progress)
+		})
+		// .addIndicators()
+		.addTo(controller);
+
 	$(document).on('click', '.p-nav', function () {
 		var $t = $(this);
 		$t.toggleClass('toggled');
