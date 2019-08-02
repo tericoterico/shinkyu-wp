@@ -259,6 +259,38 @@ body{
     }
 }
 
+#logo-eng{
+    width: (280/$base-px*100vw);
+    height: auto;
+    position: absolute;
+    left: 50%;
+    bottom: (200/$base-px*100vw);
+    margin-left: -(140/$base-px*100vw);
+    path{
+        fill:#fff;
+    }
+}
+
+.p-subcopy{
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+
+    font-size: (22/$base-px*100vw);
+    font-family: "正楷書CB1","Sei Kaisho CB1";
+    letter-spacing:0.1em;
+    line-height: 1.6;
+    text-shadow:0 0 10px rgba(0,0,0,0.25);
+
+    color:#fff;
+
+    position: absolute;
+    left: 50%;
+    bottom: (200/$base-px*100vw);
+    margin-left: -(140/$base-px*100vw);
+
+}
+
 .p-grid{
     margin-bottom: (30/$base-px*100vw);
     padding: 0 ($base-padding/$base-px*100vw);
@@ -294,6 +326,51 @@ body{
         &_text{
             font-size: (12/$base-px*100vw);
             margin: (5/$base-px*100vw) 0 0 0;
+        }
+    }
+}
+
+.p-banner{
+    &_item{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: (80/$base-px*100vw);
+        margin-bottom: (12/$base-px*100vw);
+        &:nth-child(1){
+            a{
+                background:url("./img/banner-blog.jpg") no-repeat center center;
+                background-size:cover;
+            }
+        }
+        &:nth-child(2){
+            a{
+                background:url("./img/banner-blog.jpg") no-repeat center center;
+                background-size:cover;
+            }
+        }
+
+        a{
+            display:flex;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            // background:url("./img/banner-blog.jpg") no-repeat center center;
+            background-size:cover;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            color:#000;
+            font-size: (24/$base-px*100vw);
+            font-family: "正楷書CB1","Sei Kaisho CB1";
+            text-decoration: none;
+            letter-spacing: 0.1em
+  
+        }
+        &_img{
+        }
+        &_title{
+
         }
     }
 }

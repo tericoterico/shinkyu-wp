@@ -25,6 +25,16 @@ get_header();
 					<div class="swiper-wrapper">
 						<!-- Slides -->
 						<div class="swiper-slide">
+							<img src="<?php echo get_template_directory_uri() . "/img/mv-6.jpg" ?>" alt="">
+							<?php get_template_part( 'template-parts/content', 'logo' ); ?>
+						</div>
+						<div class="swiper-slide">
+							<img src="<?php echo get_template_directory_uri() . "/img/mv-7.jpg" ?>" alt="">
+							<div class="p-subcopy">
+								静寂とこだわりの空間が<br>お出迎えします
+							</div>
+						</div>
+						<div class="swiper-slide">
 							<img class="p-mv_blackfish" src="<?php echo get_template_directory_uri() . "/img/black-fish.png" ?>" alt="">
 							<img class="p-mv_redfish" src="<?php echo get_template_directory_uri() . "/img/red-fish.png" ?>" alt="">
 							<div class="p-mv_logo">
@@ -194,6 +204,21 @@ get_header();
 				</div>
 			</li>
 		</ul>
+
+		<ul class="p-grid p-banner" data-col="1">
+			<li class="p-banner_item">
+				<a href="#">
+					東洋医学について
+				</a>
+			</li>
+			<li class="p-banner_item">
+				<a href="#">
+					ブログ
+				</a>
+			</li>
+		</ul>
+
+
 
 		<?php
 		while ( have_posts() ) :
