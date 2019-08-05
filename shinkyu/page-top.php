@@ -34,6 +34,19 @@ get_header();
 								静寂とこだわりの空間が<br>お出迎えします
 							</div>
 						</div>
+						<div class="swiper-slide slide3">
+							<div class="p-fish_circle">
+								<img class="p-mv_blackfish" src="<?php echo get_template_directory_uri() . "/img/black-fish.png" ?>" alt="">
+								<img class="p-mv_redfish" src="<?php echo get_template_directory_uri() . "/img/red-fish.png" ?>" alt="">
+							</div>
+							<?php get_template_part( 'template-parts/content', 'logo' ); ?>
+						</div>
+						<div class="swiper-slide slide4">
+							<img src="<?php echo get_template_directory_uri() . "/img/mv-8.jpg" ?>" alt="">
+							<?php get_template_part( 'template-parts/content', 'logo' ); ?>
+						</div>
+
+<?php /*
 						<div class="swiper-slide">
 							<img class="p-mv_blackfish" src="<?php echo get_template_directory_uri() . "/img/black-fish.png" ?>" alt="">
 							<img class="p-mv_redfish" src="<?php echo get_template_directory_uri() . "/img/red-fish.png" ?>" alt="">
@@ -42,20 +55,16 @@ get_header();
 								<img src="<?php echo get_template_directory_uri() . "/img/logo.svg" ?>" alt="">
 							</div>
 						</div>
-						<div class="swiper-slide">
-							<img class="p-mv_fish" src="<?php echo get_template_directory_uri() . "/img/mv-5.png" ?>" alt="">
-							<div class="p-mv_logo">
-								<img src="<?php echo get_template_directory_uri() . "/img/shinkyu.svg" ?>" alt="">
-								<img src="<?php echo get_template_directory_uri() . "/img/logo.svg" ?>" alt="">
-							</div>
-						</div>
+*/ ?>
+<?php /*
 						<div class="swiper-slide">
 							<img src="<?php echo get_template_directory_uri() . "/img/mv-2.jpg" ?>" alt="">
 						</div>
 						<div class="swiper-slide">
 							<img src="<?php echo get_template_directory_uri() . "/img/mv-3.jpg" ?>" alt="">
 						</div>
-					</div>
+*/ ?>
+						</div>
 					<!-- If we need pagination -->
 					<div class="swiper-pagination"></div>
 
@@ -69,6 +78,7 @@ get_header();
 			</div>
 		</section>
 
+		<?php /*
 		<section class="p-section">
 			<h2 class="p-section_title">
 				良鍼堂について
@@ -86,7 +96,34 @@ get_header();
 				</div>
 			</div>
 		</section>
-
+		*/ ?>
+		<section class="p-section">
+			<div class="p-section_content">
+				<?php wp_nav_menu( array('menu' => 'top_first' ) ); ?>
+				<?php /*
+				<ul class="p-top_menu">
+					<?php
+					$menu_items = wp_get_nav_menu_items('top_first');  // menu_name: カスタムメニューの名前
+					foreach ($menu_items as $menu):
+					$page_id = $menu->object_id;
+					$thumbnail_id = get_post_thumbnail_id($page_id);
+					$image_attributes = wp_get_attachment_image_src($thumbnail_id); 
+					$content = get_page($page_id);
+					?>
+					<li class="<?php echo $content->post_name; ?>">
+						<a href="<?php echo get_permalink($page_id); ?>">
+						<img src="<?php echo $image_attributes[0]; ?>" alt="" width="<?php echo $image_attributes[1]; ?>" height="<?php echo $image_attributes[2]; ?>" />
+						<?php echo $content->post_title; ?>
+						</a>
+					</li>
+					<?php
+					endforeach;
+					?>
+				</ul>
+				*/?>
+			</div>
+		</section>
+<?php /*
 		<section class="p-section">
 			<h2 class="p-section_title">
 				お知らせ
@@ -99,7 +136,8 @@ get_header();
 				<a href="#">お知らせ一覧</a>
 			</div>
 		</section>
-
+*/ ?>
+<?php /*
 		<section class="p-section">
 			<h2 class="p-section_title">
 				予約
@@ -150,8 +188,8 @@ get_header();
 				</div>
 			</div>
 		</section>
-
-
+*/ ?>
+<?php /*
 		<section class="p-section">
 			<h2 class="p-section_title">
 				ブログ
@@ -164,7 +202,8 @@ get_header();
 				<a href="#">ブログ一覧</a>
 			</div>
 		</section>
-
+*/?>
+		<?php /*
 		<ul class="p-grid" data-col="2">
 			<li class="p-grid_item">
 				<div class="p-grid_img">
@@ -190,7 +229,6 @@ get_header();
 				</div>
 			</li>
 		</ul>
-
 		<ul class="p-grid" data-col="1">
 			<li class="p-grid_item">
 				<div class="p-grid_img">
@@ -204,8 +242,24 @@ get_header();
 				</div>
 			</li>
 		</ul>
+*/ ?>
 
 		<ul class="p-grid p-banner" data-col="1">
+			<li class="p-banner_item">
+				<a href="#">
+					良鍼堂について
+				</a>
+			</li>
+			<li class="p-banner_item">
+				<a href="#">
+					鍼灸における<br>保険適用の流れ
+				</a>
+			</li>
+			<li class="p-banner_item">
+				<a href="#">
+					予約・相談・お問合せ
+				</a>
+			</li>
 			<li class="p-banner_item">
 				<a href="#">
 					東洋医学について

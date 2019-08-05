@@ -147,7 +147,7 @@
 				},
 				{
 					opacity:0.8,
-					rotation:0
+					rotation:-10
 			  });
 			  TweenMax.fromTo(".p-mv_redfish" , 3 , {
 				opacity:0,
