@@ -6,6 +6,7 @@
  *
  * @package shinkyu
  */
+$related = get_field('related');
 
 ?>
 
@@ -27,6 +28,17 @@
 		<?php
 		the_content();
 		?>
+
+		<?php if(isset($related) && $related){ ?>
+			<div class="p-related">
+			<?php foreach($related as $key => $value){ ?>
+				<a href="<?php echo get_permalink( $value->ID ); ?>">
+					<?php echo $value->post_title; ?>
+				</a>
+			<?php } ?>
+			</div>
+		<?php } ?>
+
 	</div><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->

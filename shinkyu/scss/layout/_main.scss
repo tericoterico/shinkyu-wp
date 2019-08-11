@@ -478,6 +478,12 @@ body{
     }
 }
 
+.entry-header{
+    .p-section_title{
+        padding: ($base-padding*3/$base-px*100vw) 0 ($base-padding*1.5/$base-px*100vw);
+    }
+}
+
 .p-section{
     margin-bottom: ($base-padding*1.5/$base-px*100vw);
     &_title{
@@ -788,5 +794,26 @@ p{
             border: 1px solid #00000040;
             text-align: center;
         }
+    }
+}
+
+.p-related{
+    margin-top: (40/$base-px*100vw) !important;
+    margin-bottom: (10/$base-px*100vw);
+    &:last-child(){
+        a{
+            // margin-bottom: 0;
+        }
+    }
+    a{
+        font-family: "正楷書CB1","Sei Kaisho CB1";
+        font-size: (18/$base-px*100vw);
+        text-decoration: none;
+        color: #000;
+        display: block;
+        margin: 0 auto (10/$base-px*100vw);
+        padding: (10/$base-px*100vw) 0;
+        border: 1px solid #00000040;
+        text-align: center;
     }
 }
