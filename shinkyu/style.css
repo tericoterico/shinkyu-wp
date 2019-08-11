@@ -17232,6 +17232,24 @@ p {
   text-align: center;
 }
 
+.p-back {
+  margin-top: 5.33333vw !important;
+  margin-bottom: 2.66667vw;
+}
+
+.p-back a {
+  font-family: "正楷書CB1","Sei Kaisho CB1";
+  font-size: 3.73333vw;
+  text-decoration: none;
+  color: #000;
+  display: block;
+  margin: 0 auto 2.66667vw;
+  padding: 1.33333vw 0;
+  border: 1px solid #00000040;
+  text-align: center;
+  width: 50%;
+}
+
 #side {
   position: relative;
   width: 100%;

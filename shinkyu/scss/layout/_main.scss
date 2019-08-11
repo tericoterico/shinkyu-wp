@@ -817,3 +817,20 @@ p{
         text-align: center;
     }
 }
+
+.p-back{
+    margin-top: (20/$base-px*100vw) !important;
+    margin-bottom: (10/$base-px*100vw);
+    a{
+        font-family: "正楷書CB1","Sei Kaisho CB1";
+        font-size: (14/$base-px*100vw);
+        text-decoration: none;
+        color: #000;
+        display: block;
+        margin: 0 auto (10/$base-px*100vw);
+        padding: (5/$base-px*100vw) 0;
+        border: 1px solid #00000040;
+        text-align: center;
+        width: 50%;
+    }
+}

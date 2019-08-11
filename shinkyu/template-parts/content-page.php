@@ -39,6 +39,18 @@ $related = get_field('related');
 			</div>
 		<?php } ?>
 
+		<?php
+			$page = get_post( get_the_ID() );
+			$slug = $page->post_name;
+			if(is_parent_slug() === 'feature' || $slug === 'feature'){
+		?>
+			<div class="p-back">
+				<a href="/#top-menu">戻る</a>
+			</div>
+		<?php
+			}
+		?>
+
 	</div><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->

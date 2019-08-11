@@ -433,3 +433,13 @@ function get_info_list( $atts ){
 }
    
 add_shortcode('infolist', 'get_info_list');
+
+/* 親のslug取得 */
+
+function is_parent_slug() {
+	global $post;
+	if ($post->post_parent) {
+		$post_data = get_post($post->post_parent);
+		return $post_data->post_name;
+	}
+}

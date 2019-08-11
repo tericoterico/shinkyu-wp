@@ -97,7 +97,7 @@ get_header();
 			</div>
 		</section>
 		*/ ?>
-		<section class="p-section">
+		<section id="top-menu" class="p-section">
 			<div class="p-section_content">
 				<?php wp_nav_menu( array('menu' => 'top_first' ) ); ?>
 				<?php /*
@@ -244,35 +244,27 @@ get_header();
 		</ul>
 */ ?>
 
+
 		<ul class="p-grid p-banner" data-col="1">
+
+<?php
+	$items = wp_get_nav_menu_items( 'top_banner' );
+	// echo('<pre>');
+	// var_dump($items);
+	// echo('</pre>');
+	// exit();
+	foreach ($items as $key => $value){
+?>
+
 			<li class="p-banner_item">
-				<a href="#">
-					良鍼堂について
+				<a href="<?php echo($value->url); ?>">
+					<?php echo($value->title); ?>
 				</a>
 			</li>
-			<li class="p-banner_item">
-				<a href="#">
-					鍼灸における<br>保険適用の流れ
-				</a>
-			</li>
-			<li class="p-banner_item">
-				<a href="#">
-					予約・相談・お問合せ
-				</a>
-			</li>
-			<li class="p-banner_item">
-				<a href="#">
-					東洋医学について
-				</a>
-			</li>
-			<li class="p-banner_item">
-				<a href="#">
-					ブログ
-				</a>
-			</li>
+<?php
+	}
+?>
 		</ul>
-
-
 
 		<?php
 		while ( have_posts() ) :
