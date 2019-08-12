@@ -120,21 +120,21 @@ add_action( 'widgets_init', 'shinkyu_widgets_init' );
  * Enqueue scripts and styles.
  */
 function shinkyu_scripts() {
-	wp_enqueue_style( 'shinkyu-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'shinkyu-style?date=20190821', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'shinkyu-sakura-webfont', '//webfonts.sakura.ne.jp/js/sakura.js', array(), '20190731', true );
+	wp_enqueue_script( 'shinkyu-sakura-webfont', '//webfonts.sakura.ne.jp/js/sakura.js', array(), '20190810', true );
 
-	wp_enqueue_script( 'shinkyu-jquery', 'https://code.jquery.com/jquery-3.4.1.min.js', array(), '20190731', true );
-	wp_enqueue_script( 'shinkyu-swiper', get_template_directory_uri() . '/js/libs/swiper.min.js', array(), '20190731', true );
+	wp_enqueue_script( 'shinkyu-jquery', 'https://code.jquery.com/jquery-3.4.1.min.js', array(), '20190810', true );
+	wp_enqueue_script( 'shinkyu-swiper', get_template_directory_uri() . '/js/libs/swiper.min.js', array(), '20190810', true );
 
-	wp_enqueue_script( 'shinkyu-tw', get_template_directory_uri() . '/js/libs/TweenMax.min.js', array(), '20190731', true );
-	wp_enqueue_script( 'shinkyu-sm', get_template_directory_uri() . '/js/libs/ScrollMagic.min.js', array(), '20190731', true );
-	wp_enqueue_script( 'shinkyu-sm-animation', get_template_directory_uri() . '/js/libs/animation.gsap.min.js', array(), '20190731', true );
-	wp_enqueue_script( 'shinkyu-sm-debug', get_template_directory_uri() . '/js/libs/debug.addIndicators.min.js', array(), '20190731', true );
+	wp_enqueue_script( 'shinkyu-tw', get_template_directory_uri() . '/js/libs/TweenMax.min.js', array(), '20190810', true );
+	wp_enqueue_script( 'shinkyu-sm', get_template_directory_uri() . '/js/libs/ScrollMagic.min.js', array(), '20190810', true );
+	wp_enqueue_script( 'shinkyu-sm-animation', get_template_directory_uri() . '/js/libs/animation.gsap.min.js', array(), '20190810', true );
+	wp_enqueue_script( 'shinkyu-sm-debug', get_template_directory_uri() . '/js/libs/debug.addIndicators.min.js', array(), '20190810', true );
 
-	wp_enqueue_script( 'shinkyu-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20190731', true );
+	wp_enqueue_script( 'shinkyu-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20190810', true );
 
-	wp_enqueue_script( 'shinkyu-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20190731', true );
+	wp_enqueue_script( 'shinkyu-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20190810', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -443,3 +443,28 @@ function is_parent_slug() {
 		return $post_data->post_name;
 	}
 }
+
+/* 東洋医学とはの表示順 */
+
+function change_sort_order( $query ) {
+	// echo('<pre>');
+	// var_dump($query);
+	// echo('</pre>');
+	// exit();
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+	
+	if ($query->is_post_type_archive( 'oriental' )){
+		$query->set('meta_key', 'disp_order');
+		$query->set('orderby', 'meta_value_num');
+		$query->set('order', 'ASC');
+	}
+
+	if ( $query->is_home() ) {
+		$query->set( 'order', 'ASC' );
+		$query->set( 'orderby', 'title' );
+	}
+}
+
+add_action( 'pre_get_posts', 'change_sort_order' );

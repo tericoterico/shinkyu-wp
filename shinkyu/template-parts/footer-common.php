@@ -12,7 +12,7 @@
 		<div class="p-nav_bottom">
 			<ul>
 				<li>
-					<a href="/reservation">
+					<a href="/contact">
 						<img src="<?php echo get_template_directory_uri() . "/img/reservation.svg" ?>" alt="">
 						ご予約
 					</a>

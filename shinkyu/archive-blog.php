@@ -32,6 +32,7 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 			<div class="p-archive">
+			<ul class="p-tile">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -46,6 +47,7 @@ get_header();
 
 			endwhile;
 			?>
+			</ul>
 			</div>
 			
 			<?php

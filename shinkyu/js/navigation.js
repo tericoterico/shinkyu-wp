@@ -132,9 +132,11 @@
 
 	var mySwiper = new Swiper ('.swiper-container', {
 		// Optional parameters
-		// autoplay:{
-		// 	delay:5000
-		// },
+		autoplay:{
+			delay:5000
+		},
+		speed:1500,
+		effect:'slide',
 		loop:true,
 
 		on: {
