@@ -42,7 +42,7 @@ get_header();
 							<?php get_template_part( 'template-parts/content', 'logo' ); ?>
 						</div>
 						<div class="swiper-slide slide4">
-							<img src="<?php echo get_template_directory_uri() . "/img/mv-8.jpg" ?>" alt="">
+							<img src="<?php echo get_template_directory_uri() . "/img/mv-9.png" ?>" alt="">
 							<?php get_template_part( 'template-parts/content', 'logo' ); ?>
 						</div>
 
@@ -258,7 +258,8 @@ get_header();
 
 			<li class="p-banner_item">
 				<a href="<?php echo($value->url); ?>">
-					<?php echo($value->title); ?>
+					<img class="" src="<?php echo wp_get_attachment_image_src ($value->thumbnail_id, "full")[0]; ?>" alt="">
+					<span><?php echo($value->title); ?></span>
 				</a>
 			</li>
 <?php
