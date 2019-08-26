@@ -27,11 +27,14 @@ body{
     padding-bottom: (64/$base-px*100vw);
     position: relative;
     z-index: 99;
+    @include breakpoint($bp-md) {
+        padding-bottom: 0;
+    }
 }
 
 #content{
     min-height: 100vh;
-    padding-bottom: (64/$base-px*100vw);
+    // padding-bottom: (64/$base-px*100vw);
 }
 
 .p-menu{
@@ -86,6 +89,10 @@ body{
     background:rgba(255,255,255,0.35);
     cursor: pointer;
     z-index:101;
+    @include breakpoint($bp-md) {
+        width: 100px;
+        height: 100px;
+    }
 
     &.toggled + .p-menu{
         .p-menu{
@@ -107,6 +114,11 @@ body{
         margin-left: -(40/2/$base-px*100vw);
 
         transition: transform 1s cubic-bezier(.23,1,.32,1);
+        @include breakpoint($bp-md) {
+            margin-top: 0;
+            margin-left: 0;
+        }
+    
         &:nth-child(1){
             transform: translateY(-(10/2/$base-px*100vw)) translateZ(0);
             svg{
@@ -124,6 +136,10 @@ body{
             display: block;
             margin: 0;
             padding: 0;
+            @include breakpoint($bp-md) {
+                width: 60px;
+                height: auto;
+            }
         }
     }
     &.toggled{
@@ -142,12 +158,24 @@ body{
     left: 0;
     // background:rgba($color-black, 0.85);
     z-index:102;
+    @include breakpoint($bp-md) {
+        left: auto;
+        bottom: auto;
+        top: 50%;
+        right: 0;
+     }
     ul{
         width: (375/$base-px*100vw);
         height: (64/$base-px*100vw);
         display:flex;
         flex-flow:row nowrap;
         justify-content: space-between;
+        @include breakpoint($bp-md) {
+            width: 50px;
+            height: 200px;
+            flex-flow:column nowrap;
+        }
+
         li{
             flex-basis:33.3%;
             a{
@@ -162,6 +190,10 @@ body{
                 align-items: center;
                 justify-content: center;
                 line-height: 1.3;
+                @include breakpoint($bp-md) {
+                    font-size: 1.4rem;
+                }
+
                 img{
                     display: block;
                     margin-top: -(6/$base-px*100vw);
@@ -350,6 +382,10 @@ body{
     flex-flow:row wrap;
     justify-content: space-between;
     $element: #{&};
+    @include breakpoint($bp-md) {
+        margin-bottom: 0;
+        padding: 0 20px;
+    }
 
     &[data-col="1"]{
         #{$element}{
@@ -389,7 +425,11 @@ body{
         width: 100%;
         height: (80/$base-px*100vw);
         margin-bottom: (12/$base-px*100vw);
-        // &:nth-child(1){
+        @include breakpoint($bp-md) {
+            width: auto;
+            height: auto;
+        }
+            // &:nth-child(1){
         //     a{
         //         background:url("./img/banner-reserve.jpg") no-repeat center center;
         //         background-size:cover;
@@ -441,6 +481,9 @@ body{
             line-height: 1.3;
             text-shadow: 0 0 6px rgba(255,255,255,0.95);
             position: relative;
+            @include breakpoint($bp-md) {
+                font-size: 2.0rem;
+            }
             img{
                 position: absolute;
                 width: 100%;
@@ -493,11 +536,17 @@ body{
 .entry-header{
     .p-section_title{
         padding: ($base-padding*3/$base-px*100vw) 0 ($base-padding*1.5/$base-px*100vw);
+        @include breakpoint($bp-md) {
+            padding: 80px 0 50px;
+        }
     }
 }
 
 .p-section{
     margin-bottom: ($base-padding*1.5/$base-px*100vw);
+    @include breakpoint($bp-md) {
+        margin-bottom: 20px;
+    }
     &_title{
         margin: 0;
         padding: ($base-padding*1.25/$base-px*100vw) 0 ($base-padding/$base-px*100vw);
@@ -508,6 +557,11 @@ body{
         line-height: 1.6;
         // background:url(./img/cloud1.png) no-repeat 12% (24/$base-px*100vw);
         // background-size:88%;
+        @include breakpoint($bp-md) {
+            padding: 50px 0;
+            font-size: 3.6rem;
+        }
+
         &_sub{
             display: block;
             font-size: (10/$base-px*100vw);
@@ -515,6 +569,10 @@ body{
             letter-spacing:0.15em;
             color:#999;
             margin-top: (6/$base-px*100vw);
+            @include breakpoint($bp-md) {
+                font-size: 1.2rem;
+                margin-top: 10px;
+            }
         }
     }
     &_eyecatch{
@@ -537,6 +595,9 @@ body{
 .p-copyright{
     font-size: (12/$base-px*100vw);
     text-align: center;
+    @include breakpoint($bp-md) {
+        font-size: 1.2rem;
+    }
 }
 
 #booking-package{
@@ -678,6 +739,11 @@ button{
     padding-left: (30/$base-px*100vw);
     padding-right: (30/$base-px*100vw);
     padding-bottom: (30/$base-px*100vw);
+    @include breakpoint($bp-md) {
+        width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
 }
 
 .p-archive{
@@ -795,6 +861,9 @@ p{
 .p-top_menu{
     li{
         margin-bottom: (10/$base-px*100vw);
+        @include breakpoint($bp-md) {
+            margin-bottom: 10px;
+        }
         &:last-child(){
             margin-bottom: 0;
         }
@@ -805,9 +874,13 @@ p{
             color: #000;
             display: block;
             margin: 0 auto;
-            padding: (10/$base-px*100vw) 0;
+            padding: (16/$base-px*100vw) 0;
             border: 1px solid #00000040;
             text-align: center;
+            @include breakpoint($bp-md) {
+                font-size: 1.6rem;
+                padding: 10px 0;
+            }
         }
     }
 }
@@ -867,15 +940,24 @@ p{
 }
 
 .p-oriental{
+    position: relative;
     &.is-single{
         margin-bottom: 0;
     }
     &:last-child{
         margin-bottom: (40/$base-px*100vw);
     }
+    &.is-single{
+        .post-thumbnail{
+            margin-left: 0;
+        }
+    }
     margin-bottom: (80/$base-px*100vw);
+
     .post-thumbnail{
         display: block;
+        width: 100vw;
+        margin-left: -(30/$base-px*100vw);
         img{
             width: 100%;
             height: 100%
@@ -887,6 +969,21 @@ p{
         a{
             color:#000;
         }
+    }
+    &_redfish{
+        position: absolute;
+        top: (30/$base-px*100vw); 
+        right: -(40/$base-px*100vw);
+        width: 60% !important;
+        // opacity:0;
+    }
+    &_blackfish{
+        position: absolute;
+        top: (-10/$base-px*100vw); 
+        left: -(70/$base-px*100vw); 
+        width: 78% !important;
+        transform:rotate(-4deg); 
+        // opacity:0;
     }
 }
 
@@ -951,5 +1048,27 @@ table {
                 font-weight: bold;
             }
         }
+    }
+}
+
+.add-image{
+    opacity:0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    left: -8vw;
+}
+
+#post-112{
+    position: relative;
+    .p-fish_circle{
+        width: 90vw;
+        height: 90vw;
+        margin-left: -3vw;
+        border-radius: 50%;
+        background:#f0efdf;
+        display: block;
+        overflow: hidden;
+        position: relative;
     }
 }

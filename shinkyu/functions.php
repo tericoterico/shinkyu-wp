@@ -120,21 +120,21 @@ add_action( 'widgets_init', 'shinkyu_widgets_init' );
  * Enqueue scripts and styles.
  */
 function shinkyu_scripts() {
-	wp_enqueue_style( 'shinkyu-style?date=20190821', get_stylesheet_uri() );
+	wp_enqueue_style( 'shinkyu-style?date=201908234', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'shinkyu-sakura-webfont', '//webfonts.sakura.ne.jp/js/sakura.js', array(), '20190810', true );
+	wp_enqueue_script( 'shinkyu-sakura-webfont', '//webfonts.sakura.ne.jp/js/sakura.js', array(), '201908234', true );
 
-	wp_enqueue_script( 'shinkyu-jquery', 'https://code.jquery.com/jquery-3.4.1.min.js', array(), '20190810', true );
-	wp_enqueue_script( 'shinkyu-swiper', get_template_directory_uri() . '/js/libs/swiper.min.js', array(), '20190810', true );
+	wp_enqueue_script( 'shinkyu-jquery', 'https://code.jquery.com/jquery-3.4.1.min.js', array(), '201908234', true );
+	wp_enqueue_script( 'shinkyu-swiper', get_template_directory_uri() . '/js/libs/swiper.min.js', array(), '201908234', true );
 
-	wp_enqueue_script( 'shinkyu-tw', get_template_directory_uri() . '/js/libs/TweenMax.min.js', array(), '20190810', true );
-	wp_enqueue_script( 'shinkyu-sm', get_template_directory_uri() . '/js/libs/ScrollMagic.min.js', array(), '20190810', true );
-	wp_enqueue_script( 'shinkyu-sm-animation', get_template_directory_uri() . '/js/libs/animation.gsap.min.js', array(), '20190810', true );
-	wp_enqueue_script( 'shinkyu-sm-debug', get_template_directory_uri() . '/js/libs/debug.addIndicators.min.js', array(), '20190810', true );
+	wp_enqueue_script( 'shinkyu-tw', get_template_directory_uri() . '/js/libs/TweenMax.min.js', array(), '201908234', true );
+	wp_enqueue_script( 'shinkyu-sm', get_template_directory_uri() . '/js/libs/ScrollMagic.min.js', array(), '201908234', true );
+	wp_enqueue_script( 'shinkyu-sm-animation', get_template_directory_uri() . '/js/libs/animation.gsap.min.js', array(), '201908234', true );
+	wp_enqueue_script( 'shinkyu-sm-debug', get_template_directory_uri() . '/js/libs/debug.addIndicators.min.js', array(), '201908234', true );
 
-	wp_enqueue_script( 'shinkyu-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20190810', true );
+	wp_enqueue_script( 'shinkyu-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '201908234', true );
 
-	wp_enqueue_script( 'shinkyu-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20190810', true );
+	wp_enqueue_script( 'shinkyu-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '201908234', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

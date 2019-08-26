@@ -3,4 +3,8 @@
     padding: ($base-padding*0.75/$base-px*100vw) 0;
     // background:#f1eae0;
     border-top: 1px solid #ddd;
+    @include breakpoint($bp-md) {
+        margin: 0;
+        padding: 10px 0;
+    }
 }

@@ -119,9 +119,115 @@
 		// reverse: false
 		})
 		.setTween(tween)
-		.on("progress", function (event) { // シーン変化の度に呼ばれる
-			console.log("Scene progress changed to " + event.progress)
+		// .on("progress", function (event) { // シーン変化の度に呼ばれる
+		// 	console.log("Scene progress changed to " + event.progress)
+		// })
+		// .addIndicators()
+		.addTo(controller);
+
+	//気とは何か
+	var tween_1 = TweenMax.fromTo("#post-113 .add-image", 4, {opacity:0, y:40 }, {opacity:1, y:0 });
+
+	var scene = new ScrollMagic.Scene({
+		triggerElement: "#post-113",
+		// triggerHook: "onEnter",
+		offset : 0,
+		duration:300,
+		// reverse: false
 		})
+		.setTween(tween_1)
+		// .on("progress", function (event) { // シーン変化の度に呼ばれる
+		// 	console.log("Scene progress changed to " + event.progress)
+		// })
+		// .addIndicators()
+		.addTo(controller);
+	
+	//経絡と臓腑について
+	var tween_2 = TweenMax.fromTo("#post-228 .add-image", 4, {opacity:0, y:10 }, {opacity:1, y:0 });
+
+	var scene2 = new ScrollMagic.Scene({
+		triggerElement: "#post-228",
+		// triggerHook: "onEnter",
+		offset : 0,
+		duration:300,
+		// reverse: false
+		})
+		.setTween(tween_2)
+		// .on("progress", function (event) { // シーン変化の度に呼ばれる
+		// 	console.log("Scene progress changed to " + event.progress)
+		// })
+		// .addIndicators()
+		.addTo(controller);
+
+
+	//蝶1
+	var tween_30 = TweenMax.fromTo("#post-55 .wp-post-image", 4, {opacity:0, y:10 }, {opacity:1, y:0 });
+
+	var scene30 = new ScrollMagic.Scene({
+		triggerElement: "#post-55",
+		// triggerHook: "onEnter",
+		offset : 0,
+		duration:200,
+		// reverse: false
+		})
+		.setTween(tween_30)
+		.addTo(controller);
+
+	//蝶2
+	var tween_31 = TweenMax.fromTo("#post-55 .add-image", 4, {opacity:0, y:10 }, {opacity:1, y:0 });
+
+	var scene31 = new ScrollMagic.Scene({
+		triggerElement: "#post-55",
+		// triggerHook: "onEnter",
+		offset : 0,
+		duration:300,
+		// reverse: false
+		})
+		.setTween(tween_31)
+		.addTo(controller);
+
+	//陰陽論
+	var tween_black = TweenMax.fromTo("#post-112 .p-oriental_blackfish", 4, {
+		opacity:0,
+		rotation:-40,
+		transformOrigin:"100% 100%"
+	},
+	{
+		opacity:0.8,
+		rotation:0,
+	});
+
+	var tween_red = TweenMax.fromTo("#post-112 .p-oriental_redfish", 4, {
+		opacity:0,
+		rotation:-40,
+		transformOrigin:"0 0"
+	},
+	{
+		opacity:0.8,
+		rotation:0,
+	});
+
+	//陰陽論-赤金魚
+	var scene_red = new ScrollMagic.Scene({
+		triggerElement: "#post-112",
+		// triggerHook: "onEnter",
+		offset : -100,
+		duration:400,
+		// reverse: false
+		})
+		.setTween(tween_red)
+		// .addIndicators()
+		.addTo(controller);
+
+	//陰陽論-黒金魚
+	var scene_black = new ScrollMagic.Scene({
+		triggerElement: "#post-112",
+		// triggerHook: "onEnter",
+		offset : -80,
+		duration:420,
+		// reverse: false
+		})
+		.setTween(tween_black)
 		// .addIndicators()
 		.addTo(controller);
 
@@ -141,7 +247,7 @@
 
 		on: {
 			init: function () {
-			  console.log('swiper initialized');
+			//   console.log('swiper initialized');
 			  TweenMax.fromTo(".p-mv_blackfish" , 3 , {
 				  opacity:0,
 				  rotation:-40,
