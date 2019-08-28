@@ -123,7 +123,6 @@ get_header();
 				*/?>
 			</div>
 		</section>
-<?php /*
 		<section class="p-section">
 			<h2 class="p-section_title">
 				お知らせ
@@ -136,7 +135,6 @@ get_header();
 				<a href="#">お知らせ一覧</a>
 			</div>
 		</section>
-*/ ?>
 <?php /*
 		<section class="p-section">
 			<h2 class="p-section_title">
