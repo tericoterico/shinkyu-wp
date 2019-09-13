@@ -1,0 +1,4 @@
+/* admin */
+input[type="text"][name^="my_option_name"] {
+  width: 50%;
+}

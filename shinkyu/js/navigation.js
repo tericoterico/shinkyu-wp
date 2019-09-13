@@ -231,6 +231,61 @@
 		// .addIndicators()
 		.addTo(controller);
 
+	//東洋医学とは？
+	// var tween_hasu = TweenMax.fromTo("#post-74 .p-hasu_image1", 4, {opacity:1, y:0 }, {opacity:1, y:0 });
+	var tween_cloud1 = TweenMax.fromTo("#post-74 .p-hasu_image2", 2, {opacity:0, y:20 }, {opacity:1, y:0 });
+	var tween_cloud2 = TweenMax.fromTo("#post-74 .p-hasu_image3", 2, {opacity:0, y:10 }, {opacity:1, y:0 });
+
+
+	//東洋医学とは？-蓮
+	// var hasu = new ScrollMagic.Scene({
+	// 	triggerElement: "#post-74",
+	// 	// triggerHook: "onEnter",
+	// 	offset : 280,
+	// 	duration:200,
+	// 	// reverse: false
+	// 	})
+	// 	.setTween(tween_hasu)
+	// 	// .addIndicators()
+	// 	.addTo(controller);
+
+	// //東洋医学とは？-蓮の葉
+	// var leaf = new ScrollMagic.Scene({
+	// 	triggerElement: "#post-74",
+	// 	// triggerHook: "onEnter",
+	// 	offset : 260,
+	// 	duration:200,
+	// 	// reverse: false
+	// 	})
+	// 	.setTween(tween_leaf)
+	// 	// .addIndicators()
+	// 	.addTo(controller);
+
+	//東洋医学とは？-雲1
+	var cloud1 = new ScrollMagic.Scene({
+		triggerElement: "#post-74",
+		// triggerHook: "onEnter",
+		offset : 150,
+		duration:100,
+		// reverse: false
+		})
+		.setTween(tween_cloud1)
+		// .addIndicators()
+		.addTo(controller);
+
+	//東洋医学とは？-雲2
+	var cloud2 = new ScrollMagic.Scene({
+		triggerElement: "#post-74",
+		// triggerHook: "onEnter",
+		offset : 150,
+		duration:100,
+		// reverse: false
+		})
+		.setTween(tween_cloud2)
+		// .addIndicators()
+		.addTo(controller);
+
+
 	$(document).on('click', '.p-nav', function () {
 		var $t = $(this);
 		$t.toggleClass('toggled');

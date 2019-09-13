@@ -7,8 +7,32 @@ body{
     }
 }
 
+img{
+    width: 100%;
+    height: auto;
+}
+
 #page{
     overflow:hidden;
+}
+
+.p-separator{
+    margin: 20px 0;
+    &.is-border{
+        margin: 30px 0;
+        &:after{
+            content:"";
+            width: 36%;
+            height: 1px;
+            background:#ccc;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -18%;
+        }
+    }
+    height: 1px;
+    position: relative;
 }
 
 .p-bkg{
@@ -35,6 +59,8 @@ body{
 #content{
     min-height: 100vh;
     // padding-bottom: (64/$base-px*100vw);
+    @include breakpoint($bp-md) {
+    }
 }
 
 .p-menu{
@@ -48,7 +74,7 @@ body{
     &_layer{
         width: 100vw;
         height: 100vh;
-        background:rgba(255,255,255,0.75);
+        background:rgba(0,0,0,0.75);
         pointer-events: none;
         opacity:0;
         pointer-events: none;
@@ -70,7 +96,7 @@ body{
         li{
             a{
                 display:block;
-                padding: (6/$base-px*100vw) (8/$base-px*100vw);
+                padding: (10/$base-px*100vw) (8/$base-px*100vw);
                 color:$color-white;
                 font-size: (16/$base-px*100vw);
                 text-decoration: none;
@@ -90,8 +116,8 @@ body{
     cursor: pointer;
     z-index:101;
     @include breakpoint($bp-md) {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 
     &.toggled + .p-menu{
@@ -116,17 +142,22 @@ body{
         transition: transform 1s cubic-bezier(.23,1,.32,1);
         @include breakpoint($bp-md) {
             margin-top: 0;
-            margin-left: 0;
+            margin-left: -20px;
         }
     
         &:nth-child(1){
             transform: translateY(-(10/2/$base-px*100vw)) translateZ(0);
+            @include breakpoint($bp-md) {
+                transform: translateY(-5px) translateZ(0);
+            }
             svg{
-
             }
         }
         &:nth-child(2){
             transform: translateY((10/2/$base-px*100vw)) translateZ(0);
+            @include breakpoint($bp-md) {
+                transform: translateY(5px) translateZ(0);
+            }
             svg{
             }
         }
@@ -137,7 +168,7 @@ body{
             margin: 0;
             padding: 0;
             @include breakpoint($bp-md) {
-                width: 60px;
+                width: 40px;
                 height: auto;
             }
         }
@@ -178,6 +209,9 @@ body{
 
         li{
             flex-basis:33.3%;
+            @include breakpoint($bp-md) {
+                margin-bottom: 1px;
+            }
             a{
                 font-size: (13/$base-px*100vw);
                 display:flex;
@@ -191,12 +225,29 @@ body{
                 justify-content: center;
                 line-height: 1.3;
                 @include breakpoint($bp-md) {
+                    display: block;
                     font-size: 1.4rem;
+                    padding: 10px 10px 20px;
+                    height: auto;
+                    -webkit-writing-mode: vertical-rl;
+                    -ms-writing-mode: tb-rl;
+                        writing-mode: vertical-rl;
+                    transition: all ease 0.3s;
+                }
+                &:hover{
+                    @include breakpoint($bp-md) {
+                        opacity: 0.8;
+                    }
                 }
 
                 img{
                     display: block;
                     margin-top: -(6/$base-px*100vw);
+                    width: auto;
+                    @include breakpoint($bp-md) {
+                        margin-top: 0;
+                        display: inline-block;
+                    }
                 }
             }
         }
@@ -204,11 +255,16 @@ body{
 }
 
 .p-mv{
-    height: (520/$base-px*100vw);
+    height: (480/$base-px*100vw);
     margin-bottom: (30/$base-px*100vw);
     // background:#fff;
+    @include breakpoint($bp-md) {
+        width: 1200px;
+        margin: 0 auto 30px;
+        height: 480px;
+    }
     .swiper-container{
-        height: (520/$base-px*100vw);
+        height: (480/$base-px*100vw);
     }
     .swiper-button-prev,
     .swiper-button-next{
@@ -327,7 +383,7 @@ body{
         height:(340/$base-px*100vw);
         overflow: hidden;
         position: absolute;
-        top: (17.5/$base-px*100vw);
+        top: (35/$base-px*100vw);
         left: (17.5/$base-px*100vw);
         .p-mv_blackfish{
             top: -(27.5/$base-px*100vw); 
@@ -592,14 +648,6 @@ body{
     }
 }
 
-.p-copyright{
-    font-size: (12/$base-px*100vw);
-    text-align: center;
-    @include breakpoint($bp-md) {
-        font-size: 1.2rem;
-    }
-}
-
 #booking-package{
     background:none !important;
 }
@@ -623,7 +671,7 @@ body{
 }
 
 .p-link{
-    margin: ($base-padding * 1.25/$base-px*100vw) 0 0;
+    margin: ($base-padding * 1.1/$base-px*100vw) 0 0;
     a{
         @extend %p-button;
     }
@@ -662,53 +710,55 @@ button{
 }
 
 .p-logo{
-    margin: (40/$base-px*100vw) auto (30/$base-px*100vw);
-    // position: absolute;
-    // top: (154/$base-px*100vw);
-    // left: 50%;
-    // margin-left: -(90/$base-px*100vw); 
-    // z-index:100;
-    // background:rgba(60, 28, 0, 0.90);
-    width: (75/$base-px*100vw);
-    height: (150/$base-px*100vw);
-    // border-radius:50%;
-    // transform: translateY(2.5vh);
-    text-align: center;
-    position: relative;
-    &:after{
-        content:"";
-        position: absolute;
-        bottom: -(25/$base-px*100vw);
-        left: 50%;
-        display: block;
-        width: (60/$base-px*100vw);
-        margin-left:-(30/$base-px*100vw);
-        border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-flow:row nowrap;
+    align-items: center;
+    height: (64/$base-px*100vw);
+    @include breakpoint($bp-md) {
+        height: auto;
+        padding: 15px 20px 20px;
     }
-    svg{
-        width: (75/$base-px*100vw);
-        height: (135/$base-px*100vw);
-        path{
-            fill:rgba(60, 28, 0, 0.90);
+    &-main{
+        padding: 0 (10/$base-px*100vw) 0 (15/$base-px*100vw);
+        margin-right: (5/$base-px*100vw);
+        font-family: "正楷書CB1","Sei Kaisho CB1";
+        font-size: (28/$base-px*100vw);
+        width: (125/$base-px*100vw);
+        // display: flex;
+        @include breakpoint($bp-md) {
+            padding: 0;
+            margin-right: 20px;
+            width: 125px;
+            font-size: 0;
+        }
+
+        img{
+            position: relative;
+            top: (5/$base-px*100vw);
+            width: 100%;
+            @include breakpoint($bp-md) {
+                top: 0;
+            }
         }
     }
-    &_redfish{
-        position: absolute;
-        top: (40/$base-px*100vw); 
-        right: -(140/$base-px*100vw);
-        width: 133% !important;
-        opacity:0.8;
+    &-sub{
+        position: relative;
+        top: -(5/$base-px*100vw);
+        font-family: "正楷書CB1","Sei Kaisho CB1";
+        font-size: (12/$base-px*100vw);
+        line-height: 1.3;
+        @include breakpoint($bp-md) {
+            top: 0;
+            font-size: 16px;
+        }
     }
-    &_blackfish{
-        position: absolute;
-        top: -(24/$base-px*100vw); 
-        left: -(134/$base-px*100vw); 
-        width: 144%; 
-        opacity:0.8;
-    }
-    &_symbol{
-        height: 80%;
-    }
+    // svg{
+    //     width: (75/$base-px*100vw);
+    //     height: (135/$base-px*100vw);
+    //     path{
+    //         fill:rgba(60, 28, 0, 0.90);
+    //     }
+    // }
 }
 
 .p-full{
@@ -992,7 +1042,9 @@ p{
 }
 
 table {
-    border-collapse: collapse;
+}
+
+.p-who{
     tr{
         display:block;
     }
@@ -1000,9 +1052,7 @@ table {
         display:block;
         // border: 1px solid #ddd;
     }
-}
-
-.p-who{
+    border-collapse: collapse;
     thead{
         display: none;
     }
@@ -1018,6 +1068,7 @@ table {
             padding-left: (75/$base-px*100vw);
             padding-top: (4/$base-px*100vw);
             margin-bottom: (15/$base-px*100vw);
+            font-weight: normal;
             &:before{
                 content:"分類";
                 display: block;
@@ -1057,6 +1108,9 @@ table {
     top: 0;
     width: 100vw;
     left: -8vw;
+    .is-single & {
+        left: 0;
+    }
 }
 
 #post-112{
@@ -1070,5 +1124,151 @@ table {
         display: block;
         overflow: hidden;
         position: relative;
+    }
+}
+
+#post-74{
+    position: relative;
+    .p-hasu_wrapper{
+        margin-left: -8vw;
+    }
+    &.is-single{
+        .p-hasu_wrapper{
+            margin-left: 0;
+        }
+    }
+}
+
+.p-hasu_wrapper{
+    width: 100vw;
+    height: 100vw;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    img{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &.p-hasu_image1{
+            z-index:3;
+        }
+        &.p-hasu_image2{
+            z-index:1;
+        }
+        &.p-hasu_image3{
+            z-index:2;
+        }
+        &.p-hasu_image4{
+            z-index:4;
+        }
+
+        &.p-oriental_man{
+            z-index:2;
+        }
+        &.p-oriental_cloud1{
+            z-index:3;
+        }
+        &.p-oriental_cloud2{
+            z-index:1;
+        }
+    }
+}
+
+
+/**/
+
+.p-greeting{
+    padding: 0 ($base-padding/$base-px*100vw);
+    >img{
+        display: block;
+        width: 100%;
+        margin-bottom: (20/$base-px*100vw);
+    }
+}
+
+.p-shortcut{
+    padding: 0;
+    .p-grid{
+        &_item{
+            position: relative;
+            margin-top: 0;
+            padding: (24/$base-px*100vw) 0;
+            flex-basis:100vw !important;
+            > a{
+                text-decoration: none;
+            }
+            &:nth-child(1){
+                background:url(./img/sc1.jpg) no-repeat center center;
+                background-size:cover;
+            }
+            &:nth-child(2){
+                background:url(./img/sc2.jpg) no-repeat center center;
+                background-size:cover;
+            }
+        }
+        &_content{
+            color:#fff;
+            text-align: center;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            &_title{
+                font-size: (20/$base-px*100vw);
+                margin-top: 0;
+            }
+            &_text{
+                >span{
+                    display: inline-block;
+                    margin-top: (10/$base-px*100vw);
+                    padding: (2/$base-px*100vw) (16/$base-px*100vw);
+                    border: 1px solid rgba(255,255,255,0.5);
+                    font-size: (10/$base-px*100vw);
+                }
+            }
+        }
+    }
+}
+
+.p-gmap{
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;    
+    @include breakpoint($bp-md) {
+        padding-bottom: 25%;
+    }
+
+    iframe,
+    object,
+    embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.p-req{
+    color: #c52626;
+}
+
+/*cf7*/
+
+div.wpcf7-response-output{
+    padding: (6/$base-px*100vw) (10/$base-px*100vw);
+}
+
+div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
+    border: 1px solid #c52626;
+}
+
+.wpcf7-form{
+    .p-contact{
+        li{
+            margin-bottom: (20/$base-px*100vw);
+        }
     }
 }

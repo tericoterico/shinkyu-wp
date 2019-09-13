@@ -23,7 +23,14 @@ input[type="email"],
 input[type="search"],
 input[type="number"],
 input[type="password"],
+input[type="date"],
+input[type="tel"],
+select,
 textarea{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
     width: 125%;
     margin-top: 3px;
     margin-bottom: 3px;
@@ -86,8 +93,10 @@ input[type="text"],
 input[type="search"],
 input[type="number"],
 input[type="email"],
+input[type="date"],
 input[type="password"],
 textarea {
+
     &[readonly] {
         background: $color-mercury;
         cursor: not-allowed;
@@ -112,7 +121,11 @@ textarea {
 //
 // Styleguide 3.3.2
 select {
-    border-radius: $form-border-radius;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-bottom: 1px solid $form-border-color;
+    // border-radius: $form-border-radius;
     padding: 3px;
     min-height: 28px;
     vertical-align: middle;
@@ -191,6 +204,10 @@ select {
 // Styleguide 3.3.5
 input[type="submit"] {
     @extend %p-button;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
     // @include button($color-white, $color-cerulean);
 }
 
@@ -279,5 +296,34 @@ label.error {
         &:first-child:last-child {
             float: none;
         }
+    }
+}
+
+.f-date{
+    > div{
+        display: flex;
+        flex-flow:row nowrap;
+    }
+    &_day{
+        padding: 0 (10/$base-px*100vw) 0 (15/$base-px*100vw); 
+        display:flex;
+        align-items: center;
+    }
+    &_day + div{
+        display:flex;
+        align-items: center;
+        flex-grow: 1;
+        > span{
+            width: 100%;
+        }
+    }
+    &_hour{
+        padding: 0 (10/$base-px*100vw) 0 (15/$base-px*100vw); 
+        display:flex;
+        align-items: center;
+    }
+    &_hour + div{
+        display:flex;
+        align-items: center;
     }
 }

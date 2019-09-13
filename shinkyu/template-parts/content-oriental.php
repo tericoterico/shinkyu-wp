@@ -20,6 +20,22 @@
 	<?php if($url){ ?>
 		<img class="add-image" src="<?php echo $url; ?>">
 	<?php } ?>
+	<?php /* 東洋医学とは（id=74） */ ?>
+	<?php if($id == 74){ ?>
+		<?php
+			$man = get_field('man');
+			$cloud1 = get_field('cloud1');
+			$cloud2 = get_field('cloud2');
+			$url = get_permalink();
+		?>
+		<a href="<?php echo $url; ?>" class="p-hasu_wrapper">
+			<img class="p-oriental_man" src="<?php echo $man; ?>">
+			<img class="p-oriental_cloud1" src="<?php echo $cloud1; ?>">
+			<img class="p-oriental_cloud2" src="<?php echo $cloud2; ?>">
+		</a>
+	<?php } ?>
+
+	<?php /* 陰陽論（id=112） */ ?>
 	<?php if($id == 112){ ?>
 		<?php
 			$black = get_field('fish-black');
@@ -30,7 +46,6 @@
 			<img class="p-oriental_blackfish" src="<?php echo $black; ?>">
 			<img class="p-oriental_redfish" src="<?php echo $red; ?>">
 		</a>
-
 	<?php } ?>
 
 	<?php

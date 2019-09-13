@@ -6,19 +6,19 @@
  *
  * @package shinkyu
  */
-
+$options=get_option(mySettingPage::getKey());
 ?>
 
 		<div class="p-nav_bottom">
 			<ul>
 				<li>
-					<a href="/contact">
+					<a href="/reservation">
 						<img src="<?php echo get_template_directory_uri() . "/img/reservation.svg" ?>" alt="">
 						ご予約
 					</a>
 				</li>
 				<li>
-					<a href="tel:000-0000-0000">
+					<a href="tel:<?php echo esc_html($options['tel']);?>">
 						<img src="<?php echo get_template_directory_uri() . "/img/phone.svg" ?>" alt="">
 						お電話
 					</a>

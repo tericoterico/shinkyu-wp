@@ -15,6 +15,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
@@ -72,3 +73,12 @@
 		</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+		<div class="p-logo">
+			<div class="p-logo-main">
+				<img src="<?php echo get_template_directory_uri() . "/img/logo-rsd.svg" ?>" alt="">
+			</div>
+			<div class="p-logo-sub">
+				東大阪 河内花園<br>
+				鍼灸院
+			</div>
+		</div>

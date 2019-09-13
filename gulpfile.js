@@ -9,7 +9,7 @@ gulp.task("default", function() {
 		// style.scssファイルを取得
 		return (
 		  gulp
-			.src("shinkyu/scss/style.scss")
+			.src("shinkyu/scss/*.scss")
 			// Sassのコンパイルを実行
 			.pipe(
 			  sass({

@@ -17,7 +17,6 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
 		<section class="p-mv">
 			<!-- Slider main container -->
 			<div class="swiper-container">
@@ -41,11 +40,12 @@ get_header();
 							</div>
 							<?php get_template_part( 'template-parts/content', 'logo' ); ?>
 						</div>
+<?php /*
 						<div class="swiper-slide slide4">
 							<img src="<?php echo get_template_directory_uri() . "/img/mv-9.png" ?>" alt="">
 							<?php get_template_part( 'template-parts/content', 'logo' ); ?>
 						</div>
-
+*/?>
 <?php /*
 						<div class="swiper-slide">
 							<img class="p-mv_blackfish" src="<?php echo get_template_directory_uri() . "/img/black-fish.png" ?>" alt="">
@@ -97,9 +97,9 @@ get_header();
 			</div>
 		</section>
 		*/ ?>
-		<section id="top-menu" class="p-section">
+		<section id="top-menu" class="p-section hide">
 			<div class="p-section_content">
-				<?php wp_nav_menu( array('menu' => 'top_first' ) ); ?>
+				<?php /* wp_nav_menu( array('menu' => 'top_first' ) ); */ ?>
 				<?php /*
 				<ul class="p-top_menu">
 					<?php
@@ -121,18 +121,6 @@ get_header();
 					?>
 				</ul>
 				*/?>
-			</div>
-		</section>
-		<section class="p-section">
-			<h2 class="p-section_title">
-				お知らせ
-				<span class="p-section_title_sub">Information</span>
-			</h2>
-			<ul class="p-tile">
-				<?php echo do_shortcode('[infolist pt="info"]'); ?>
-			</ul>
-			<div class="p-link">
-				<a href="#">お知らせ一覧</a>
 			</div>
 		</section>
 <?php /*
@@ -201,49 +189,92 @@ get_header();
 			</div>
 		</section>
 */?>
-		<?php /*
-		<ul class="p-grid" data-col="2">
+
+		<section class="p-section">
+			<h2 class="p-section_title">
+				ご挨拶
+				<span class="p-section_title_sub">Greeting</span>
+			</h2>
+			<div class="p-greeting">
+				<img src="<?php echo get_template_directory_uri() . "/img/greeting.jpg" ?>" alt="">
+				東大阪市河内花園の鍼灸院 良鍼堂です。<br>
+				当院は、東洋医学の理論を根拠にした治療を行いますが、症状によっては西洋医学の理論や知見を取り入れて、いち早く完全治癒を目指していきます。
+				<div class="p-link">
+					<a href="/about/">良鍼堂について</a>
+				</div>
+			</div>
+		</section>
+
+		<ul class="p-shortcut p-grid" data-col="1">
 			<li class="p-grid_item">
-				<div class="p-grid_img">
-					<img src="<?php echo get_template_directory_uri() . "/img/dummy-9.jpg" ?>" alt="">
-				</div>
-				<div class="p-grid_content">
-					<h3 class="p-grid_content_title">生きるとは</h3>
-					<div class="p-grid_content_text">
-						呼吸することではない。行動することだ。
+				<a href="#">
+					<div class="p-grid_content">
+						<h3 class="p-grid_content_title">良鍼堂の治療</h3>
+						<div class="p-grid_content_text">
+							自己治癒力を阻害している要因を取り除き<br>
+							お身体を正常な状態に導きます。<br>
+							あらゆる方・あらゆる病気に対応<br>
+							<span>詳しく見る</span>
+						</div>
 					</div>
-				</div>
+				</a>
 			</li>
 			<li class="p-grid_item">
-				<div class="p-grid_img">
-					<img src="<?php echo get_template_directory_uri() . "/img/dummy-8.jpg" ?>" alt="">
-				</div>
-				<div class="p-grid_content">
-					<h3 class="p-grid_content_title">休日の過ごし方</h3>
-					<div class="p-grid_content_text">
-						人間には不幸か、貧乏か、病気が必要だ。
-						でないと人間はすぐに思いあがる。
+				<a href="#">
+					<div class="p-grid_content">
+						<h3 class="p-grid_content_title">診察の流れ</h3>
+						<div class="p-grid_content_text">
+							問診に時間を頂くため、<br>予約された方が優先となります。<br>
+							一人一人に合わせた治療プランを提案いたします。<br>
+							<span>詳しく見る</span>
+						</div>
 					</div>
-				</div>
+				</a>
 			</li>
 		</ul>
-		<ul class="p-grid" data-col="1">
-			<li class="p-grid_item">
-				<div class="p-grid_img">
-					<img src="<?php echo get_template_directory_uri() . "/img/dummy-4.jpg" ?>" alt="">
-				</div>
-				<div class="p-grid_content">
-					<h3 class="p-grid_content_title">人間のほほえみ</h3>
-					<div class="p-grid_content_text">
-						人間のほほえみ、人間のふれあいを忘れた人がいます。これはとても大きな貧困です。
-					</div>
-				</div>
-			</li>
-		</ul>
-*/ ?>
 
+		<section class="p-section">
+			<h2 class="p-section_title">
+				お知らせ
+				<span class="p-section_title_sub">Information</span>
+			</h2>
+			<ul class="p-tile">
+				<?php echo do_shortcode('[infolist pt="info"]'); ?>
+			</ul>
+			<div class="p-link">
+				<a href="#">お知らせ一覧</a>
+			</div>
+		</section>
+		<section class="p-section">
+			<a href="http://shinkyu.night-and-day.org/oriental/about/" class="p-hasu_wrapper">
+				<img class="p-hasu_image1" src="/wp-content/themes/shinkyu/img/hana.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+				<img class="p-hasu_image2" src="/wp-content/themes/shinkyu/img/hasu.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+				<img class="p-hasu_image3" src="/wp-content/themes/shinkyu/img/kumo1.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+				<img class="p-hasu_image4" src="/wp-content/themes/shinkyu/img/kumo2.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+			</a>
+			<div class="p-link">
+				<a href="#">東洋医学について</a>
+			</div>
+		</section>
 
-		<ul class="p-grid p-banner" data-col="1">
+		<section class="p-section">
+			<a href="http://shinkyu.night-and-day.org/oriental/about/" class="p-hasu_wrapper">
+				<img class="p-hasu_image1" src="/wp-content/themes/shinkyu/img/hana.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+				<img class="p-hasu_image2" src="/wp-content/themes/shinkyu/img/hasu.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+				<img class="p-hasu_image3" src="/wp-content/themes/shinkyu/img/kumo1.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+				<img class="p-hasu_image4" src="/wp-content/themes/shinkyu/img/kumo2.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+			</a>
+			<div class="p-link">
+				<a href="#">ブログ</a>
+			</div>
+		</section>
+		<section class="p-section mb-0">
+			<div class="p-gmap">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2320.507707084428!2d135.61801321978984!3d34.662443439063075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f4!3m3!1m2!1s0x6001208b5e42ab6d%3A0xd16e42266a65ea42!2z44CSNTc4LTA5Mzcg5aSn6Ziq5bqc5p2x5aSn6Ziq5biC6Iqx5ZyS5pys55S677yR5LiB55uu77yR4oiS77yU77yT!5e0!3m2!1sja!2sjp!4v1567689166387!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+			</div>
+		</section>
+
+		<ul class="p-grid p-banner hide" data-col="1">
 
 <?php
 	$items = wp_get_nav_menu_items( 'top_banner' );
@@ -253,6 +284,7 @@ get_header();
 	// exit();
 	foreach ($items as $key => $value){
 ?>
+<?php /* 
 
 			<li class="p-banner_item">
 				<a href="<?php echo($value->url); ?>">
@@ -260,6 +292,7 @@ get_header();
 					<span><?php echo($value->title); ?></span>
 				</a>
 			</li>
+*/ ?>
 <?php
 	}
 ?>
