@@ -198,7 +198,7 @@ get_header();
 			<div class="p-greeting">
 				<img src="<?php echo get_template_directory_uri() . "/img/greeting.jpg" ?>" alt="">
 				東大阪市河内花園の鍼灸院 良鍼堂です。<br>
-				当院は、東洋医学の理論を根拠にした治療を行いますが、症状によっては西洋医学の理論や知見を取り入れて、いち早く完全治癒を目指していきます。
+				当院は、東洋医学の理論を根拠にした治療を行いますが、<br class="for-pc">症状によっては西洋医学の理論や知見を取り入れて、<br class="for-pc">いち早く完全治癒を目指していきます。
 				<div class="p-link">
 					<a href="/about/">良鍼堂について</a>
 				</div>
@@ -245,7 +245,7 @@ get_header();
 				<a href="#">お知らせ一覧</a>
 			</div>
 		</section>
-		<section class="p-section">
+		<section class="p-section p-linkbox">
 			<a href="http://shinkyu.night-and-day.org/oriental/about/" class="p-hasu_wrapper">
 				<img class="p-hasu_image1" src="/wp-content/themes/shinkyu/img/hana.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
 				<img class="p-hasu_image2" src="/wp-content/themes/shinkyu/img/hasu.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
@@ -257,7 +257,7 @@ get_header();
 			</div>
 		</section>
 
-		<section class="p-section">
+		<section class="p-section p-linkbox">
 			<a href="http://shinkyu.night-and-day.org/oriental/about/" class="p-hasu_wrapper">
 				<img class="p-hasu_image1" src="/wp-content/themes/shinkyu/img/hana.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
 				<img class="p-hasu_image2" src="/wp-content/themes/shinkyu/img/hasu.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
@@ -268,7 +268,7 @@ get_header();
 				<a href="#">ブログ</a>
 			</div>
 		</section>
-		<section class="p-section mb-0">
+		<section class="p-section mb-0 is-full">
 			<div class="p-gmap">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2320.507707084428!2d135.61801321978984!3d34.662443439063075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f4!3m3!1m2!1s0x6001208b5e42ab6d%3A0xd16e42266a65ea42!2z44CSNTc4LTA5Mzcg5aSn6Ziq5bqc5p2x5aSn6Ziq5biC6Iqx5ZyS5pys55S677yR5LiB55uu77yR4oiS77yU77yT!5e0!3m2!1sja!2sjp!4v1567689166387!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 			</div>

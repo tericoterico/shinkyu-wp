@@ -92,7 +92,12 @@ img{
 
         transition: transform 1s cubic-bezier(.23,1,.32,1);
         transform: translateX(-((375-64)/$base-px*100vw));
-
+        @include breakpoint($bp-md) {
+            width: 80%;
+            padding: 20px;
+            transform: translateX(-100%);
+        }
+    
         li{
             a{
                 display:block;
@@ -101,6 +106,10 @@ img{
                 font-size: (16/$base-px*100vw);
                 text-decoration: none;
                 white-space: nowrap;
+                @include breakpoint($bp-md) {
+                    padding: 10px;
+                    font-size: 20px;
+                }
             }
         }
     }
@@ -191,8 +200,8 @@ img{
     z-index:102;
     @include breakpoint($bp-md) {
         left: auto;
-        bottom: auto;
-        top: 50%;
+        bottom: 300px;
+        top: auto;
         right: 0;
      }
     ul{
@@ -261,10 +270,13 @@ img{
     @include breakpoint($bp-md) {
         width: 1200px;
         margin: 0 auto 30px;
-        height: 480px;
+        height: 720px;
     }
     .swiper-container{
         height: (480/$base-px*100vw);
+        @include breakpoint($bp-md) {
+            height: 720px;
+        }
     }
     .swiper-button-prev,
     .swiper-button-next{
@@ -363,6 +375,11 @@ img{
     left: 50%;
     bottom: (200/$base-px*100vw);
     margin-left: -(130/$base-px*100vw);
+    @include breakpoint($bp-md) {
+        width: 500px;
+        bottom: 300px;
+        margin-left: -250px;
+    }
     path{
         fill:#fff;
     }
@@ -371,7 +388,10 @@ img{
 .slide3 {
     #logo-eng{
         bottom: (250/$base-px*100vw);
-   
+        @include breakpoint($bp-md) {
+            bottom: 300px;
+        }
+       
         path{
             fill:#000;
         }
@@ -385,6 +405,14 @@ img{
         position: absolute;
         top: (35/$base-px*100vw);
         left: (17.5/$base-px*100vw);
+        @include breakpoint($bp-md) {
+            width:700px;
+            height:700px;
+            top: 0;
+            left: 50%;
+            margin-left: -350px;
+    
+        }
         .p-mv_blackfish{
             top: -(27.5/$base-px*100vw); 
             left: -(40/$base-px*100vw); 
@@ -426,9 +454,13 @@ img{
 
     position: absolute;
     left: 50%;
-    bottom: (200/$base-px*100vw);
+    bottom: (150/$base-px*100vw);
     margin-left: -(140/$base-px*100vw);
-
+    @include breakpoint($bp-md) {
+        font-size: 16px;
+        bottom: auto;
+        margin: 0;
+    }
 }
 
 .p-grid{
@@ -556,9 +588,21 @@ img{
 
 .p-tile{
     padding: 0 ($base-padding/$base-px*100vw);
+    @include breakpoint($bp-md) {
+        display: flex;
+        flex-flow:row nowrap;
+        flex-grow: 1;
+        margin: 0 -30px;
+    }
+
     &_item{
         margin-bottom: (20/$base-px*100vw);
         font-size: (14/$base-px*100vw);
+        @include breakpoint($bp-md) {
+            font-size: 16px;
+            margin: 0 30px 20px;
+            flex-basis: 25%;
+        }
 
         > a{
             display: flex;
@@ -566,24 +610,43 @@ img{
             justify-content: space-between;
             text-decoration: none;
             color:#333;
+            @include breakpoint($bp-md) {
+                flex-flow:column wrap;
+            }
         }
 
         &_img{
             background:#eaeaea;
             height: (85/$base-px*100vw);
             flex-basis:(85/$base-px*100vw);
+            @include breakpoint($bp-md) {
+                height: auto;
+                flex-basis:100%;
+                min-height: 200px;
+            }
             img{
                 width: 100%;
+                vertical-align: top;
             }
         }
 
         &_content{
             flex-basis: (205/$base-px*100vw);
             padding-top: (8/$base-px*100vw);
+            @include breakpoint($bp-md) {
+                flex-basis: auto;
+                padding-top: 0;
+            }
             &_date{
                 margin-top: (-5/$base-px*100vw);
                 margin-bottom: (3/$base-px*100vw);
                 font-size: (12/$base-px*100vw);
+                @include breakpoint($bp-md) {
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                }
+    
             }
         }
     }
@@ -601,7 +664,30 @@ img{
 .p-section{
     margin-bottom: ($base-padding*1.5/$base-px*100vw);
     @include breakpoint($bp-md) {
-        margin-bottom: 20px;
+        width: 1200px;
+        margin: 20px auto 100px auto;
+    }
+    &.is-full{
+        @include breakpoint($bp-md) {
+            width: 100%;
+            margin: 20px auto 100px auto;
+        }
+    }
+    &.p-linkbox{
+        >a{
+            @include breakpoint($bp-md) {
+            }
+        }
+        .p-hasu_wrapper{
+            @include breakpoint($bp-md) {
+                width: 750px;
+                height: 750px;
+                margin: 0 auto;
+            }
+        }
+        .p-link{
+            margin: 0;
+        }
     }
     &_title{
         margin: 0;
@@ -663,15 +749,28 @@ img{
     text-decoration: none;
     color:#000;
     display: block;
-    width: (150/$base-px*100vw);
+    width: (200/$base-px*100vw);
     margin: 0 auto;
     padding: (6/$base-px*100vw) 0;
     border: 1px solid #00000040;
     text-align: center;
+    transition:all ease 0.3s;
+    @include breakpoint($bp-md) {
+        width: 200px;
+        padding: 10px 20px;
+    }
+    &:hover{
+        @include breakpoint($bp-md) {
+            opacity: 0.75;
+        }
+    }
 }
 
 .p-link{
     margin: ($base-padding * 1.1/$base-px*100vw) 0 0;
+    @include breakpoint($bp-md) {
+        margin: 50px 0 0;
+    }
     a{
         @extend %p-button;
     }
@@ -747,6 +846,7 @@ button{
         font-family: "正楷書CB1","Sei Kaisho CB1";
         font-size: (12/$base-px*100vw);
         line-height: 1.3;
+        letter-spacing: 0.1em;
         @include breakpoint($bp-md) {
             top: 0;
             font-size: 16px;
@@ -1050,6 +1150,7 @@ table {
     }
     th,td{
         display:block;
+        letter-spacing: 0;
         // border: 1px solid #ddd;
     }
     border-collapse: collapse;
@@ -1180,21 +1281,37 @@ table {
 
 .p-greeting{
     padding: 0 ($base-padding/$base-px*100vw);
+    @include breakpoint($bp-md) {
+        width: 600px;
+        margin: 0 auto;
+        padding: 0;
+    }
     >img{
         display: block;
         width: 100%;
         margin-bottom: (20/$base-px*100vw);
+        @include breakpoint($bp-md) {
+            display: none;
+        }
     }
 }
 
 .p-shortcut{
     padding: 0;
+    flex-flow:row wrap;
+    @include breakpoint($bp-md) {
+        flex-flow:row nowrap;
+    }
     .p-grid{
         &_item{
             position: relative;
             margin-top: 0;
             padding: (24/$base-px*100vw) 0;
             flex-basis:100vw !important;
+            @include breakpoint($bp-md) {
+                flex-basis:50% !important;
+                padding: 50px 0;
+            }
             > a{
                 text-decoration: none;
             }
@@ -1216,14 +1333,23 @@ table {
             &_title{
                 font-size: (20/$base-px*100vw);
                 margin-top: 0;
+                @include breakpoint($bp-md) {
+                    font-size: 24px;
+                }
             }
             &_text{
+                @include breakpoint($bp-md) {
+                    font-size: 16px;
+                }
                 >span{
                     display: inline-block;
                     margin-top: (10/$base-px*100vw);
                     padding: (2/$base-px*100vw) (16/$base-px*100vw);
                     border: 1px solid rgba(255,255,255,0.5);
                     font-size: (10/$base-px*100vw);
+                    @include breakpoint($bp-md) {
+                        font-size: 14px;
+                    }
                 }
             }
         }
@@ -1269,6 +1395,16 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
     .p-contact{
         li{
             margin-bottom: (20/$base-px*100vw);
+        }
+    }
+}
+
+/**/
+
+.page-template-page-about{
+    .entry-header{
+        .p-section_title{
+            padding-top: 0;
         }
     }
 }

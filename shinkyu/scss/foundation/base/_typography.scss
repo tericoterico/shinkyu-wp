@@ -18,6 +18,11 @@ body {
     font-family: '游明朝', 'Yu Mincho', YuMincho, serif;
     font-size: 1.4rem;
     color:#000;
+    letter-spacing: 0.2em;
+    @include breakpoint($bp-md) {
+        font-size: 1.6rem;
+        line-height: 2.0;
+    }
 }
 
 button,

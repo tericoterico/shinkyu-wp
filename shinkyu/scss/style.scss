@@ -14,6 +14,7 @@
 /* Base
    ------------------------ */
 
+@import "foundation/variable/media-queries";
 @import "foundation/base/typography";
 @import "foundation/base/reset";
 
@@ -28,7 +29,6 @@
 @import "foundation/variable/colors";
 @import "foundation/variable/variables";
 @import "foundation/variable/z-index";
-@import "foundation/variable/media-queries";
 // styleguide:ignore:end
 
 /* ========================

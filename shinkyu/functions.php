@@ -422,7 +422,7 @@ function get_info_list( $atts ){
 	$the_pt = get_post ( $pt ); 
 
 	$args = array(
-		'posts_per_page' => 3,
+		'posts_per_page' => 4,
 		'post_type' => $pt,
 	);
 	 
