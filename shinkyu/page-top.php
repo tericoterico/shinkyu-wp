@@ -197,8 +197,11 @@ get_header();
 			</h2>
 			<div class="p-greeting">
 				<img src="<?php echo get_template_directory_uri() . "/img/greeting.jpg" ?>" alt="">
-				東大阪市河内花園の鍼灸院 良鍼堂です。<br>
-				当院は、東洋医学の理論を根拠にした治療を行いますが、<br class="for-pc">症状によっては西洋医学の理論や知見を取り入れて、<br class="for-pc">いち早く完全治癒を目指していきます。
+				東大阪市河内花園の鍼灸院・良鍼堂です。 <br>
+				良鍼堂は簡素な作りで、余分な装飾を削ぎ落とした小さな鍼灸院です。<br class="for-pc">
+				素っ気ないほど簡素ですが、空間を美しく隅々まで気持ちを行き届かせ、<br class="for-pc">
+				東洋医学 の理論を根拠に、いかに『治す』かの一点に集中しております。<br class="for-pc">
+				もしお身体の不具合などありましたら、足を運んでみてはいかがでしょうか。
 				<div class="p-link">
 					<a href="/about/">良鍼堂について</a>
 				</div>
@@ -242,30 +245,30 @@ get_header();
 				<?php echo do_shortcode('[infolist pt="info"]'); ?>
 			</ul>
 			<div class="p-link">
-				<a href="#">お知らせ一覧</a>
+				<a href="/info/">お知らせ一覧</a>
 			</div>
 		</section>
 		<section class="p-section p-linkbox">
-			<a href="http://shinkyu.night-and-day.org/oriental/about/" class="p-hasu_wrapper">
+			<a href="/oriental/" class="p-hasu_wrapper">
 				<img class="p-hasu_image1" src="/wp-content/themes/shinkyu/img/hana.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
 				<img class="p-hasu_image2" src="/wp-content/themes/shinkyu/img/hasu.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
 				<img class="p-hasu_image3" src="/wp-content/themes/shinkyu/img/kumo1.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
 				<img class="p-hasu_image4" src="/wp-content/themes/shinkyu/img/kumo2.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
 			</a>
 			<div class="p-link">
-				<a href="#">東洋医学について</a>
+				<a href="/oriental/">東洋医学について</a>
 			</div>
 		</section>
 
 		<section class="p-section p-linkbox">
-			<a href="http://shinkyu.night-and-day.org/oriental/about/" class="p-hasu_wrapper">
+			<a href="/blog/" class="p-hasu_wrapper">
 				<img class="p-hasu_image1" src="/wp-content/themes/shinkyu/img/hana.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
 				<img class="p-hasu_image2" src="/wp-content/themes/shinkyu/img/hasu.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
 				<img class="p-hasu_image3" src="/wp-content/themes/shinkyu/img/kumo1.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
 				<img class="p-hasu_image4" src="/wp-content/themes/shinkyu/img/kumo2.png" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
 			</a>
 			<div class="p-link">
-				<a href="#">ブログ</a>
+				<a href="/blog/">ブログ</a>
 			</div>
 		</section>
 		<section class="p-section mb-0 is-full">

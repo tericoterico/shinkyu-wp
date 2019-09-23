@@ -50,12 +50,19 @@
             margin: 0 auto;
             font-size: 14px;
         }
-        > span{
-            display: block;
-            font-size: (20/$base-px*100vw);
-            font-family: "正楷書CB1","Sei Kaisho CB1";
-            @include breakpoint($bp-md) {
-                font-size: 24px;
+        >div{
+            > span{
+                display: block;
+                font-size: (20/$base-px*100vw);
+                font-family: "正楷書CB1","Sei Kaisho CB1";
+                @include breakpoint($bp-md) {
+                    font-size: 24px;
+                }
+            }
+        }
+        .p-sns{
+            a{
+                color:#fff;
             }
         }
     }

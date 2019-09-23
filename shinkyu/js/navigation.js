@@ -233,8 +233,8 @@
 
 	//東洋医学とは？
 	// var tween_hasu = TweenMax.fromTo("#post-74 .p-hasu_image1", 4, {opacity:1, y:0 }, {opacity:1, y:0 });
-	var tween_cloud1 = TweenMax.fromTo("#post-74 .p-hasu_image2", 2, {opacity:0, y:20 }, {opacity:1, y:0 });
-	var tween_cloud2 = TweenMax.fromTo("#post-74 .p-hasu_image3", 2, {opacity:0, y:10 }, {opacity:1, y:0 });
+	var tween_cloud1 = TweenMax.fromTo("#post-74 .p-oriental_cloud1", 2, {opacity:0.75, y:30 }, {opacity:1, y:0 });
+	var tween_cloud2 = TweenMax.fromTo("#post-74 .p-oriental_cloud2", 2, {opacity:0.75, y:20 }, {opacity:1, y:0 });
 
 
 	//東洋医学とは？-蓮
@@ -263,10 +263,10 @@
 
 	//東洋医学とは？-雲1
 	var cloud1 = new ScrollMagic.Scene({
-		triggerElement: "#post-74",
-		// triggerHook: "onEnter",
-		offset : 150,
-		duration:100,
+		triggerElement: "body",
+		triggerHook: "onLeave",
+		// offset : 150,
+		duration:150,
 		// reverse: false
 		})
 		.setTween(tween_cloud1)
@@ -275,10 +275,10 @@
 
 	//東洋医学とは？-雲2
 	var cloud2 = new ScrollMagic.Scene({
-		triggerElement: "#post-74",
-		// triggerHook: "onEnter",
-		offset : 150,
-		duration:100,
+		triggerElement: "body",
+		triggerHook: "onLeave",
+		// offset : 150,
+		duration:150,
 		// reverse: false
 		})
 		.setTween(tween_cloud2)

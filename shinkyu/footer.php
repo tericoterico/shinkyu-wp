@@ -20,11 +20,15 @@
 
 	<footer class="p-footer">
 		<div class="p-footer-content">
-			<span>鍼灸院 良鍼堂</span>
-			〒<?php echo esc_html($options['postal']); ?><br>
-			<?php echo esc_html($options['address']); ?><br>
-			TEL:<?php echo esc_html($options['tel']); ?><br>
-			FAX:<?php echo esc_html($options['fax']); ?><br>
+			<div>
+				<span>鍼灸院 良鍼堂</span>
+				〒<?php echo esc_html($options['postal']); ?><br>
+				<?php echo esc_html($options['address']); ?><br>
+				TEL:<?php echo esc_html($options['tel']); ?>　FAX:<?php echo esc_html($options['fax']); ?><br>
+			</div>
+			<div class="p-sns">
+				<a href="" target="_blank">Instagram</a>
+			</div>
 		</div>
 		<ul class="p-footer-link">
 			<li><a href="#">保険適用について</a></li>
