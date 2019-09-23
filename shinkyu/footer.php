@@ -27,9 +27,15 @@
 				TEL:<?php echo esc_html($options['tel']); ?>　FAX:<?php echo esc_html($options['fax']); ?><br>
 			</div>
 			<div class="p-sns">
-				<a href="" target="_blank">Instagram</a>
+				<a href="https://www.instagram.com/ryoshindo999/" target="_blank">Instagram</a>
 			</div>
 		</div>
+		<?php
+		wp_nav_menu( array(
+			'menu_id'        => 'footer-link',
+		) );
+		?>
+
 		<ul class="p-footer-link">
 			<li><a href="#">保険適用について</a></li>
 			<li><a href="#">プライバシーポリシー</a></li>

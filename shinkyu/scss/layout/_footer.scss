@@ -10,6 +10,7 @@
         margin: 0;
         padding: 20px 0;
     }
+    #footer-link,
     &-link{
         font-size: 0;
         margin: (20/$base-px*100vw) 0;
@@ -21,7 +22,7 @@
             a{
                 font-size: (14/$base-px*100vw);
                 text-decoration: none;
-                color: rgba(255,255,255,0.8);
+                color: rgba(12, 1, 1, 0.8);
                 @include breakpoint($bp-md) {
                     font-size: 14px;
                 }
