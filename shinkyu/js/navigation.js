@@ -285,6 +285,21 @@
 		// .addIndicators()
 		.addTo(controller);
 
+	//トップヘッダ
+
+	var top_logo = TweenMax.to(".home .p-logo", 2, {y:0 });
+
+	var top_logo_scene = new ScrollMagic.Scene({
+		triggerElement: "body",
+		triggerHook: "onLeave",
+		offset : 150,
+		duration:150,
+		// reverse: false
+		})
+		.setTween(top_logo)
+		// .addIndicators()
+		.addTo(controller);
+
 
 	$(document).on('click', '.p-nav', function () {
 		var $t = $(this);
