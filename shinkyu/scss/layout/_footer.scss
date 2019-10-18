@@ -22,9 +22,15 @@
             a{
                 font-size: (14/$base-px*100vw);
                 text-decoration: none;
-                color: rgba(12, 1, 1, 0.8);
+                color: rgba(255, 255, 255, 0.8);
                 @include breakpoint($bp-md) {
                     font-size: 14px;
+                }
+                br{
+                    display: none;
+                    @include breakpoint($bp-md) {
+                        display: none;
+                    }
                 }
             }
             &:after{

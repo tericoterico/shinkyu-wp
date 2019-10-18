@@ -269,7 +269,7 @@ img{
 }
 
 .p-mv{
-    height: (480/$base-px*100vw);
+    height: (300/$base-px*100vw);
     margin-bottom: (30/$base-px*100vw);
     // background:#fff;
     @include breakpoint($bp-md) {
@@ -278,7 +278,7 @@ img{
         height: 720px;
     }
     .swiper-container{
-        height: (480/$base-px*100vw);
+        height: (300/$base-px*100vw);
         @include breakpoint($bp-md) {
             height: 720px;
         }
@@ -374,12 +374,12 @@ img{
 }
 
 #logo-eng{
-    width: (260/$base-px*100vw);
+    width: (200/$base-px*100vw);
     height: auto;
     position: absolute;
     left: 50%;
-    bottom: (200/$base-px*100vw);
-    margin-left: -(130/$base-px*100vw);
+    bottom: (68/$base-px*100vw);
+    margin-left: -(100/$base-px*100vw);
     @include breakpoint($bp-md) {
         width: 500px;
         bottom: 300px;
@@ -392,7 +392,7 @@ img{
 
 .slide3 {
     #logo-eng{
-        bottom: (250/$base-px*100vw);
+        // bottom: (250/$base-px*100vw);
         @include breakpoint($bp-md) {
             bottom: 300px;
         }
@@ -404,32 +404,41 @@ img{
     .p-fish_circle{
         background:#f1efde;
         border-radius: 50%;
-        width:(340/$base-px*100vw);
-        height:(340/$base-px*100vw);
+        width:(300/$base-px*100vw);
+        height:(300/$base-px*100vw);
         overflow: hidden;
         position: absolute;
-        top: (35/$base-px*100vw);
-        left: (17.5/$base-px*100vw);
+        top: 0;
+        left: (37.5/$base-px*100vw);
         @include breakpoint($bp-md) {
-            width:700px;
-            height:700px;
+            width:600px;
+            height:600px;
             top: 0;
             left: 50%;
-            margin-left: -350px;
+            margin-left: -300px;
     
         }
         .p-mv_blackfish{
             top: -(27.5/$base-px*100vw); 
             left: -(40/$base-px*100vw); 
             width: 82% !important; 
+            @include breakpoint($bp-md) {
+                top: -50px;
+                left: -78px;
+                width: 490px !important;        
+            }
         }
         .p-mv_redfish{
             top: (13/$base-px*100vw); 
             right: -(55/$base-px*100vw);
             width: 63% !important;
             opacity:0;
+            @include breakpoint($bp-md) {
+                top: 14px;
+                right: -93px;
+                width: 380px !important;
+            }
         }
-
     }
 }
 
@@ -449,7 +458,7 @@ img{
     -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
 
-    font-size: (22/$base-px*100vw);
+    font-size: (20/$base-px*100vw);
     font-family: "正楷書CB1","Sei Kaisho CB1";
     letter-spacing:0.1em;
     line-height: 1.6;
@@ -459,7 +468,7 @@ img{
 
     position: absolute;
     left: 50%;
-    bottom: (150/$base-px*100vw);
+    bottom: (20/$base-px*100vw);
     margin-left: -(140/$base-px*100vw);
     @include breakpoint($bp-md) {
         font-size: 16px;
@@ -756,7 +765,7 @@ img{
     display: block;
     width: (200/$base-px*100vw);
     margin: 0 auto;
-    padding: (6/$base-px*100vw) 0;
+    padding: (12/$base-px*100vw) 0;
     border: 1px solid #00000040;
     text-align: center;
     transition:all ease 0.5s;
@@ -814,11 +823,18 @@ button{
     }
 }
 
+.home .p-logo {
+    transform:translateY(-(64/$base-px*100vw));
+}
+
+
 .p-logo{
+    position: fixed;
     display: flex;
     flex-flow:row nowrap;
     align-items: center;
     height: (64/$base-px*100vw);
+    z-index:100;
     @include breakpoint($bp-md) {
         height: auto;
         padding: 15px 20px 20px;
@@ -867,6 +883,18 @@ button{
     // }
 }
 
+.p-mv-logo{
+    padding:(75/$base-px*100vw) 0 (50/$base-px*100vw);
+    text-align: center;
+    @include breakpoint($bp-md) {
+        padding:40px 0;
+    }
+    img{
+        width: 50%;
+        vertical-align: top;
+    }
+}
+
 .p-full{
     width: 100vw !important;
     margin-left:-(30/$base-px*100vw);
@@ -885,8 +913,8 @@ button{
         left: 0;
         width: 100%;
         height: 100%;
-        filter:sepia(15%);
-        -webkit-filter:sepia(15%);
+        filter:grayscale(100%);
+        -webkit-filter:grayscale(100%);
     }    
 }
 
@@ -923,10 +951,10 @@ button{
 
 .p-question{
     position: relative;
-    padding-left: (40/$base-px*100vw);
+    padding-left: (50/$base-px*100vw);
     margin-top:(50/$base-px*100vw);
     @include breakpoint($bp-md) {
-        padding-left: 60px;
+        padding-left: 80px;
         margin-top:50px;
     }
 
@@ -938,14 +966,17 @@ button{
         display: inline-block;
         border: 1px solid #aaa;
         width: (25/$base-px*100vw);
-        height: (25/$base-px*100vw);
+        height: (29/$base-px*100vw);
         text-align: center;
-        margin-right: (15/$base-px*100vw);
+        padding-left:(4/$base-px*100vw);
+        line-height: (29/$base-px*100vw);
+        // margin-right: (15/$base-px*100vw);
         @include breakpoint($bp-md) {
             width: 40px;
-            height: 40px;
-            line-height: 40px;
+            height: 44px;
+            line-height: 44px;
             margin-right: 15px;
+            padding-left: 4px;
         }
     }
 }
@@ -953,10 +984,10 @@ button{
 .p-answer{
     position: relative;
     margin-top:(30/$base-px*100vw);
-    padding-left: (40/$base-px*100vw);
+    padding-left: (50/$base-px*100vw);
     @include breakpoint($bp-md) {
         margin-top:30px;
-        padding-left: 60px;
+        padding-left: 80px;
         }
     &:before{
         position: absolute;
@@ -968,14 +999,17 @@ button{
         background:#000;
         color:#fff;
         width: (25/$base-px*100vw);
-        height: (25/$base-px*100vw);
+        height: (29/$base-px*100vw);
         text-align: center;
-        margin-right: (15/$base-px*100vw);
+        padding-left:(4/$base-px*100vw);
+        line-height: (29/$base-px*100vw);
+        // margin-right: (15/$base-px*100vw);
         @include breakpoint($bp-md) {
             width: 40px;
-            height: 40px;
-            line-height: 40px;
+            height: 44px;
+            line-height: 44px;
             margin-right: 15px;
+            padding-left: 4px;
         }
     }
     &:after{
@@ -1172,6 +1206,9 @@ p{
     &.is-single{
         .post-thumbnail{
             margin-left: 0;
+            @include breakpoint($bp-md) {
+                margin-left: auto;
+            }
         }
     }
 
@@ -1298,6 +1335,10 @@ table {
     }
     .is-single & {
         left: 0;
+        @include breakpoint($bp-md) {
+            left: 50%;
+            margin-left: -300px;
+        }
     }
 }
 
@@ -1485,6 +1526,10 @@ table {
         left: 0;
         width: 100%;
         height: 100%;
+    }
+    iframe{
+        filter:grayscale(100%);
+        -webkit-filter:grayscale(100%);
     }
 }
 

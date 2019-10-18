@@ -17,6 +17,11 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+
+		<div class="p-mv-logo">
+			<img src="<?php echo get_template_directory_uri() . "/img/mv-logo.svg" ?>" alt="">
+		</div>
+
 		<section class="p-mv">
 			<!-- Slider main container -->
 			<div class="swiper-container">
@@ -210,7 +215,7 @@ get_header();
 
 		<ul class="p-shortcut p-grid" data-col="1">
 			<li class="p-grid_item">
-				<a href="#">
+				<a href="/about/feature/">
 					<div class="p-grid_content">
 						<h3 class="p-grid_content_title">良鍼堂の治療</h3>
 						<div class="p-grid_content_text">
@@ -223,7 +228,7 @@ get_header();
 				</a>
 			</li>
 			<li class="p-grid_item">
-				<a href="#">
+				<a href="/about/flow/">
 					<div class="p-grid_content">
 						<h3 class="p-grid_content_title">診察の流れ</h3>
 						<div class="p-grid_content_text">

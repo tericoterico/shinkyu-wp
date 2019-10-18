@@ -75,7 +75,9 @@
 	<div id="content" class="site-content">
 		<div class="p-logo">
 			<div class="p-logo-main">
-				<img src="<?php echo get_template_directory_uri() . "/img/logo-rsd.svg" ?>" alt="">
+				<a href="/">
+					<img src="<?php echo get_template_directory_uri() . "/img/logo-rsd.svg" ?>" alt="">
+				</a>
 			</div>
 			<div class="p-logo-sub">
 				東大阪 河内花園<br>
