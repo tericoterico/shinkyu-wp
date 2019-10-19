@@ -16623,7 +16623,7 @@ img {
   height: 100vh;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 200;
   pointer-events: none;
 }
 
@@ -16681,13 +16681,13 @@ img {
   height: 17.06667vw;
   background: rgba(255, 255, 255, 0.35);
   cursor: pointer;
-  z-index: 101;
+  z-index: 201;
 }
 
 @media (min-width: 720px) {
   .p-nav {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -17272,7 +17272,7 @@ img {
 
 @media (min-width: 720px) {
   .entry-header .p-section_title {
-    padding: 80px 0 50px;
+    padding: 120px 0 50px;
   }
 }
 
@@ -17318,7 +17318,7 @@ img {
 
 @media (min-width: 720px) {
   .p-section_title {
-    padding: 50px 0;
+    padding: 120px 0 50px;
     font-size: 3.6rem;
   }
 }
@@ -17470,7 +17470,7 @@ img {
   .p-logo-main {
     padding: 0;
     margin-right: 20px;
-    width: 125px;
+    width: 100px;
     font-size: 0;
   }
 }
@@ -17499,7 +17499,7 @@ img {
 @media (min-width: 720px) {
   .p-logo-sub {
     top: 0;
-    font-size: 16px;
+    font-size: 12px;
   }
 }
 
@@ -17510,7 +17510,9 @@ img {
 
 @media (min-width: 720px) {
   .p-mv-logo {
-    padding: 40px 0;
+    padding: 100px 0 70px;
+    width: 420px;
+    margin: 0 auto;
   }
 }
 

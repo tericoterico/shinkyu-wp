@@ -475,6 +475,12 @@ function change_sort_order( $query ) {
 		$query->set('order', 'ASC');
 	}
 
+	if ($query->is_post_type_archive( 'faq' )){
+		$query->set('meta_key', 'order');
+		$query->set('orderby', 'meta_value_num');
+		$query->set('order', 'ASC');
+	}
+
 	if ( $query->is_home() ) {
 		$query->set( 'order', 'ASC' );
 		$query->set( 'orderby', 'title' );
