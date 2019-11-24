@@ -115,13 +115,21 @@ img{
     }
 }
 
+.p-blog-date{
+    margin-bottom: (40/$base-px*100vw);
+    text-align: center;
+    @include breakpoint($bp-md) {
+        margin-bottom: 20px;
+    }
+}
+
 .p-nav{
     position: fixed;
     top: 0;
     right: 0;
     width: (64/$base-px*100vw);
     height: (64/$base-px*100vw);
-    background:rgba(255,255,255,0.35);
+    // background:rgba(255,255,255,0.35);
     cursor: pointer;
     z-index:201;
     @include breakpoint($bp-md) {
@@ -183,6 +191,8 @@ img{
         }
     }
     &.toggled{
+        background:rgba(255,255,255,0.35);
+
         > div:nth-child(1){
             transform: rotate(-45deg) translateY((-1/$base-px*100vw)) translateZ(0);
         }
@@ -378,11 +388,11 @@ img{
     height: auto;
     position: absolute;
     left: 50%;
-    bottom: (68/$base-px*100vw);
+    bottom: (110/$base-px*100vw);
     margin-left: -(100/$base-px*100vw);
     @include breakpoint($bp-md) {
         width: 500px;
-        bottom: 300px;
+        bottom: 140px;
         margin-left: -250px;
     }
     path{
@@ -392,9 +402,10 @@ img{
 
 .slide3 {
     #logo-eng{
+        bottom: (68/$base-px*100vw);
         // bottom: (250/$base-px*100vw);
         @include breakpoint($bp-md) {
-            bottom: 300px;
+            bottom: 260px;
         }
        
         path{
@@ -600,6 +611,17 @@ img{
     }
 }
 
+
+.post-type-archive-info{
+    .p-tile_item_img{
+        @include breakpoint($bp-md) {
+            min-height: 165px;
+            display: flex;
+        }
+    }
+}
+
+
 .p-tile{
     padding: 0 ($base-padding/$base-px*100vw);
     @include breakpoint($bp-md) {
@@ -637,6 +659,7 @@ img{
                 height: auto;
                 flex-basis:100%;
                 min-height: 193px;
+                align-items: center;
             }
             img{
                 width: 100%;
@@ -669,6 +692,15 @@ img{
 .entry-header{
     .p-section_title{
         padding: ($base-padding*3/$base-px*100vw) 0 ($base-padding*1.5/$base-px*100vw);
+        @include breakpoint($bp-md) {
+            padding: 120px 0 50px;
+        }
+    }
+}
+
+.page-header{
+    .p-section_title{
+        padding: ($base-padding*3/$base-px*100vw) 0 ($base-padding/$base-px*100vw);
         @include breakpoint($bp-md) {
             padding: 120px 0 50px;
         }
@@ -835,6 +867,7 @@ button{
     align-items: center;
     height: (64/$base-px*100vw);
     z-index:100;
+    top: 0;
     @include breakpoint($bp-md) {
         height: auto;
         padding: 15px 20px 20px;
@@ -892,7 +925,7 @@ button{
         margin: 0 auto;
     }
     img{
-        width: 50%;
+        width: 45%;
         vertical-align: top;
     }
 }
@@ -906,7 +939,7 @@ button{
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: 75%;
+    padding-bottom: 42%;
     overflow: hidden;
     margin-top: (30/$base-px*100vw);
     iframe{
@@ -1193,23 +1226,29 @@ p{
     }
 }
 
-.p-oriental{
+.p-oriental, .p-blog{
     position: relative;
     margin-bottom: (80/$base-px*100vw);
     @include breakpoint($bp-md) {
         margin-bottom: 140px;
     }
-    &.is-single{
-        margin-bottom: 0;
-    }
     &:last-child{
         margin-bottom: (40/$base-px*100vw);
     }
     &.is-single{
+        margin-bottom: 0;
         .post-thumbnail{
             margin-left: 0;
             @include breakpoint($bp-md) {
                 margin-left: auto;
+            }
+        }
+        .attachment-post-thumbnail,
+        .p-noimage{
+            @include breakpoint($bp-md) {
+                width: 840px;
+                margin: 0 auto;
+                display: block;
             }
         }
     }
@@ -1230,6 +1269,9 @@ p{
     .entry-title{
         font-family: "正楷書CB1","Sei Kaisho CB1";
         text-align:center;
+        @include breakpoint($bp-md) {
+            margin-top: 50px;
+        }
         a{
             color:#000;
         }
@@ -1562,13 +1604,41 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
 .page-template-page-about{
     .entry-header{
         .p-section_title{
-            padding-top: 0;
+            // padding-top: ($base-padding*3/$base-px*100vw);
+            padding-top:0;
+            @include breakpoint($bp-md) {
+                padding-top: 120px;
+            }
         }
     }
     .post-thumbnail{
         @include breakpoint($bp-md) {
             width: 600px;
             margin: 0 auto;
+        }
+    }
+}
+
+.has-post-thumbnail{
+    .entry-header{
+        .p-section_title{
+            padding-top: ($base-padding*1.25/$base-px*100vw);
+            @include breakpoint($bp-md) {
+                padding-top: 120px;
+            }
+        }
+    }
+}
+
+.p-about-menu{
+    padding-bottom: (20/$base-px*100vw);
+    li{
+        margin: (20/$base-px*100vw) 0 0 0;
+        @include breakpoint($bp-md) {
+            margin: 20px 0 0 0;
+        }
+        &:first-child{
+            margin: 0;
         }
     }
 }

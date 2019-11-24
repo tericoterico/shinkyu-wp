@@ -21,7 +21,7 @@
 	<footer class="p-footer">
 		<div class="p-footer-content">
 			<div>
-				<span>鍼灸院 良鍼堂</span>
+				<span><?php echo get_bloginfo ( 'name' ); ?></span>
 				〒<?php echo esc_html($options['postal']); ?><br>
 				<?php echo esc_html($options['address']); ?><br>
 				TEL:<?php echo esc_html($options['tel']); ?>
@@ -37,7 +37,7 @@
 		?>
 
 		<div class="p-copyright">
-			鍼灸院 良鍼堂 Ryoshindo.net &copy; all rights reserved.
+		<?php echo get_bloginfo ( 'name' ); ?> Ryoshindo.net &copy; all rights reserved.
 		</div>
 	</footer>
 </div><!-- #page -->

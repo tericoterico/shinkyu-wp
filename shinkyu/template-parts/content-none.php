@@ -9,6 +9,12 @@
 
 ?>
 
+<section class="error-404 not-found">
+	<div class="entry-content">
+		<h2 class="p-section_title typesquare_tags typesquare_tags">Contents not found.<span class="p-section_title_sub">コンテンツがありません。</span></h2>
+	</div><!-- .page-content -->
+</section><!-- .error-404 -->
+<? /*
 <section class="no-results not-found">
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'shinkyu' ); ?></h1>
@@ -20,7 +26,6 @@
 
 			printf(
 				'<p>' . wp_kses(
-					/* translators: 1: link to WP admin new post page. */
 					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'shinkyu' ),
 					array(
 						'a' => array(
@@ -49,3 +54,4 @@
 		?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->
+*/?>

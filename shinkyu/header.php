@@ -27,24 +27,18 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'shinkyu' ); ?></a>
 	*/ ?>
 	<header id="masthead" class="site-header">
-		<div class="site-branding" style="display:none;">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$shinkyu_description = get_bloginfo( 'description', 'display' );
-			if ( $shinkyu_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $shinkyu_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+		<div class="p-logo">
+			<div class="p-logo-main">
+				<a href="/">
+					<img src="<?php echo get_template_directory_uri() . "/img/logo-rsd.svg" ?>" alt="">
+				</a>
+			</div>
+			<div class="p-logo-sub">
+				東大阪 河内花園<br>
+				鍼灸院
+			</div>
+		</div>
+
 
 		<nav class="p-nav">
 			<div><svg xmlns="http://www.w3.org/2000/svg" width="864" height="36" viewBox="0 0 864 36"><path d="M576 0v10.381l-576 8.119 576 8.118v9.382h288v-36z"/></svg></div>
@@ -73,14 +67,3 @@
 		</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-		<div class="p-logo">
-			<div class="p-logo-main">
-				<a href="/">
-					<img src="<?php echo get_template_directory_uri() . "/img/logo-rsd.svg" ?>" alt="">
-				</a>
-			</div>
-			<div class="p-logo-sub">
-				東大阪 河内花園<br>
-				鍼灸院
-			</div>
-		</div>

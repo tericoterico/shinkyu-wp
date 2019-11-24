@@ -11,9 +11,6 @@ $related = get_field('related');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<?php shinkyu_post_thumbnail(); ?>
-
 	<header class="entry-header">
 		<?php
 		get_template_part( 'template-parts/content', 'header' );
@@ -25,6 +22,7 @@ $related = get_field('related');
 		</div>
 	</header><!-- .entry-header -->
 
+	<?php shinkyu_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -44,10 +42,10 @@ $related = get_field('related');
 		<?php
 			$page = get_post( get_the_ID() );
 			$slug = $page->post_name;
-			if(is_parent_slug() === 'about' || $slug === 'feature'){
+			if(is_parent_slug() === 'feature' || $slug === 'feature'){
 		?>
 			<div class="p-back">
-				<a href="/about">戻る</a>
+				<a href="/#top-menu">戻る</a>
 			</div>
 		<?php
 			}

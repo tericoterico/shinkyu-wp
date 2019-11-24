@@ -299,8 +299,6 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: sans-serif;
-  /* 1 */
   font-size: 100%;
   /* 1 */
   line-height: 1.15;
@@ -16441,6 +16439,30 @@ button.swiper-pagination-bullet {
   max-width: 200px;
 }
 
+#masthead {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  min-height: 17.06667vw;
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+  /* IE6-9 */
+  z-index: 100;
+}
+
+@media (min-width: 720px) {
+  #masthead {
+    height: auto;
+    min-height: 80px;
+  }
+}
+
 .p-footer {
   margin: 0;
   padding: 6vw 0;
@@ -16673,13 +16695,23 @@ img {
   }
 }
 
+.p-blog-date {
+  margin-bottom: 10.66667vw;
+  text-align: center;
+}
+
+@media (min-width: 720px) {
+  .p-blog-date {
+    margin-bottom: 20px;
+  }
+}
+
 .p-nav {
   position: fixed;
   top: 0;
   right: 0;
   width: 17.06667vw;
   height: 17.06667vw;
-  background: rgba(255, 255, 255, 0.35);
   cursor: pointer;
   z-index: 201;
 }
@@ -16749,6 +16781,10 @@ img {
     width: 40px;
     height: auto;
   }
+}
+
+.p-nav.toggled {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .p-nav.toggled > div:nth-child(1) {
@@ -16974,14 +17010,14 @@ img {
   height: auto;
   position: absolute;
   left: 50%;
-  bottom: 18.13333vw;
+  bottom: 29.33333vw;
   margin-left: -26.66667vw;
 }
 
 @media (min-width: 720px) {
   #logo-eng {
     width: 500px;
-    bottom: 300px;
+    bottom: 140px;
     margin-left: -250px;
   }
 }
@@ -16990,9 +17026,13 @@ img {
   fill: #fff;
 }
 
+.slide3 #logo-eng {
+  bottom: 18.13333vw;
+}
+
 @media (min-width: 720px) {
   .slide3 #logo-eng {
-    bottom: 300px;
+    bottom: 260px;
   }
 }
 
@@ -17181,6 +17221,13 @@ img {
   z-index: 2;
 }
 
+@media (min-width: 720px) {
+  .post-type-archive-info .p-tile_item_img {
+    min-height: 165px;
+    display: flex;
+  }
+}
+
 .p-tile {
   padding: 0 8vw;
 }
@@ -17232,6 +17279,7 @@ img {
     height: auto;
     flex-basis: 100%;
     min-height: 193px;
+    align-items: center;
   }
 }
 
@@ -17272,6 +17320,16 @@ img {
 
 @media (min-width: 720px) {
   .entry-header .p-section_title {
+    padding: 120px 0 50px;
+  }
+}
+
+.page-header .p-section_title {
+  padding: 24vw 0 8vw;
+}
+
+@media (min-width: 720px) {
+  .page-header .p-section_title {
     padding: 120px 0 50px;
   }
 }
@@ -17449,6 +17507,7 @@ img {
   align-items: center;
   height: 17.06667vw;
   z-index: 100;
+  top: 0;
 }
 
 @media (min-width: 720px) {
@@ -17517,7 +17576,7 @@ img {
 }
 
 .p-mv-logo img {
-  width: 50%;
+  width: 45%;
   vertical-align: top;
 }
 
@@ -17530,7 +17589,7 @@ img {
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 75%;
+  padding-bottom: 42%;
   overflow: hidden;
   margin-top: 8vw;
 }
@@ -17853,63 +17912,79 @@ p {
   }
 }
 
-.p-oriental {
+.p-oriental, .p-blog {
   position: relative;
   margin-bottom: 21.33333vw;
 }
 
 @media (min-width: 720px) {
-  .p-oriental {
+  .p-oriental, .p-blog {
     margin-bottom: 140px;
   }
 }
 
-.p-oriental.is-single {
-  margin-bottom: 0;
-}
-
-.p-oriental:last-child {
+.p-oriental:last-child, .p-blog:last-child {
   margin-bottom: 10.66667vw;
 }
 
-.p-oriental.is-single .post-thumbnail {
+.p-oriental.is-single, .p-blog.is-single {
+  margin-bottom: 0;
+}
+
+.p-oriental.is-single .post-thumbnail, .p-blog.is-single .post-thumbnail {
   margin-left: 0;
 }
 
 @media (min-width: 720px) {
-  .p-oriental.is-single .post-thumbnail {
+  .p-oriental.is-single .post-thumbnail, .p-blog.is-single .post-thumbnail {
     margin-left: auto;
   }
 }
 
-.p-oriental .post-thumbnail {
+@media (min-width: 720px) {
+  .p-oriental.is-single .attachment-post-thumbnail,
+  .p-oriental.is-single .p-noimage, .p-blog.is-single .attachment-post-thumbnail,
+  .p-blog.is-single .p-noimage {
+    width: 840px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.p-oriental .post-thumbnail, .p-blog .post-thumbnail {
   display: block;
   width: 100vw;
   margin-left: -8vw;
 }
 
 @media (min-width: 720px) {
-  .p-oriental .post-thumbnail {
+  .p-oriental .post-thumbnail, .p-blog .post-thumbnail {
     width: 600px;
     margin: 0 auto;
   }
 }
 
-.p-oriental .post-thumbnail img {
+.p-oriental .post-thumbnail img, .p-blog .post-thumbnail img {
   width: 100%;
   height: 100%;
 }
 
-.p-oriental .entry-title {
+.p-oriental .entry-title, .p-blog .entry-title {
   font-family: "正楷書CB1","Sei Kaisho CB1";
   text-align: center;
 }
 
-.p-oriental .entry-title a {
+@media (min-width: 720px) {
+  .p-oriental .entry-title, .p-blog .entry-title {
+    margin-top: 50px;
+  }
+}
+
+.p-oriental .entry-title a, .p-blog .entry-title a {
   color: #000;
 }
 
-.p-oriental_redfish {
+.p-oriental_redfish, .p-blog_redfish {
   position: absolute;
   top: 8vw;
   right: -10.66667vw;
@@ -17917,13 +17992,13 @@ p {
 }
 
 @media (min-width: 720px) {
-  .p-oriental_redfish {
+  .p-oriental_redfish, .p-blog_redfish {
     top: 60px;
     right: -60px;
   }
 }
 
-.p-oriental_blackfish {
+.p-oriental_blackfish, .p-blog_blackfish {
   position: absolute;
   top: -2.66667vw;
   left: -18.66667vw;
@@ -17932,7 +18007,7 @@ p {
 }
 
 @media (min-width: 720px) {
-  .p-oriental_blackfish {
+  .p-oriental_blackfish, .p-blog_blackfish {
     top: -20px;
     left: -130px;
   }
@@ -18294,10 +18369,44 @@ div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
 }
 
 @media (min-width: 720px) {
+  .page-template-page-about .entry-header .p-section_title {
+    padding-top: 120px;
+  }
+}
+
+@media (min-width: 720px) {
   .page-template-page-about .post-thumbnail {
     width: 600px;
     margin: 0 auto;
   }
+}
+
+.has-post-thumbnail .entry-header .p-section_title {
+  padding-top: 10vw;
+}
+
+@media (min-width: 720px) {
+  .has-post-thumbnail .entry-header .p-section_title {
+    padding-top: 120px;
+  }
+}
+
+.p-about-menu {
+  padding-bottom: 5.33333vw;
+}
+
+.p-about-menu li {
+  margin: 5.33333vw 0 0 0;
+}
+
+@media (min-width: 720px) {
+  .p-about-menu li {
+    margin: 20px 0 0 0;
+  }
+}
+
+.p-about-menu li:first-child {
+  margin: 0;
 }
 
 #side {
